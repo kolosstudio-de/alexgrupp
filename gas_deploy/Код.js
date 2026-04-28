@@ -8,7 +8,7 @@ const SHEET_CLIENTS_BAU = 'Clients_Bau';
 
 function onOpen() {
   const ui = SpreadsheetApp.getUi();
-  ui.createMenu('AlexGruppee CRM')
+  ui.createMenu('AlexGruppe CRM')
     .addItem('Sync Clients (Auto)', 'manualSyncClientsAuto')
     .addItem('Sync Clients (Bau)', 'manualSyncClientsBau')
     .addToUi();
@@ -24,11 +24,11 @@ function doGet(e) {
     template.rowId = id;
     template.source = source;
     return template.evaluate()
-      .setTitle('AlexGruppee: CRM')
+      .setTitle('AlexGruppe: CRM')
       .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
       .addMetaTag('viewport', 'width=device-width, initial-scale=1');
   }
-  return ContentService.createTextOutput("AlexGruppee CRM V2 Active");
+  return ContentService.createTextOutput("AlexGruppe CRM V2 Active");
 }
 
 function escapeHtml(value) {
@@ -175,13 +175,13 @@ function executeFinalConfirmation(row, finalDateTime, notes, source, status) {
 
 function sendRejectionEmail(data) {
   const templates = {
-    de: { subject: 'Terminabsage – AlexGruppee', body: `Hallo ${data.firstName},\n\nleider sind an Ihrem Wunschtermin bereits alle Kapazitäten ausgeschöpft. Wir melden uns in Kürze mit einem Alternativvorschlag.\n\nViele Grüße,\nAlexGruppee` },
-    en: { subject: 'Appointment Unavailable – AlexGruppee', body: `Hello ${data.firstName},\n\nUnfortunately, we are fully booked at your requested time. We will contact you shortly with an alternative proposal.\n\nBest regards,\nAlexGruppee` },
-    ru: { subject: 'Отмена записи – AlexGruppee', body: `Здравствуйте, ${data.firstName}!\n\nК сожалению, на выбранное вами время все места заняты. Мы скоро свяжемся с вами, чтобы предложить альтернативу.\n\nС уважением,\nAlexGruppee` },
-    uk: { subject: 'Скасування запису – AlexGruppee', body: `Вітаємо, ${data.firstName}!\n\nНа жаль, на обраний вами час усі місця зайняті. Ми скоро зв'яжемося з вами, щоб запропонувати альтернативу.\n\nЗ повагою,\nAlexGruppee` }
+    de: { subject: 'Terminabsage – AlexGruppe', body: `Hallo ${data.firstName},\n\nleider sind an Ihrem Wunschtermin bereits alle Kapazitäten ausgeschöpft. Wir melden uns in Kürze mit einem Alternativvorschlag.\n\nViele Grüße,\nAlexGruppe` },
+    en: { subject: 'Appointment Unavailable – AlexGruppe', body: `Hello ${data.firstName},\n\nUnfortunately, we are fully booked at your requested time. We will contact you shortly with an alternative proposal.\n\nBest regards,\nAlexGruppe` },
+    ru: { subject: 'Отмена записи – AlexGruppe', body: `Здравствуйте, ${data.firstName}!\n\nК сожалению, на выбранное вами время все места заняты. Мы скоро свяжемся с вами, чтобы предложить альтернативу.\n\nС уважением,\nAlexGruppe` },
+    uk: { subject: 'Скасування запису – AlexGruppe', body: `Вітаємо, ${data.firstName}!\n\nНа жаль, на обраний вами час усі місця зайняті. Ми скоро зв'яжемося з вами, щоб запропонувати альтернативу.\n\nЗ повагою,\nAlexGruppe` }
   };
   const t = templates[data.language] || templates.de;
-  if (data.email) GmailApp.sendEmail(data.email, t.subject, t.body, { name: 'AlexGruppee' });
+  if (data.email) GmailApp.sendEmail(data.email, t.subject, t.body, { name: 'AlexGruppe' });
 }
 
 function updateCalendar(data, finalDateTime) {
@@ -193,7 +193,7 @@ function updateCalendar(data, finalDateTime) {
     if (data.eventId) {
       const event = cal.getEventById(data.eventId);
       if (event) {
-        event.setTitle('AlexGruppee CONFIRMED: ' + data.firstName + ' ' + data.lastName);
+        event.setTitle('AlexGruppe CONFIRMED: ' + data.firstName + ' ' + data.lastName);
         event.setTime(start, end);
         event.setDescription('Topic: ' + data.topic + '\nNotes: ' + (data.source === 'Bau' ? 'Bauprojekt Besprechung' : 'Werkstatt Termin'));
         if (data.source === 'Bau') {
@@ -205,7 +205,7 @@ function updateCalendar(data, finalDateTime) {
       }
     }
     // Fallback if event not found or no ID
-    const newEvent = cal.createEvent('AlexGruppee CONFIRMED: ' + data.firstName + ' ' + data.lastName, start, end, {
+    const newEvent = cal.createEvent('AlexGruppe CONFIRMED: ' + data.firstName + ' ' + data.lastName, start, end, {
       description: 'Topic: ' + data.topic,
       location: data.source === 'Auto' ? 'Industriestr. 22, 93077 Bad Abbach' : ''
     });
@@ -217,7 +217,7 @@ function updateCalendar(data, finalDateTime) {
 }
 
 function sendInitialConfirmation(data) {
-  const signatur = '\n\nAlexGruppee\nInh. Oleksandr Halushka\nIndustriestraße 22, 93077 Bad Abbach\ninfo@alexgruppee.de';
+  const signatur = '\n\nAlexGruppe\nInh. Oleksandr Halushka\nIndustriestraße 22, 93077 Bad Abbach\ninfo@alexgruppee.de';
   
   const cmDict = {
     de: { email: 'per E-Mail', wa_text: 'per WhatsApp (Nachricht)', wa_audio: 'per WhatsApp (Anruf)', phone: 'telefonisch' },
@@ -233,13 +233,13 @@ function sendInitialConfirmation(data) {
   const tUk = data.prefTime !== 'any' && data.prefTime ? ` у період з ${data.prefTime}` : '';
 
   const templates = {
-    de: { subject: 'Ihre Anfrage bei AlexGruppee', body: `Hallo ${data.firstName},\n\nvielen Dank für Ihre Anfrage. Wir melden uns bei Ihnen am ${data.prefDate}${tDe} ${contactStr}, um die Details zu "${data.topic}" zu besprechen.\n\nBis bald,${signatur}` },
-    uk: { subject: 'Ваша заявка в AlexGruppee', body: `Вітаємо, ${data.firstName}!\n\nДякуємо за звернення. Ми зв'яжемося з вами ${data.prefDate}${tUk} ${contactStr}, щоб обговорити деталі щодо "${data.topic}".\n\nДо зв'язку,${signatur}` },
-    ru: { subject: 'Ваша заявка в AlexGruppee', body: `Здравствуйте, ${data.firstName}!\n\nСпасибо за обращение. Мы свяжемся с вами ${data.prefDate}${tRu} ${contactStr}, чтобы обсудить детали по "${data.topic}".\n\nДо связи,${signatur}` },
-    en: { subject: 'Your request at AlexGruppee', body: `Hello ${data.firstName},\n\nThank you for reaching out. We will contact you on ${data.prefDate}${tEn} ${contactStr} to discuss the details regarding "${data.topic}".\n\nTalk to you soon,${signatur}` }
+    de: { subject: 'Ihre Anfrage bei AlexGruppe', body: `Hallo ${data.firstName},\n\nvielen Dank für Ihre Anfrage. Wir melden uns bei Ihnen am ${data.prefDate}${tDe} ${contactStr}, um die Details zu "${data.topic}" zu besprechen.\n\nBis bald,${signatur}` },
+    uk: { subject: 'Ваша заявка в AlexGruppe', body: `Вітаємо, ${data.firstName}!\n\nДякуємо за звернення. Ми зв'яжемося з вами ${data.prefDate}${tUk} ${contactStr}, щоб обговорити деталі щодо "${data.topic}".\n\nДо зв'язку,${signatur}` },
+    ru: { subject: 'Ваша заявка в AlexGruppe', body: `Здравствуйте, ${data.firstName}!\n\nСпасибо за обращение. Мы свяжемся с вами ${data.prefDate}${tRu} ${contactStr}, чтобы обсудить детали по "${data.topic}".\n\nДо связи,${signatur}` },
+    en: { subject: 'Your request at AlexGruppe', body: `Hello ${data.firstName},\n\nThank you for reaching out. We will contact you on ${data.prefDate}${tEn} ${contactStr} to discuss the details regarding "${data.topic}".\n\nTalk to you soon,${signatur}` }
   };
   const t = templates[data.language] || templates.de;
-  if (data.email) GmailApp.sendEmail(data.email, t.subject, t.body, { name: 'AlexGruppee' });
+  if (data.email) GmailApp.sendEmail(data.email, t.subject, t.body, { name: 'AlexGruppe' });
 }
 
 function sendFinalConfirmationEmail(data, finalDateTime) {
@@ -249,42 +249,42 @@ function sendFinalConfirmationEmail(data, finalDateTime) {
   
   // Format for Google Calendar Link (YYYYMMDDTHHMMSS)
   const fDate = (d) => d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-  const calTitle = encodeURIComponent('AlexGruppee Termin: ' + data.topic);
+  const calTitle = encodeURIComponent('AlexGruppe Termin: ' + data.topic);
   const calLoc = encodeURIComponent('Industriestraße 22, 93077 Bad Abbach');
-  const calDetails = encodeURIComponent('Ihr Termin bei AlexGruppee. Wir freuen uns auf Sie!');
+  const calDetails = encodeURIComponent('Ihr Termin bei AlexGruppe. Wir freuen uns auf Sie!');
   const gCalLink = 'https://www.google.com/calendar/render?action=TEMPLATE&text=' + calTitle + 
                   '&dates=' + fDate(start) + '/' + fDate(end) + 
                   '&details=' + calDetails + '&location=' + calLoc;
 
-  const signaturHtml = '<br><br><b>AlexGruppee</b><br>Inh. Oleksandr Halushka<br>Industriestraße 22, 93077 Bad Abbach<br><a href="mailto:info@alexgruppee.de" style="color:#1e40af;">info@alexgruppee.de</a>';
+  const signaturHtml = '<br><br><b>AlexGruppe</b><br>Inh. Oleksandr Halushka<br>Industriestraße 22, 93077 Bad Abbach<br><a href="mailto:info@alexgruppee.de" style="color:#1e40af;">info@alexgruppee.de</a>';
   const btnStyle = 'display:inline-block;padding:12px 24px;background-color:#0f172a;color:#ffffff;text-decoration:none;border-radius:6px;font-weight:bold;margin:15px 0;font-family:sans-serif;';
   
   const templates = {
     de: { 
-      subject: 'Ihr Termin ist bestätigt – AlexGruppee', 
-      body: `Hallo ${data.firstName},\n\nIhr Termin bei uns steht fest:\n\nZeit: ${formatted}\nOrt: Industriestraße 22, 93077 Bad Abbach\n\nZum Google Kalender hinzufügen:\n${gCalLink}\n\nWir freuen uns auf Sie!\n\nAlexGruppee\nInh. Oleksandr Halushka...`,
+      subject: 'Ihr Termin ist bestätigt – AlexGruppe', 
+      body: `Hallo ${data.firstName},\n\nIhr Termin bei uns steht fest:\n\nZeit: ${formatted}\nOrt: Industriestraße 22, 93077 Bad Abbach\n\nZum Google Kalender hinzufügen:\n${gCalLink}\n\nWir freuen uns auf Sie!\n\nAlexGruppe\nInh. Oleksandr Halushka...`,
       htmlBody: `<div style="font-family:sans-serif;color:#333;line-height:1.6;font-size:15px;">Hallo ${data.firstName},<br><br>Ihr Termin bei uns steht fest:<br><br><b>Zeit:</b> ${formatted}<br><b>Ort:</b> Industriestraße 22, 93077 Bad Abbach<br><br><a href="${gCalLink}" style="${btnStyle}">Zum Google Kalender hinzufügen</a><br><br>Wir freuen uns auf Sie!${signaturHtml}</div>`
     },
     uk: { 
-      subject: 'Ваш запис підтверджено – AlexGruppee', 
-      body: `Вітаємо, ${data.firstName}!\n\nВаш запис успішно підтверджено:\n\nЧас: ${formatted}\nАдреса: Industriestraße 22, 93077 Bad Abbach\n\nДодати в Google Календар:\n${gCalLink}\n\nДо зустрічі!\n\nAlexGruppee...`,
+      subject: 'Ваш запис підтверджено – AlexGruppe', 
+      body: `Вітаємо, ${data.firstName}!\n\nВаш запис успішно підтверджено:\n\nЧас: ${formatted}\nАдреса: Industriestraße 22, 93077 Bad Abbach\n\nДодати в Google Календар:\n${gCalLink}\n\nДо зустрічі!\n\nAlexGruppe...`,
       htmlBody: `<div style="font-family:sans-serif;color:#333;line-height:1.6;font-size:15px;">Вітаємо, ${data.firstName}!<br><br>Ваш запис успішно підтверджено:<br><br><b>Час:</b> ${formatted}<br><b>Адреса:</b> Industriestraße 22, 93077 Bad Abbach<br><br><a href="${gCalLink}" style="${btnStyle}">Додати в Google Календар</a><br><br>До зустрічі!${signaturHtml}</div>`
     },
     ru: { 
-      subject: 'Ваша запись подтверждена – AlexGruppee', 
-      body: `Здравствуйте, ${data.firstName}!\n\nВаша запись успешно подтверждена:\n\nВремя: ${formatted}\nАдрес: Industriestraße 22, 93077 Bad Abbach\n\nДобавить в Google Календарь:\n${gCalLink}\n\nДо встречи!\n\nAlexGruppee...`,
+      subject: 'Ваша запись подтверждена – AlexGruppe', 
+      body: `Здравствуйте, ${data.firstName}!\n\nВаша запись успешно подтверждена:\n\nВремя: ${formatted}\nАдрес: Industriestraße 22, 93077 Bad Abbach\n\nДобавить в Google Календарь:\n${gCalLink}\n\nДо встречи!\n\nAlexGruppe...`,
       htmlBody: `<div style="font-family:sans-serif;color:#333;line-height:1.6;font-size:15px;">Здравствуйте, ${data.firstName}!<br><br>Ваша запись успешно подтверждена:<br><br><b>Время:</b> ${formatted}<br><b>Адрес:</b> Industriestraße 22, 93077 Bad Abbach<br><br><a href="${gCalLink}" style="${btnStyle}">Добавить в Google Календарь</a><br><br>До встречи!${signaturHtml}</div>`
     },
     en: { 
-      subject: 'Your appointment is confirmed – AlexGruppee', 
-      body: `Hello ${data.firstName},\n\nYour appointment is confirmed:\n\nTime: ${formatted}\nLocation: Industriestraße 22, 93077 Bad Abbach\n\nAdd to Google Calendar:\n${gCalLink}\n\nLooking forward to seeing you!\n\nAlexGruppee...`,
+      subject: 'Your appointment is confirmed – AlexGruppe', 
+      body: `Hello ${data.firstName},\n\nYour appointment is confirmed:\n\nTime: ${formatted}\nLocation: Industriestraße 22, 93077 Bad Abbach\n\nAdd to Google Calendar:\n${gCalLink}\n\nLooking forward to seeing you!\n\nAlexGruppe...`,
       htmlBody: `<div style="font-family:sans-serif;color:#333;line-height:1.6;font-size:15px;">Hello ${data.firstName},<br><br>Your appointment is confirmed:<br><br><b>Time:</b> ${formatted}<br><b>Location:</b> Industriestraße 22, 93077 Bad Abbach<br><br><a href="${gCalLink}" style="${btnStyle}">Add to Google Calendar</a><br><br>Looking forward to seeing you!${signaturHtml}</div>`
     }
   };
   const t = templates[data.language] || templates.de;
   if (data.email) {
     GmailApp.sendEmail(data.email, t.subject, t.body, { 
-      name: 'AlexGruppee',
+      name: 'AlexGruppe',
       htmlBody: t.htmlBody
     });
   }
@@ -298,7 +298,7 @@ function sendOwnerNotification(data, row) {
   const bodyText = `Neue Anfrage #${row}\n\nKunde: ${data.firstName} ${data.lastName}\nE-Mail: ${data.email}\nTelefon: ${data.phone}\nThema: ${data.topic}\nWunschtermin: ${data.prefDate} (${data.prefTime})\nSprache: ${data.language}\n\nLINK:\n${confirmUrl}`;
 
   const cleanPhone = (data.phone || "").replace(/[^0-9]/g, '');
-  const waText = encodeURIComponent('Hallo ' + (data.firstName || '') + ', hier ist AlexGruppee. Danke für Ihre Anfrage zu ' + (data.topic || '') + '!');
+  const waText = encodeURIComponent('Hallo ' + (data.firstName || '') + ', hier ist AlexGruppe. Danke für Ihre Anfrage zu ' + (data.topic || '') + '!');
   const waLink = cleanPhone ? `https://wa.me/${cleanPhone}?text=${waText}` : '#';
 
   // Escape every user-controlled value before injecting into HTML.
@@ -343,12 +343,12 @@ function sendOwnerNotification(data, row) {
         <a href="${e.waLink}" style="${waBtnStyle}">WhatsApp Chat öffnen</a><br>
         <a href="${e.confirmUrl}" style="${btnStyle}">Status aktualisieren (CRM)</a>
       </div>
-      <p style="font-size:12px;color:#94a3b8;margin-bottom:0;text-align:center;margin-top:20px;">Automatisches AlexGruppee CRM System</p>
+      <p style="font-size:12px;color:#94a3b8;margin-bottom:0;text-align:center;margin-top:20px;">Automatisches AlexGruppe CRM System</p>
     </div>
   `;
 
   GmailApp.sendEmail(OWNER_EMAIL, subject, bodyText, { 
-    name: 'AlexGruppee CRM',
+    name: 'AlexGruppe CRM',
     htmlBody: htmlBody
   });
 }
@@ -380,7 +380,7 @@ function createCalendarEvent(data) {
     }
     const start = new Date(data.prefDate + 'T' + timeStr);
     const end = new Date(start.getTime() + 60 * 60 * 1000); 
-    const event = cal.createEvent('AlexGruppee REQUEST: ' + data.firstName + ' ' + data.lastName, start, end, {
+    const event = cal.createEvent('AlexGruppe REQUEST: ' + data.firstName + ' ' + data.lastName, start, end, {
       description: 'Phone: ' + data.phone + '\nEmail: ' + data.email + '\nTopic: ' + data.topic,
       location: data.source === 'Auto' ? 'Industriestr. 22, 93077 Bad Abbach' : ''
     });

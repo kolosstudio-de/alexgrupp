@@ -1,5 +1,5 @@
 /**
- * AlexGrupp i18n — Language Switcher
+ * AlexGruppe i18n — Language Switcher
  * 
  * Loads a JSON locale file and replaces all [data-i18n] attribute values.
  * Language is stored in localStorage. Defaults to 'de'.
@@ -28,17 +28,37 @@ async function loadLocale(lang) {
         if (!res.ok) throw new Error('Locale not found: ' + lang);
         return await res.json();
     } catch (e) {
-        console.warn('[i18n] Falling back to de.', e);
-        const res = await fetch(BASE_PATH + 'de.json');
-        return await res.json();
+        console.warn('[i18n] Note: Translations may not load properly when viewing via file:// protocol due to CORS.', e.message);
+        try {
+            const res = await fetch(BASE_PATH + 'de.json');
+            return await res.json();
+        } catch (e2) {
+            console.error('[i18n] Safe fallback triggered for local viewing.');
+            return {}; // Prevent unhandled promise rejection
+        }
     }
 }
 
 function applyLocale(strings) {
+    // Plain text content
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (strings[key] !== undefined) {
             el.textContent = strings[key];
+        }
+    });
+    // Placeholder attribute (input / textarea)
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (strings[key] !== undefined) {
+            el.setAttribute('placeholder', strings[key]);
+        }
+    });
+    // innerHTML — for strings that contain inline HTML like <strong>
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (strings[key] !== undefined) {
+            el.innerHTML = strings[key];
         }
     });
     document.documentElement.lang = currentLang;

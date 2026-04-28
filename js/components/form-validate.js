@@ -1,5 +1,5 @@
 /**
- * AlexGrupp — German Form Validation
+ * AlexGruppe — German Form Validation
  * Replaces browser's native English validation popups.
  * Adds red animated borders + German error messages below each invalid field.
  */
@@ -139,9 +139,13 @@
             e.preventDefault();
             const isValid = validateForm(form);
             if (isValid) {
-                // Form is valid — submit or show success
-                // For now, show a German success message
-                showSuccess(form);
+                // Form is valid — submit to the booking system
+                if (window.handleBookingSubmit) {
+                    window.handleBookingSubmit(form);
+                } else {
+                    // Fallback if the script isn't loaded
+                    showSuccess(form);
+                }
             }
         });
     }

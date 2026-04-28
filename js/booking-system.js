@@ -1,5 +1,5 @@
 /**
- * AlexGruppee — Booking System Handler
+ * AlexGruppe — Booking System Handler
  * Handles form submission to Google Apps Script (GAS).
  */
 

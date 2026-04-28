@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt | AlexGruppee KFZ-Service</title>
+    <title>Kontakt | AlexGruppe KFZ-Service</title>
     <meta name="description"
-        content="Kontaktieren Sie AlexGruppee — Termin anfragen, Fragen stellen oder direkt anrufen.">
+        content="Kontaktieren Sie AlexGruppe — Termin anfragen, Fragen stellen oder direkt anrufen.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -205,6 +205,10 @@
             color: rgba(255, 255, 255, 0.45);
             letter-spacing: 0.06em;
             text-transform: uppercase;
+            line-height: 1.25;
+            min-height: 2.5em;
+            display: flex;
+            align-items: flex-end;
         }
 
         .form-group input,
@@ -418,7 +422,7 @@
             </div>
             <span class="eyebrow" data-i18n="auto-contact-eyebrow">Wir sind für Sie da</span>
             <h1 data-i18n="auto-contact-title">Beratung anfragen</h1>
-            <p>Schreiben Sie uns oder rufen Sie an — wir melden uns mit einer ehrlichen Ersteinschätzung zurück.</p>
+            <p data-i18n="auto-contact-page-desc">Schreiben Sie uns oder rufen Sie an — wir melden uns mit einer ehrlichen Ersteinschätzung zurück.</p>
         </div>
     </section>
 
@@ -426,34 +430,34 @@
     <div class="contact-layout">
         <!-- Info -->
         <div class="contact-info" data-aos="fade-right">
-            <h2>Direkte Kontaktwege</h2>
-            <p>Wählen Sie den für Sie bequemsten Weg. Wir sind meist innerhalb von einer Stunde erreichbar.</p>
+            <h2 data-i18n="auto-kontakt-info-title">Direkte Kontaktwege</h2>
+            <p data-i18n="auto-kontakt-info-desc">Wählen Sie den für Sie bequemsten Weg. Wir sind meist innerhalb von einer Stunde erreichbar.</p>
 
             <div class="contact-method">
                 <div class="contact-method-icon"><i class="fas fa-phone"></i></div>
                 <div>
-                    <h4>Telefon</h4>
+                    <h4 data-i18n="auto-kontakt-tel-label">Telefon</h4>
                     <a href="tel:+4916093409671">+49 160 9340 9671</a>
                 </div>
             </div>
             <div class="contact-method">
                 <div class="contact-method-icon"><i class="fab fa-whatsapp"></i></div>
                 <div>
-                    <h4>WhatsApp</h4>
-                    <a href="https://wa.me/4916093409671">Nachricht senden</a>
+                    <h4 data-i18n="auto-kontakt-wa-label">WhatsApp</h4>
+                    <a href="https://wa.me/4916093409671" data-i18n="auto-kontakt-wa-text">Nachricht senden</a>
                 </div>
             </div>
             <div class="contact-method">
                 <div class="contact-method-icon"><i class="fas fa-envelope"></i></div>
                 <div>
-                    <h4>E-Mail</h4>
+                    <h4 data-i18n="auto-kontakt-email-label">E-Mail</h4>
                     <a href="mailto:info@alexgruppee.de">info@alexgruppee.de</a>
                 </div>
             </div>
             <div class="contact-method">
                 <div class="contact-method-icon"><i class="fas fa-map-marker-alt"></i></div>
                 <div>
-                    <h4>Standort</h4>
+                    <h4 data-i18n="auto-kontakt-loc-label">Standort</h4>
                     <p>Industriestraße 22<br>93077 Bad Abbach, Deutschland</p>
                 </div>
             </div>
@@ -464,7 +468,7 @@
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2638.4!2d12.0432!3d48.9338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f9c4b7e83a34b%3A0x0!2sIndustriestr.%2022%2C%2093077%20Bad%20Abbach!5e0!3m2!1sde!2sde!4v1234567890"
                     width="100%" height="220" style="border:0; display:block;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade" title="AlexGruppee KFZ — Industriestr. 22, Bad Abbach">
+                    referrerpolicy="no-referrer-when-downgrade" title="AlexGruppe KFZ — Industriestr. 22, Bad Abbach">
                 </iframe>
             </div>
         </div>
@@ -472,8 +476,8 @@
         <!-- Form -->
         <div data-aos="fade-left">
             <div class="contact-form-card">
-                <h3>Anfrage senden</h3>
-                <p>Füllen Sie das Formular aus — wir melden uns so schnell wie möglich.</p>
+                <h3 data-i18n="auto-form-title">Anfrage senden</h3>
+                <p data-i18n="auto-form-intro">Füllen Sie das Formular aus — wir melden uns so schnell wie möglich.</p>
                 <!-- Form action: replace with Formspree endpoint when ready -->
                 <!-- Advanced Booking Form -->
                 <form action="#" method="POST" id="bookingFormAuto">
@@ -483,70 +487,71 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="firstName">Vorname *</label>
+                            <label for="firstName" data-i18n="auto-form-firstName">Vorname *</label>
                             <input type="text" id="firstName" name="firstName" placeholder="Max" required>
                         </div>
                         <div class="form-group">
-                            <label for="lastName">Nachname *</label>
+                            <label for="lastName" data-i18n="auto-form-lastName">Nachname *</label>
                             <input type="text" id="lastName" name="lastName" placeholder="Mustermann" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="email">E-Mail *</label>
+                            <label for="email" data-i18n="auto-form-email">E-Mail *</label>
                             <input type="email" id="email" name="email" placeholder="max@beispiel.de" required>
                         </div>
                         <div class="form-group" id="phoneGroup">
-                            <label for="phone">Handy / Telefon</label>
+                            <label for="phone" data-i18n="auto-form-phone">Handy / Telefon</label>
                             <input type="tel" id="phone" name="phone" placeholder="+49 151 1234567">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="contactPref">Bevorzugter Kontaktweg *</label>
+                            <label for="contactPref" data-i18n="auto-form-contactPref">Bevorzugter Kontaktweg *</label>
                             <select id="contactPref" name="contactPref" required onchange="togglePhoneReq(this)">
-                                <option value="email">E-Mail</option>
-                                <option value="wa_text">WhatsApp (Text)</option>
-                                <option value="wa_audio">WhatsApp (Audio)</option>
-                                <option value="phone">Telefonanruf</option>
+                                <option value="email" data-i18n="auto-form-cp-email">E-Mail</option>
+                                <option value="wa_text" data-i18n="auto-form-cp-wa-text">WhatsApp (Text)</option>
+                                <option value="wa_audio" data-i18n="auto-form-cp-wa-audio">WhatsApp (Audio)</option>
+                                <option value="phone" data-i18n="auto-form-cp-phone">Telefonanruf</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="topic">Service / Thema *</label>
+                            <label for="topic" data-i18n="auto-form-topic">Service / Thema *</label>
                             <select id="topic" name="topic" required>
-                                <option value="" disabled selected>Bitte wählen</option>
-                                <option value="kaufberatung">Kaufberatung</option>
-                                <option value="ankaufsbegleitung">Ankaufsbegleitung (Besichtigung)</option>
-                                <option value="verkaufsberatung">Verkaufsberatung</option>
-                                <option value="wertermittlung">Wertermittlung</option>
-                                <option value="general">Allgemeine Beratung</option>
-                                <option value="other">Sonstiges</option>
+                                <option value="" disabled selected data-i18n="auto-form-topic-placeholder">Bitte wählen</option>
+                                <option value="kaufberatung" data-i18n="auto-form-topic-kaufberatung">Kaufberatung</option>
+                                <option value="ankaufsbegleitung" data-i18n="auto-form-topic-ankaufsbegleitung">Ankaufsbegleitung (Besichtigung)</option>
+                                <option value="verkaufsberatung" data-i18n="auto-form-topic-verkaufsberatung">Verkaufsberatung</option>
+                                <option value="wertermittlung" data-i18n="auto-form-topic-wertermittlung">Wertermittlung</option>
+                                <option value="general" data-i18n="auto-form-topic-general">Allgemeine Beratung</option>
+                                <option value="other" data-i18n="auto-form-topic-other">Sonstiges</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="prefDate">Wunschdatum *</label>
+                            <label for="prefDate" data-i18n="auto-form-prefDate">Wunschdatum *</label>
                             <input type="date" id="prefDate" name="prefDate" required>
                         </div>
                         <div class="form-group">
-                            <label for="prefTime">Uhrzeit</label>
+                            <label for="prefTime" data-i18n="auto-form-prefTime">Uhrzeit</label>
                             <select id="prefTime" name="prefTime">
-                                <option value="any">Egal</option>
-                                <option value="08-10">08:00 - 10:00 Uhr</option>
-                                <option value="10-12">10:00 - 12:00 Uhr</option>
-                                <option value="13-15">13:00 - 15:00 Uhr</option>
-                                <option value="15-17">15:00 - 17:00 Uhr</option>
+                                <option value="any" data-i18n="auto-form-time-any">Egal</option>
+                                <option value="08-10" data-i18n="auto-form-time-08-10">08:00 - 10:00 Uhr</option>
+                                <option value="10-12" data-i18n="auto-form-time-10-12">10:00 - 12:00 Uhr</option>
+                                <option value="13-15" data-i18n="auto-form-time-13-15">13:00 - 15:00 Uhr</option>
+                                <option value="15-17" data-i18n="auto-form-time-15-17">15:00 - 17:00 Uhr</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="message">Ihre Nachricht / Fahrzeugdaten</label>
+                        <label for="message" data-i18n="auto-form-message">Ihre Nachricht / Fahrzeugdaten</label>
                         <textarea id="message" name="message"
+                            data-i18n-placeholder="auto-form-message-placeholder"
                             placeholder="Bitte beschreiben Sie kurz Ihr Anliegen oder geben Sie Modell/Baujahr an..."></textarea>
                     </div>
 
@@ -574,8 +579,8 @@
                     </div>
 
                     <button type="submit" class="form-submit btn-primary-auto"
-                        style="border:none; color:#fff; background:var(--color-auto-primary);">Anfrage verbindlich
-                        absenden</button>
+                        style="border:none; color:#fff; background:var(--color-auto-primary);"
+                        data-i18n="auto-form-submit">Anfrage verbindlich absenden</button>
 
                     <script>
                         // Make phone mandatory if WhatsApp or Call is selected
@@ -600,35 +605,29 @@
     <!-- FAQ -->
     <section class="faq-section">
         <div class="section-head" data-aos="fade-up">
-            <span class="eyebrow">Häufige Fragen</span>
-            <h2>Was Sie wissen möchten</h2>
+            <span class="eyebrow" data-i18n="auto-faq-eyebrow">Häufige Fragen</span>
+            <h2 data-i18n="auto-faq-title">Was Sie wissen möchten</h2>
         </div>
         <div class="faq-list">
             <div class="faq-item" data-aos="fade-up">
-                <h4>Wie schnell bekomme ich eine Rückmeldung?</h4>
-                <p>In der Regel innerhalb von 1–3 Werktagen. Bei dringenden Fällen versuchen wir, Sie noch am selben Tag
-                    zu kontaktieren.</p>
+                <h4 data-i18n="auto-faq1-q">Wie schnell bekomme ich eine Rückmeldung?</h4>
+                <p data-i18n="auto-faq1-a">In der Regel innerhalb von 1–3 Werktagen. Bei dringenden Fällen versuchen wir, Sie noch am selben Tag zu kontaktieren.</p>
             </div>
             <div class="faq-item" data-aos="fade-up">
-                <h4>Was kostet die Erstberatung?</h4>
-                <p>Die erste Einschätzung per Telefon, E-Mail oder WhatsApp ist immer kostenlos und unverbindlich.
-                    Erst bei einer ausführlichen Beratung oder Begleitung vor Ort entstehen Kosten — natürlich nach
-                    vorheriger klarer Absprache.</p>
+                <h4 data-i18n="auto-faq2-q">Was kostet die Erstberatung?</h4>
+                <p data-i18n="auto-faq2-a">Die erste Einschätzung per Telefon, E-Mail oder WhatsApp ist immer kostenlos und unverbindlich. Erst bei einer ausführlichen Beratung oder Begleitung vor Ort entstehen Kosten — natürlich nach vorheriger klarer Absprache.</p>
             </div>
             <div class="faq-item" data-aos="fade-up">
-                <h4>Welche Fahrzeugmarken betreuen Sie bei Kauf und Verkauf?</h4>
-                <p>Wir beraten markenübergreifend zu Fahrzeugen aus dem europäischen, asiatischen und
-                    amerikanischen Markt.</p>
+                <h4 data-i18n="auto-faq3-q">Welche Fahrzeugmarken betreuen Sie bei Kauf und Verkauf?</h4>
+                <p data-i18n="auto-faq3-a">Wir beraten markenübergreifend zu Fahrzeugen aus dem europäischen, asiatischen und amerikanischen Markt.</p>
             </div>
             <div class="faq-item" data-aos="fade-up">
-                <h4>Begleiten Sie mich auch zur Besichtigung vor Ort?</h4>
-                <p>Ja. Auf Wunsch fahren wir mit Ihnen zur Besichtigung, schauen das Fahrzeug gemeinsam an und
-                    sprechen offen über Auffälligkeiten — bevor Sie eine Kaufentscheidung treffen.</p>
+                <h4 data-i18n="auto-faq4-q">Begleiten Sie mich auch zur Besichtigung vor Ort?</h4>
+                <p data-i18n="auto-faq4-a">Ja. Auf Wunsch fahren wir mit Ihnen zur Besichtigung, schauen das Fahrzeug gemeinsam an und sprechen offen über Auffälligkeiten — bevor Sie eine Kaufentscheidung treffen.</p>
             </div>
             <div class="faq-item" data-aos="fade-up">
-                <h4>In welchen Sprachen beraten Sie?</h4>
-                <p>Wir beraten Sie auf Deutsch, Englisch, Ukrainisch und Russisch — gerade für Neukunden aus der
-                    ukrainischen Gemeinschaft in Bayern eine echte Hilfe.</p>
+                <h4 data-i18n="auto-faq5-q">In welchen Sprachen beraten Sie?</h4>
+                <p data-i18n="auto-faq5-a">Wir beraten Sie auf Deutsch, Englisch, Ukrainisch und Russisch — gerade für Neukunden aus der ukrainischen Gemeinschaft in Bayern eine echte Hilfe.</p>
             </div>
         </div>
     </section>
@@ -636,7 +635,7 @@
     <!-- Footer -->
     <footer class="site-footer section" style="padding:40px 8%;">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap: wrap; gap: 1.5rem;">
-            <p style="margin:0;">&copy; 2026 AlexGruppee &middot; Alle Rechte vorbehalten</p>
+            <p style="margin:0;">&copy; 2026 AlexGruppe &middot; Alle Rechte vorbehalten</p>
             <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
                 <div class="social-links" style="display:flex; gap: 1rem; align-items: center;">
                     <a href="https://www.instagram.com/alexgruppee.auto/" target="_blank" rel="noopener"
