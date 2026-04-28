@@ -211,6 +211,17 @@
             align-items: flex-end;
         }
 
+        /* Red asterisk for required fields. Class is toggleable so
+           togglePhoneReq() can flip the marker on/off without colliding
+           with i18n textContent rewrites. */
+        .form-group label.required::after {
+            content: ' *';
+            color: #ef4444;
+            font-weight: 800;
+            margin-left: 2px;
+            white-space: pre;
+        }
+
         .form-group input,
         .form-group select,
         .form-group textarea {
@@ -487,18 +498,18 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="firstName" data-i18n="auto-form-firstName">Vorname *</label>
+                            <label for="firstName" class="required" data-i18n="auto-form-firstName">Vorname</label>
                             <input type="text" id="firstName" name="firstName" placeholder="Max" required>
                         </div>
                         <div class="form-group">
-                            <label for="lastName" data-i18n="auto-form-lastName">Nachname *</label>
+                            <label for="lastName" class="required" data-i18n="auto-form-lastName">Nachname</label>
                             <input type="text" id="lastName" name="lastName" placeholder="Mustermann" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="email" data-i18n="auto-form-email">E-Mail *</label>
+                            <label for="email" class="required" data-i18n="auto-form-email">E-Mail</label>
                             <input type="email" id="email" name="email" placeholder="max@beispiel.de" required>
                         </div>
                         <div class="form-group" id="phoneGroup">
@@ -509,7 +520,7 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="contactPref" data-i18n="auto-form-contactPref">Bevorzugter Kontaktweg *</label>
+                            <label for="contactPref" class="required" data-i18n="auto-form-contactPref">Bevorzugter Kontaktweg</label>
                             <select id="contactPref" name="contactPref" required onchange="togglePhoneReq(this)">
                                 <option value="email" data-i18n="auto-form-cp-email">E-Mail</option>
                                 <option value="wa_text" data-i18n="auto-form-cp-wa-text">WhatsApp (Text)</option>
@@ -518,7 +529,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="topic" data-i18n="auto-form-topic">Service / Thema *</label>
+                            <label for="topic" class="required" data-i18n="auto-form-topic">Service / Thema</label>
                             <select id="topic" name="topic" required>
                                 <option value="" disabled selected data-i18n="auto-form-topic-placeholder">Bitte wählen</option>
                                 <option value="kaufberatung" data-i18n="auto-form-topic-kaufberatung">Kaufberatung</option>
@@ -533,7 +544,7 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="prefDate" data-i18n="auto-form-prefDate">Wunschdatum *</label>
+                            <label for="prefDate" class="required" data-i18n="auto-form-prefDate">Wunschdatum</label>
                             <input type="date" id="prefDate" name="prefDate" required>
                         </div>
                         <div class="form-group">
@@ -583,18 +594,17 @@
                         data-i18n="auto-form-submit">Anfrage verbindlich absenden</button>
 
                     <script>
-                        // Make phone mandatory if WhatsApp or Call is selected
+                        // Phone becomes mandatory when WhatsApp or Call is selected.
+                        // We toggle the `required` class on the label instead of rewriting
+                        // textContent — that way the red "*" stays in sync without
+                        // overwriting the i18n-translated label text.
                         function togglePhoneReq(select) {
                             const val = select.value;
                             const phoneInput = document.getElementById('phone');
                             const phoneLabel = document.querySelector('#phoneGroup label');
-                            if (val === 'wa_text' || val === 'wa_audio' || val === 'phone') {
-                                phoneInput.required = true;
-                                phoneLabel.textContent = 'Handy / Telefon *';
-                            } else {
-                                phoneInput.required = false;
-                                phoneLabel.textContent = 'Handy / Telefon';
-                            }
+                            const isReq = (val === 'wa_text' || val === 'wa_audio' || val === 'phone');
+                            phoneInput.required = isReq;
+                            phoneLabel.classList.toggle('required', isReq);
                         }
                     </script>
                 </form>
