@@ -27,7 +27,7 @@
 .split-side.split-bau {
     background: var(--gradient-bau);
     /* Optional: Background image for the Bau half */
-    background-image: linear-gradient(rgba(253, 253, 253, 0.8), rgba(253, 253, 253, 0.9)), url('../assets/bau-bg.jpg');
+    background-image: linear-gradient(rgba(253, 253, 253, 0.8), rgba(253, 253, 253, 0.9)), url('../assets/bau-bg.webp');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -100,7 +100,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.6)), url('../assets/bau_hero.png');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.6)), url('../assets/bau_hero.webp');
     background-size: cover;
     background-position: center;
     color: var(--color-bau-text);

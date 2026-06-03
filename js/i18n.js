@@ -29,11 +29,27 @@ function getLang() {
 
 async function fetchLocale(lang) {
     if (_cache[lang]) return _cache[lang];
+    
+    const cachedData = localStorage.getItem('ag-i18n-' + lang);
+    if (cachedData) {
+        try {
+            const parsed = JSON.parse(cachedData);
+            _cache[lang] = parsed;
+            fetch(BASE_PATH + lang + '.json')
+                .then(res => res.json())
+                .then(data => localStorage.setItem('ag-i18n-' + lang, JSON.stringify(data)))
+                .catch(e => console.error(e));
+            return parsed;
+        } catch(e) {}
+    }
+
     try {
-        const res = await fetch(BASE_PATH + lang + '.json?v=' + Date.now());
+        const res = await fetch(BASE_PATH + lang + '.json');
         if (!res.ok) throw new Error('HTTP ' + res.status);
-        _cache[lang] = await res.json();
-        return _cache[lang];
+        const data = await res.json();
+        _cache[lang] = data;
+        localStorage.setItem('ag-i18n-' + lang, JSON.stringify(data));
+        return data;
     } catch (err) {
         console.error('[i18n] Cannot load ' + lang + '.json:', err.message, '| BASE_PATH:', BASE_PATH);
         return null;

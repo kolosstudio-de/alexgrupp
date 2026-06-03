@@ -55,7 +55,7 @@ body {
     position: absolute;
     inset: 0;
     background-image: linear-gradient(to bottom, rgba(11, 15, 25, 0.4), var(--color-auto-bg)),
-        url('../assets/auto_hero.png');
+        url('../assets/auto_hero.webp');
     background-size: cover;
     background-position: center;
     transform: scale(1.05);
