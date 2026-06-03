@@ -1,7 +1,7 @@
 # AlexGroup.d Website Design
 
 ## 1. Project Overview & Vibe
-**Client:** AlexGruppe
+**Client:** Oleksandr Halushka
 **Goal:** Create a premium, bilingual (4 languages) website split into two main business directions: Auto (Service Station) and Bau (Construction/Renovation).
 **Architecture:** Pure HTML, CSS, JS stack with a strictly modular structure to ensure extremely easy migration to WordPress in the future. Mobile-first and fully responsive design is mandatory.
 

@@ -3,10 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
+    <script>
+        (function() {
+            const stored = localStorage.getItem('ag-lang');
+            if (stored) {
+                document.documentElement.setAttribute('lang', stored);
+            }
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Über uns | AlexGruppe Innenausbau</title>
+    <title>Über uns | Oleksandr Halushka · Innenausbau</title>
     <meta name="description"
-        content="Lernen Sie das AlexGruppe Bau-Team kennen — erfahrene Handwerker mit Leidenschaft für Details.">
+        content="Lernen Sie das Bau-Team von Oleksandr Halushka kennen — erfahrene Handwerker mit Leidenschaft für Details.">
+    <meta name="theme-color" content="#f8fafc">
+    <link rel="canonical" href="https://oleksandrhalushka.de/bau/uber-uns.html">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Über uns | Innenausbau Oleksandr Halushka">
+    <meta property="og:description" content="Wer ist Oleksandr Halushka? Ihr Spezialist für Innenausbau in Bayern.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oleksandrhalushka.de/bau/uber-uns.html">
+    <meta property="og:locale" content="de_DE">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -273,10 +289,10 @@
     </style>
 </head>
 
-<body>
+<body class="theme-bau bau-theme">
     <header class="global-header" id="mainHeader">
-        <div class="logo"><a href="../index.html"><img src="../assets/Photopea Logo Black.png" alt="AG"
-                    class="logo-icon logo-icon-bau">ALEX<span>GRUPP</span></a></div>
+        <div class="logo"><a href="../index.html"><img src="../assets/Photopea Logo Black.png" alt="Oleksandr Halushka"
+                    class="logo-icon">OLEKSANDR<span>HALUSHKA</span></a></div>
         <nav class="header-nav">
             <a href="index.html" data-i18n="nav-start">Startseite</a>
             <a href="leistungen.html" data-i18n="nav-services">Leistungen</a>
@@ -300,117 +316,113 @@
     <section class="page-hero">
         <div data-aos="fade-down" data-aos-duration="1000">
             <div class="breadcrumb">
-                <a href="index.html">Startseite</a>
+                <a href="index.html" data-i18n="nav-start">Startseite</a>
                 <span>›</span>
-                Über uns
+                <span data-i18n="nav-about">Über uns</span>
             </div>
             <span class="eyebrow" data-i18n="bau-about-eyebrow">Wer wir sind</span>
             <h1 data-i18n="bau-about-title">Präzision 🇺🇦 in jedem Detail</h1>
-            <p>Erfahren Sie mehr über die Vision und das Team von AlexGruppe im Bereich Bau & Innenausbau.</p>
+            <p data-i18n="bau-about-desc">Erfahren Sie mehr über die Vision und das Team von Oleksandr Halushka im Bereich Bau & Innenausbau.</p>
         </div>
     </section>
 
     <section class="about-intro">
         <div class="about-intro-inner">
             <div class="about-text" data-aos="fade-right">
-                <span class="eyebrow">Unsere Geschichte</span>
-                <h2>Handwerk mit Herz und Präzision</h2>
-                <p>AlexGruppe Bau entstand aus der Überzeugung, dass gute Handwerksarbeit mehr ist als nur Funktionalität
-                    — sie soll schön sein, lange halten und Freude bereiten.</p>
-                <p>Unser Team aus erfahrenen Fliesenlegern, Renovierungsspezialisten und Umzugshelfern arbeitet nach
-                    einem klaren Grundsatz: Wir behandeln jede Wohnung, als wäre es unsere eigene.</p>
-                <p>Von kleinen Reparaturen bis zu kompletten Kernsanierungen — die Qualität bleibt immer gleich.</p>
-                <p>Als ukrainisches Team mit bayerischem Qualitätsanspruch legen wir größten Wert auf Präzision, Zuverlässigkeit und höchste handwerkliche Standards.</p>
-                <a href="kontakt.html" class="btn btn-primary-bau"
-                    style="margin-top:1.5rem; display:inline-flex;">Kontakt aufnehmen</a>
+                <span class="eyebrow" data-i18n="bau-about-story-eyebrow">Unsere Geschichte</span>
+                <h2 data-i18n="bau-about-story-title">Handwerk mit Herz und Präzision</h2>
+                <p data-i18n="bau-about-story-p1">Der Bau-Bereich von Oleksandr Halushka entstand aus der Überzeugung, dass gute Handwerksarbeit mehr ist
+                    als nur Funktionalität — sie soll schön sein, lange halten und Freude bereiten.</p>
+                <p data-i18n="bau-about-story-p2">Oleksandr Halushka arbeitet mit erfahrenen Fachkräften zusammen — darunter spezialisierte Fliesenleger, Renovierungsexperten und zuverlässige Umzugshelfer. Jedes Projekt wird persönlich betreut.</p>
+                <p data-i18n="bau-about-story-p3">Von kleinen Reparaturen bis zu kompletten Kernsanierungen — die Qualität bleibt immer gleich.</p>
             </div>
             <div class="interactive-img-container" data-aos="fade-left">
-                <img src="../assets/bau_hero.png" alt="AlexGruppe Innenausbau Team" class="interactive-img">
+                <img src="../assets/bau_hero.png" alt="Oleksandr Halushka · Innenausbau Team" class="interactive-img">
             </div>
         </div>
     </section>
 
     <section class="values-section">
         <div class="section-head" data-aos="fade-up">
-            <span class="eyebrow">Was uns antreibt</span>
-            <h2>Unsere Werte</h2>
-            <p>Grundsätze, nach denen wir jeden Tag arbeiten.</p>
+            <span class="eyebrow" data-i18n="bau-values-eyebrow">Was uns antreibt</span>
+            <h2 data-i18n="bau-values-title">Unsere Werte</h2>
+            <p data-i18n="bau-values-desc">Grundsätze, nach denen wir jeden Tag arbeiten.</p>
         </div>
         <div class="values-grid">
             <div class="value-card" data-aos="fade-up" data-aos-delay="0">
                 <i class="fas fa-gem"></i>
-                <h4>Perfektion im Detail</h4>
-                <p>Wir legen Wert auf jede Fliese, jede Fuge, jede gerade Linie — auch wenn es niemand direkt sieht.</p>
+                <h4 data-i18n="bau-val1-title">Perfektion im Detail</h4>
+                <p data-i18n="bau-val1-desc">Wir legen Wert auf jede Fliese, jede Fuge, jede gerade Linie — auch wenn es niemand direkt sieht.</p>
             </div>
             <div class="value-card" data-aos="fade-up" data-aos-delay="80">
                 <i class="fas fa-comments"></i>
-                <h4>Offene Kommunikation</h4>
-                <p>Wir informieren Sie über den Fortschritt und sprechen Änderungen immer vorab ab.</p>
+                <h4 data-i18n="bau-val2-title">Offene Kommunikation</h4>
+                <p data-i18n="bau-val2-desc">Wir informieren Sie über den Fortschritt und sprechen Änderungen immer vorab ab.</p>
             </div>
             <div class="value-card" data-aos="fade-up" data-aos-delay="160">
                 <i class="fas fa-leaf"></i>
-                <h4>Sauberkeit & Ordnung</h4>
-                <p>Ihre Wohnung bleibt so sauber wie möglich. Schutzmaßnahmen sind für uns selbstverständlich.</p>
+                <h4 data-i18n="bau-val3-title">Sauberkeit & Ordnung</h4>
+                <p data-i18n="bau-val3-desc">Ihre Wohnung bleibt so sauber wie möglich. Schutzmaßnahmen sind für uns selbstverständlich.</p>
             </div>
             <div class="value-card" data-aos="fade-up" data-aos-delay="240">
                 <i class="fas fa-shield-halved"></i>
-                <h4>Verlässlichkeit</h4>
-                <p>Wir kommen, wenn wir sagen, dass wir kommen. Und wir liefern, was wir versprechen.</p>
+                <h4 data-i18n="bau-val4-title">Verlässlichkeit</h4>
+                <p data-i18n="bau-val4-desc">Wir kommen, wenn wir sagen, dass wir kommen. Und wir liefern, was wir versprechen.</p>
             </div>
         </div>
     </section>
 
     <section class="timeline-section">
         <div class="section-head" data-aos="fade-up">
-            <span class="eyebrow">Meilensteine</span>
-            <h2>Unsere Entwicklung</h2>
+            <span class="eyebrow" data-i18n="bau-timeline-eyebrow">Meilensteine</span>
+            <h2 data-i18n="bau-timeline-title">Unsere Entwicklung</h2>
         </div>
         <div class="timeline">
             <div class="timeline-item" data-aos="fade-up" data-aos-delay="0">
                 <div class="timeline-dot">1</div>
                 <div class="timeline-content">
-                    <h4>Fundament der Qualität</h4>
-                    <p>Start unserer handwerklichen Reise mit Fokus auf kompromisslose Präzision und erste anspruchsvolle Projekte im Innenausbau.</p>
+                    <h4 data-i18n="bau-tl1-title">Fundament der Qualität</h4>
+                    <p data-i18n="bau-tl1-desc">Start unserer handwerklichen Reise mit Fokus auf kompromisslose Präzision und erste anspruchsvolle Projekte im Innenausbau.</p>
                 </div>
             </div>
             <div class="timeline-item" data-aos="fade-up" data-aos-delay="80">
                 <div class="timeline-dot">2</div>
                 <div class="timeline-content">
-                    <h4>Erweiterung auf Vollrenovierungen</h4>
-                    <p>Auf Kundenwunsch übernahmen wir komplette Wohnungsrenovierungen — schlüsselfertig.</p>
+                    <h4 data-i18n="bau-tl2-title">Erweiterung auf Vollrenovierungen</h4>
+                    <p data-i18n="bau-tl2-desc">Auf Kundenwunsch übernahmen wir komplette Wohnungsrenovierungen — schlüsselfertig.</p>
                 </div>
             </div>
             <div class="timeline-item" data-aos="fade-up" data-aos-delay="160">
                 <div class="timeline-dot">3</div>
                 <div class="timeline-content">
-                    <h4>Umzugsservice & Möbelmontage</h4>
-                    <p>Logische Erweiterung durch Umzugsservice — für unsere Kunden aus einer Hand.</p>
+                    <h4 data-i18n="bau-tl3-title">Umzugsservice & Möbelmontage</h4>
+                    <p data-i18n="bau-tl3-desc">Logische Erweiterung durch Umzugsservice — für unsere Kunden aus einer Hand.</p>
                 </div>
             </div>
             <div class="timeline-item" data-aos="fade-up" data-aos-delay="240">
                 <div class="timeline-dot">4</div>
                 <div class="timeline-content">
-                    <h4>AlexGruppe — eine Marke, zwei Welten</h4>
-                    <p>Zusammenschluss mit KFZ-Service unter dem Dach von AlexGruppe — für umfassenden Service.</p>
+                    <h4 data-i18n="bau-tl4-title">Oleksandr Halushka — Fahrzeugberatung & Innenausbau</h4>
+                    <p data-i18n="bau-tl4-desc">Erweiterung des Angebots: Neben dem Innenausbau bietet Oleksandr Halushka nun auch persönliche Fahrzeugberatung an — alles aus einer Hand.</p>
                 </div>
             </div>
         </div>
         <!-- Footer -->
         <footer class="site-footer section" style="padding:40px 8%;">
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap: wrap; gap: 1.5rem;">
-                <p style="margin:0;">&copy; 2026 AlexGruppe &middot; Alle Rechte vorbehalten</p>
+                <p style="margin:0;">&copy; 2026 Oleksandr Halushka &middot; <span data-i18n="footer-copy">Alle Rechte vorbehalten</span></p>
                 <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
                     <div class="social-links" style="display:flex; gap: 1rem; align-items: center;">
-                        <a href="https://www.instagram.com/alexgruppee.innenausbau/" target="_blank" rel="noopener"
+                        <a href="https://www.instagram.com/oleksandrhalushka.bau/" target="_blank" rel="noopener"
                             aria-label="Instagram" style="color: #94a3b8; font-size: 1.3rem; transition: color 0.2s;"
                             onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='#94a3b8'">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
                     <div class="footer-links">
-                        <a href="../index.html">Hauptseite</a>
-                        <a href="../legal/impressum.html">Impressum</a>
-                        <a href="../legal/datenschutz.html">Datenschutz</a>
+                        <a href="../index.html" data-i18n="footer-home">Hauptseite</a>
+                        <a href="../legal/impressum.html" data-i18n="footer-impressum">Impressum</a>
+                        <a href="../legal/datenschutz.html" data-i18n="footer-datenschutz">Datenschutz</a>
                     </div>
                 </div>
             </div>
@@ -420,8 +432,26 @@
         <script src="../js/i18n.js"></script>
         <script src="../js/components/smart-header.js"></script>
         <script>
-            AOS.init({ duration: 650, easing: 'ease-out-cubic', once: true, offset: 80, startEvent: 'DOMContentLoaded' });
+            AOS.init({ duration: 700, easing: 'ease-out-quart', once: true, offset: 60, delay: 0 });
         </script>
+
+    <script>
+    // Smooth page-exit transition
+    (function() {
+        document.addEventListener('click', function(e) {
+            var a = e.target.closest('a[href]');
+            if (!a) return;
+            var href = a.getAttribute('href');
+            if (!href || href.startsWith('#') || href.startsWith('javascript') ||
+                href.startsWith('http') || href.startsWith('mailto') ||
+                href.startsWith('tel') || a.target === '_blank') return;
+            e.preventDefault();
+            document.body.style.transition = 'opacity 0.12s ease';
+            document.body.style.opacity = '0';
+            setTimeout(function() { location.href = href; }, 120);
+        });
+    })();
+    </script>
 </body>
 
 </html>

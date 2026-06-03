@@ -3,10 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
+    <script>
+        (function() {
+            const stored = localStorage.getItem('ag-lang');
+            if (stored) {
+                document.documentElement.setAttribute('lang', stored);
+            }
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beratung beim Autokauf und Autoverkauf | AlexGruppe</title>
+    <title>Beratung beim Autokauf und Autoverkauf | Oleksandr Halushka</title>
     <meta name="description"
-        content="AlexGruppe in Bayern — kompetente Begleitung beim An- und Verkauf Ihres Fahrzeugs. Marktbewertung, Besichtigungsbegleitung und ehrliche Beratung.">
+        content="Oleksandr Halushka in Bayern — kompetente Begleitung beim An- und Verkauf Ihres Fahrzeugs. Marktbewertung, Besichtigungsbegleitung und ehrliche Beratung.">
+    <meta name="theme-color" content="#0e1117">
+    <link rel="canonical" href="https://oleksandrhalushka.de/auto/">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Fahrzeugberatung Bayern | Oleksandr Halushka">
+    <meta property="og:description" content="Kompetente Begleitung beim Autokauf und Autoverkauf in Bayern. Ehrlich, persönlich, marktkundig.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oleksandrhalushka.de/auto/">
+    <meta property="og:locale" content="de_DE">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,7 +78,7 @@
             font-weight: 600;
             letter-spacing: 0.28em;
             text-transform: uppercase;
-            color: #e63946;
+            color: #3b7dd8;
             margin-bottom: 1.25rem;
             display: block;
         }
@@ -177,7 +193,7 @@
         .service-card {
             background: #161616;
             border: 1px solid rgba(255, 255, 255, 0.06);
-            border-top: 2px solid #e63946;
+            border-top: 2px solid #3b7dd8;
             padding: 2rem 1.75rem;
             border-radius: 8px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -185,19 +201,19 @@
 
         .service-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(230, 57, 70, 0.2);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(59, 125, 216, 0.2);
         }
 
         .service-card .icon {
             width: 44px;
             height: 44px;
             border-radius: 8px;
-            background: rgba(230, 57, 70, 0.1);
+            background: rgba(59, 125, 216, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1.25rem;
-            color: #e63946;
+            color: #3b7dd8;
             font-size: 1.1rem;
         }
 
@@ -239,7 +255,7 @@
 
         .why-item i {
             font-size: 1.8rem;
-            color: #e63946;
+            color: #3b7dd8;
             margin-bottom: 1rem;
             display: block;
         }
@@ -364,8 +380,8 @@
     <!-- Header -->
     <header class="global-header" id="mainHeader">
         <div class="logo">
-            <a href="../index.html"><img src="../assets/Photopea Logo Black.png" alt="AG"
-                    class="logo-icon">ALEX<span>GRUPP</span></a>
+            <a href="../index.html"><img src="../assets/Photopea Logo Black.png" alt="Oleksandr Halushka"
+                    class="logo-icon">OLEKSANDR<span>HALUSHKA</span></a>
         </div>
         <nav class="header-nav" id="headerNav">
             <a href="index.html" class="active" data-i18n="nav-start">Startseite</a>
@@ -391,7 +407,7 @@
     <section class="hero" id="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
-            <span class="eyebrow" data-i18n="auto-hero-eyebrow">AlexGruppe · Bayern</span>
+            <span class="eyebrow" data-i18n="auto-hero-eyebrow">Oleksandr Halushka · Bayern</span>
             <h1 data-i18n="auto-hero-title">Beratung beim Autokauf und Autoverkauf</h1>
             <p data-i18n="auto-hero-desc">Wir begleiten Sie persönlich beim An- und Verkauf — unabhängig, ehrlich
                 und mit Marktkenntnis aus Bayern.</p>
@@ -411,8 +427,8 @@
             <span class="label" data-i18n="auto-counter-experience">Jahre Erfahrung</span>
         </div>
         <div class="counter-item" data-aos="fade-up" data-aos-delay="80">
-            <span class="count">2000+</span>
-            <span class="label" data-i18n="auto-counter-clients">Zufriedene Kunden</span>
+            <span class="count">Bayern</span>
+            <span class="label" data-i18n="auto-counter-clients">Region</span>
         </div>
         <div class="counter-item" data-aos="fade-up" data-aos-delay="160">
             <span class="count">100%</span>
@@ -472,7 +488,7 @@
                 <div class="service-card" data-aos="fade-up" style="cursor:pointer;">
                     <div class="icon"><i class="fas fa-headset"></i></div>
                     <h3 data-i18n="auto-pricing-card-title">Online-Beratung</h3>
-                    <h4 style="font-size: 1.8rem; font-weight: 800; color: #e63946; margin: 0.5rem 0;" data-i18n="auto-pricing-card-price">Kostenlos</h4>
+                    <h4 style="font-size: 1.8rem; font-weight: 800; color: #3b7dd8; margin: 0.5rem 0;" data-i18n="auto-pricing-card-price">Kostenlos</h4>
                     <p data-i18n="auto-pricing-card-desc">Ersteinschätzung per Telefon, E-Mail oder WhatsApp — auch auf Deutsch, Englisch,
                         Ukrainisch oder Russisch.</p>
                     <span
@@ -483,11 +499,11 @@
         </div>
     </section>
 
-    <!-- Why AlexGruppe -->
+    <!-- Why Oleksandr Halushka -->
     <section class="why-section">
         <div class="section-head" style="text-align:center;" data-aos="fade-up">
             <span class="eyebrow" data-i18n="auto-why-eyebrow">Warum wir</span>
-            <h2 data-i18n="auto-why-title">Ihr Vorteil mit AlexGruppe</h2>
+            <h2 data-i18n="auto-why-title">Ihr Vorteil mit Oleksandr Halushka</h2>
         </div>
         <div class="why-grid">
             <div class="why-item" data-aos="fade-up" data-aos-delay="0">
@@ -534,25 +550,15 @@
     <!-- Footer -->
     <footer class="site-footer section" style="padding: 40px 8%;">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap: wrap; gap: 1.5rem;">
-            <p style="margin:0;">&copy; 2026 AlexGruppe &middot; <span data-i18n="footer-copy">Alle Rechte
+            <p style="margin:0;">&copy; 2026 Oleksandr Halushka &middot; <span data-i18n="footer-copy">Alle Rechte
                     vorbehalten</span></p>
             <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
                 <div class="social-links" style="display:flex; gap: 1rem; align-items: center;">
-                    <a href="https://www.instagram.com/alexgruppee.auto/" target="_blank" rel="noopener"
+                    <a href="https://www.instagram.com/oleksandrhalushka.auto/" target="_blank" rel="noopener"
                         aria-label="Instagram"
                         style="color: rgba(255,255,255,0.4); font-size: 1.3rem; transition: color 0.2s;"
                         onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">
                         <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"
-                        style="color: rgba(255,255,255,0.4); font-size: 1.3rem; transition: color 0.2s;"
-                        onmouseover="this.style.color='#1877F2'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"
-                        style="color: rgba(255,255,255,0.4); font-size: 1.3rem; transition: color 0.2s;"
-                        onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">
-                        <i class="fab fa-linkedin"></i>
                     </a>
                 </div>
                 <div class="footer-links">
@@ -570,8 +576,26 @@
     <script src="../js/components/testimonial-slider.js"></script>
     <script src="../js/components/modal.js"></script>
     <script>
-        AOS.init({ duration: 650, easing: 'ease-out-cubic', once: true, offset: 80, startEvent: 'DOMContentLoaded' });
+        AOS.init({ duration: 700, easing: 'ease-out-quart', once: true, offset: 60, delay: 0 });
         setTimeout(() => document.getElementById('hero')?.classList.add('loaded'), 80);
+    </script>
+
+    <script>
+    // Smooth page-exit transition
+    (function() {
+        document.addEventListener('click', function(e) {
+            var a = e.target.closest('a[href]');
+            if (!a) return;
+            var href = a.getAttribute('href');
+            if (!href || href.startsWith('#') || href.startsWith('javascript') ||
+                href.startsWith('http') || href.startsWith('mailto') ||
+                href.startsWith('tel') || a.target === '_blank') return;
+            e.preventDefault();
+            document.body.style.transition = 'opacity 0.12s ease';
+            document.body.style.opacity = '0';
+            setTimeout(function() { location.href = href; }, 120);
+        });
+    })();
     </script>
 </body>
 

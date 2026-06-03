@@ -1,0 +1,116 @@
+topic: "Google Business Profile Naming for German Einzelunternehmer using a Phantasiename"
+context: |
+  Client: Oleksandr Halushka, Einzelunternehmer (Kleingewerbe / no HRB) in Bayern.
+  Trade name on website/email: "Oleksandr Halushka" (Phantasiename / Geschäftsbezeichnung).
+  Impressum shows: "Inh. Oleksandr Halushka".
+  Service: vehicle purchase/sale advisory (no STO licenses yet).
+  Domain: Oleksandr Halushka.de · Email: info@Oleksandr Halushka.de
+  Decision needed: Which name to register on Google Business Profile?
+    A) "Oleksandr Halushka"
+    B) "Oleksandr Halushka"
+    C) "Oleksandr Halushka — Oleksandr Halushka" (or similar combined format)
+  Goal: minimize legal risk, maximize trust + brand recognition + local-SEO.
+
+items:
+  # ===== German legal framework =====
+  - id: gewo_15a
+    name: "GewO §15a – Anzeigepflicht and naming obligations on Gewerbeschein"
+    type: law
+    why: "Defines what name appears on the Gewerbeanmeldung — basis for everything downstream."
+
+  - id: hgb_17_19
+    name: "HGB §17 / §19 – Firmenrecht for Kaufmann vs Kleingewerbe"
+    type: law
+    why: "Critical distinction: only HRB-eingetragene Kaufleute have a Firma; Kleingewerbe must use real name as legal designation, can use Geschäftsbezeichnung as supplement."
+
+  - id: uwg_5
+    name: "UWG §5 / §5a – Irreführende Werbung through company designation"
+    type: law
+    why: "Phantasiename like 'Oleksandr Halushka' implying a Gruppe/group when actually one person = potential UWG violation triggering Abmahnung."
+
+  - id: tmg_ddg_5
+    name: "TMG §5 → DDG §5 – Impressumspflicht (effective 14.05.2024)"
+    type: law
+    why: "Website Impressum must show real name; Geschäftsbezeichnung allowed as supplement. Sets baseline transparency requirement."
+
+  - id: bgb_pacta
+    name: "BGB §164 ff. – contracts/invoices must be signed under real name"
+    type: law
+    why: "Confirms: invoices and contracts must show 'Oleksandr Halushka' (possibly with 'Oleksandr Halushka' as Geschäftsbezeichnung) — supports same approach for GBP."
+
+  # ===== Google policies =====
+  - id: gbp_name_policy
+    name: "Google Business Profile official name guidelines (support.google.com)"
+    type: policy
+    why: "Google's stated rule: name must be 'real-world business name as used consistently on storefront, website, stationery'."
+
+  - id: gbp_suspension_naming
+    name: "Common reasons GBP listings are suspended for naming violations"
+    type: policy_practice
+    why: "Empirical: keyword stuffing, mismatched name, fake business names trigger suspensions; real-world cases inform what's safe."
+
+  - id: gbp_verification
+    name: "GBP verification process — postcard / video / document — name match requirements"
+    type: process
+    why: "What document Google checks during verification (Gewerbeschein, utility bill) determines what name the listing can use."
+
+  - id: gbp_legal_name_field
+    name: "GBP 'legal business name' field vs. public-facing name"
+    type: feature
+    why: "Some regions distinguish public name from legal name in profile. Determines whether dual-naming is supported natively."
+
+  # ===== Practice & competitors =====
+  - id: ihk_guidance_bayern
+    name: "IHK Bayern guidance on Geschäftsbezeichnung for Einzelunternehmer"
+    type: guidance
+    why: "Authoritative German source on how trade names should be used in business communications."
+
+  - id: einzelunternehmer_gbp_practice
+    name: "Common practice: how German Einzelunternehmer / Kleingewerbe structure GBP names"
+    type: practice
+    why: "Empirical comparison — what do similar businesses (consulting, KFZ advisory, freelance) actually use?"
+
+  - id: kfz_vermittlung_examples
+    name: "KFZ-Vermittlung / vehicle advisory businesses in Bayern — GBP name patterns"
+    type: practice
+    why: "Closest peer group. Shows what works in this specific niche."
+
+  - id: abmahnung_cases_phantasiename
+    name: "Abmahnung cases involving Phantasiename for Einzelunternehmer"
+    type: case_law
+    why: "What triggers actual Abmahnung — words like 'Gruppe', 'Group', '& Partner', 'GmbH-implying' suffixes."
+
+  # ===== SEO / UX / branding =====
+  - id: local_seo_brand_vs_person
+    name: "Local SEO impact: brand name vs personal name in GBP"
+    type: seo
+    why: "Does GBP name 'Oleksandr Halushka' or 'Oleksandr Halushka' rank better for queries like 'Autoberatung Bayern'?"
+
+  - id: trust_perception_advisory
+    name: "Trust perception in advisory/Vertrauensgewerbe — brand vs personal name"
+    type: ux
+    why: "For trust-heavy services (legal/financial/advisory), real name often outperforms fantasy name."
+
+  - id: name_consistency_naming_audit
+    name: "NAP consistency (Name-Address-Phone) across GBP, website, email, Impressum"
+    type: seo
+    why: "Inconsistent names hurt local SEO and trust signals."
+
+  # ===== Decision matrix =====
+  - id: name_format_options
+    name: "Concrete name format options and their tradeoffs"
+    type: recommendation
+    why: |
+      Final synthesis: rate each format ('Oleksandr Halushka', 'Oleksandr Halushka',
+      'Oleksandr Halushka – Oleksandr Halushka', 'Oleksandr Halushka (Oleksandr Halushka)')
+      against legal-risk / Google-policy / SEO / trust / brand.
+
+execution:
+  batch_size: 4
+  items_per_agent: 4
+  output_dir: ./results
+
+# Notes (decided autonomously per CLAUDE.md — no clarifying questions to user):
+# - Time range for web search: last 24 months (covers DDG transition + recent GBP policy updates)
+# - 4 parallel deep-research agents, ~4 items each, balanced load
+# - Output goes to ./results/ in this folder

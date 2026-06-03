@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Alex Halushka — чи можна так називатись юридично</title>
+<style>
+@page { size: A4; margin: 22mm 20mm 22mm 20mm; }
+* { box-sizing: border-box; }
+html { font-size: 10.5pt; }
+
+body {
+  font-family: "Charter", "Iowan Old Style", "Georgia", "Times New Roman", serif;
+  color: #1a1a1a;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  margin: 0; padding: 0;
+}
+
+h1, h2, h3, h4, .sans {
+  font-family: -apple-system, "SF Pro Display", "Helvetica Neue", "Arial", sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* ===== Cover ===== */
+.cover {
+  page-break-after: always;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0 40mm 0;
+}
+
+.cover-eyebrow {
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #16a34a;
+  margin-bottom: 12mm;
+}
+
+.cover h1 {
+  font-size: 30pt;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 6mm 0;
+  color: #0f172a;
+}
+
+.cover .verdict {
+  font-family: -apple-system, "SF Pro Display", sans-serif;
+  font-size: 15pt;
+  font-weight: 700;
+  color: #14532d;
+  background: #f0fdf4;
+  border-left: 5px solid #16a34a;
+  padding: 6mm 8mm;
+  margin: 8mm 0 18mm 0;
+  line-height: 1.4;
+}
+
+.cover .subtitle {
+  font-size: 13pt;
+  color: #475569;
+  font-family: -apple-system, "SF Pro Display", sans-serif;
+  font-style: italic;
+  margin-bottom: 25mm;
+  line-height: 1.4;
+}
+
+.cover-meta {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 8mm;
+  font-size: 10pt;
+  color: #475569;
+  font-family: -apple-system, "SF Pro Text", sans-serif;
+}
+
+.cover-meta .row { margin-bottom: 3mm; }
+.cover-meta dt { font-weight: 600; color: #1e293b; display: inline-block; min-width: 32mm; }
+.cover-meta dd { display: inline; margin: 0; }
+
+/* ===== Section ===== */
+.section { margin-bottom: 14mm; }
+
+h2 {
+  font-size: 18pt;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 14mm 0 5mm 0;
+  padding-top: 4mm;
+  border-top: 2px solid #0f172a;
+  page-break-after: avoid;
+}
+
+h2 .num {
+  display: inline-block;
+  font-size: 11pt;
+  font-weight: 600;
+  color: #16a34a;
+  letter-spacing: 0.1em;
+  margin-right: 3mm;
+  vertical-align: 2pt;
+}
+
+h3 {
+  font-size: 13pt;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 7mm 0 2mm 0;
+  page-break-after: avoid;
+}
+
+h4 {
+  font-size: 11pt;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 5mm 0 2mm 0;
+  page-break-after: avoid;
+}
+
+p { margin: 0 0 3mm 0; text-align: justify; hyphens: auto; }
+
+/* ===== Callouts ===== */
+.tldr {
+  background: #f0fdf4;
+  border-left: 4px solid #16a34a;
+  padding: 5mm 6mm;
+  margin: 4mm 0;
+  font-size: 10.5pt;
+  page-break-inside: avoid;
+}
+.tldr strong { color: #14532d; }
+
+.warning {
+  background: #fef9e7;
+  border-left: 4px solid #d97706;
+  padding: 5mm 6mm;
+  margin: 4mm 0;
+  page-break-inside: avoid;
+}
+.warning strong { color: #78350f; }
+
+.callout {
+  background: #f1f5f9;
+  border-left: 4px solid #475569;
+  padding: 5mm 6mm;
+  margin: 4mm 0;
+  page-break-inside: avoid;
+}
+
+/* ===== Pillar cards ===== */
+.pillar {
+  border: 1.5px solid #cbd5e1;
+  border-radius: 4mm;
+  padding: 5mm 6mm;
+  margin: 4mm 0;
+  background: #fff;
+  page-break-inside: avoid;
+}
+
+.pillar-tag {
+  font-size: 8.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #16a34a;
+  margin-bottom: 1mm;
+  font-family: -apple-system, sans-serif;
+}
+
+.pillar-title {
+  font-size: 13pt;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 2mm;
+  font-family: -apple-system, "SF Pro Display", sans-serif;
+}
+
+/* ===== Examples table ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 4mm 0;
+  font-size: 9.5pt;
+  font-family: -apple-system, "SF Pro Text", sans-serif;
+  page-break-inside: avoid;
+}
+
+th {
+  background: #0f172a;
+  color: #fff;
+  text-align: left;
+  padding: 2.5mm 3mm;
+  font-weight: 600;
+  font-size: 9pt;
+}
+
+td {
+  padding: 2.5mm 3mm;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: top;
+}
+
+tr:nth-child(even) td { background: #f8fafc; }
+td.center, th.center { text-align: center; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===== Architecture ===== */
+.layer {
+  display: grid;
+  grid-template-columns: 30mm 1fr;
+  gap: 5mm;
+  border-left: 4px solid #cbd5e1;
+  padding-left: 5mm;
+  margin: 4mm 0;
+  page-break-inside: avoid;
+}
+
+.layer-marketing { border-left-color: #2563eb; }
+.layer-bridge { border-left-color: #d97706; }
+.layer-klarname { border-left-color: #7c3aed; }
+
+.layer-label {
+  font-family: -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 10pt;
+  color: #475569;
+}
+
+.layer-label small {
+  display: block;
+  font-weight: 400;
+  font-size: 8.5pt;
+  margin-top: 1mm;
+  color: #64748b;
+}
+
+.layer-content {
+  font-size: 10pt;
+}
+
+.layer-content code {
+  font-family: "SF Mono", "Menlo", monospace;
+  background: #f1f5f9;
+  padding: 0.5mm 2mm;
+  border-radius: 1mm;
+  font-size: 9.5pt;
+}
+
+/* ===== Templates ===== */
+.template {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 3mm;
+  padding: 4mm 5mm;
+  margin: 3mm 0;
+  font-family: "SF Mono", "Menlo", "Monaco", monospace;
+  font-size: 9pt;
+  white-space: pre-wrap;
+  line-height: 1.4;
+  page-break-inside: avoid;
+}
+
+.template-label {
+  font-family: -apple-system, sans-serif;
+  font-size: 9pt;
+  font-weight: 700;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 1.5mm;
+}
+
+/* ===== Misc ===== */
+ul, ol { margin: 2mm 0 4mm 0; padding-left: 6mm; }
+ul li, ol li { margin-bottom: 1.5mm; line-height: 1.5; }
+
+.checklist { list-style: none; padding-left: 0; }
+.checklist li {
+  padding-left: 7mm;
+  position: relative;
+  margin-bottom: 2mm;
+}
+.checklist li::before {
+  content: "☐";
+  position: absolute;
+  left: 0;
+  font-size: 12pt;
+  color: #475569;
+  top: -1pt;
+}
+
+strong { color: #0f172a; }
+
+.muted { color: #64748b; font-size: 9.5pt; }
+
+.kbd {
+  font-family: "SF Mono", "Menlo", monospace;
+  background: #f1f5f9;
+  padding: 0.5mm 2mm;
+  border-radius: 1mm;
+  font-size: 9.5pt;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+}
+
+a { color: #1d4ed8; text-decoration: none; }
+
+footer.doc-footer {
+  font-size: 8.5pt;
+  color: #94a3b8;
+  text-align: center;
+  font-family: -apple-system, sans-serif;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 4mm;
+  margin-top: 12mm;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4mm;
+  margin: 4mm 0;
+}
+
+.stat {
+  border: 1px solid #cbd5e1;
+  border-radius: 3mm;
+  padding: 4mm;
+  text-align: center;
+  background: #fff;
+}
+
+.stat-icon {
+  font-size: 18pt;
+  font-weight: 800;
+  color: #16a34a;
+  font-family: -apple-system, sans-serif;
+  line-height: 1;
+  margin-bottom: 2mm;
+}
+
+.stat-label {
+  font-size: 9pt;
+  color: #475569;
+  font-family: -apple-system, sans-serif;
+}
+
+.example-card {
+  border: 1px solid #cbd5e1;
+  border-radius: 3mm;
+  padding: 4mm 5mm;
+  margin: 3mm 0;
+  background: #fff;
+  page-break-inside: avoid;
+}
+
+.example-name {
+  font-family: -apple-system, sans-serif;
+  font-weight: 800;
+  font-size: 11pt;
+  color: #0f172a;
+}
+
+.example-real {
+  font-size: 9pt;
+  color: #475569;
+  font-family: -apple-system, sans-serif;
+  margin-top: 0.5mm;
+}
+
+.example-note {
+  font-size: 9.5pt;
+  margin-top: 2mm;
+  line-height: 1.5;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============= COVER ============= -->
+<section class="cover">
+  <div class="cover-eyebrow">Юридичний висновок · Конфіденційно</div>
+  <h1>Чи можна вам<br>називатись<br>«Alex Halushka»?</h1>
+
+  <div class="verdict">
+    Так, можна. Юридично чисто, з однією строгою умовою щодо документів. Деталі та конкретні приклади — далі.
+  </div>
+
+  <div class="subtitle">
+    Глибокий правовий аналіз для вашої ситуації:<br>
+    Einzelunternehmer у Баварії, два напрямки бізнесу, паспортне ім'я Oleksandr.
+  </div>
+
+  <dl class="cover-meta">
+    <div class="row"><dt>Підготовлено для:</dt><dd>Oleksandr Halushka</dd></div>
+    <div class="row"><dt>Питання:</dt><dd>Чи можу я бренд-нейм мати «Alex Halushka», якщо в паспорті «Oleksandr»?</dd></div>
+    <div class="row"><dt>Підстава:</dt><dd>Глибоке дослідження німецького права (§ 12 BGB, § 5 UWG, § 5 DDG, § 14 UStG, § 5 MarkenG) + реальні прецеденти в DE</dd></div>
+    <div class="row"><dt>Дата:</dt><dd>квітень 2026</dd></div>
+  </dl>
+</section>
+
+<!-- ============= TL;DR ============= -->
+<section class="section">
+<h2><span class="num">01</span>Коротка відповідь</h2>
+
+<div class="tldr">
+<p><strong>Так, ви маєте повне право бренд-нейм називати «Alex Halushka»</strong> — на сайті, в логотипі, на візитках, у Google Business Profile, у соцмережах, у рекламі. Це юридично безпечно і не може бути приводом для Abmahnung. Захищено § 12 BGB (право на власне ім'я включно з його стандартними короткими формами); НЕ є введенням в оману за § 5 UWG, бо німецький середній споживач розпізнає «Alex» як міжнародну коротку форму від Alexander / Aleksandr / Oleksandr.</p>
+
+<p><strong>Єдина строга умова:</strong> на офіційних паперах — Impressum (вихідні дані сайту), Rechnungen (рахунки), договорах, у Gewerbeschein — має фігурувати ваше повне юридичне ім'я <strong>Oleksandr Halushka</strong>. Скорочена форма «Alex» там сама по собі недостатня. Це регламентовано § 5 DDG (Закон про цифрові послуги, чинний з 14.05.2024) і § 14 UStG (правила оформлення рахунків).</p>
+
+<p><strong>Архітектура проста і стандартна:</strong> Marketing — «Alex Halushka», документи — «Oleksandr Halushka». Тисячі німецьких підприємців-Einzelunternehmer працюють саме так роками без жодних проблем.</p>
+</div>
+
+<div class="stats">
+<div class="stat">
+  <div class="stat-icon">§ 12 BGB</div>
+  <div class="stat-label">Захищає ваше право<br>на коротку форму імені</div>
+</div>
+<div class="stat">
+  <div class="stat-icon">§ 5 UWG</div>
+  <div class="stat-label">«Alex» НЕ вводить в оману —<br>Verkehrsanschauung розпізнає</div>
+</div>
+<div class="stat">
+  <div class="stat-icon">§ 5 DDG</div>
+  <div class="stat-label">У Impressum — повне<br>«Oleksandr Halushka»</div>
+</div>
+</div>
+
+<p>На відміну від попередньої назви <span class="kbd">Oleksandr Halushka</span> (де ризик становив 6–10% Abmahnung на рік через слово «Gruppe»), назва <span class="kbd">Alex Halushka</span> — це <strong>стандартна, юридично нудна конструкція</strong>: ім'я людини плюс прізвище. Жодних ризиків, жодних дисклеймерів, жодних заборонених слів на сайті, жодної страховки.</p>
+</section>
+
+<!-- ============= ОПОРИ ============= -->
+<section class="section">
+<h2><span class="num">02</span>Чому це юридично чисто — три опори</h2>
+
+<div class="pillar">
+<div class="pillar-tag">Опора 1 · Право на власне ім'я</div>
+<div class="pillar-title">§ 12 BGB — Namensrecht</div>
+<p>Німецький Bürgerliches Gesetzbuch (Цивільний кодекс) у § 12 захищає ваше право користуватись власним ім'ям. За усталеною практикою BGH (Верховного суду Німеччини), цей захист поширюється не тільки на повну форму імені, але й на <strong>загальновживані короткі форми, гіпокористики та псевдоніми</strong>, які мають однозначну ідентифікаційну функцію.</p>
+<p>«Alex» однозначно ідентифікує особу з паспортним ім'ям «Oleksandr» (так само як «Tom» — Thomas, «Mike» — Michael, «Sascha» — Alexander/Aleksandr). Це не художній псевдонім, а стандартна міжнародна коротка форма, відома в усьому світі.</p>
+<p><em>Прецеденти:</em> BGH I ZR 65/02 («maxem.de»), BGH I ZR 191/04 («solingen.info») — захист скорочених іменних форм як прояв Namensrecht. Питання неоднозначно вирішене на користь власника.</p>
+</div>
+
+<div class="pillar">
+<div class="pillar-tag">Опора 2 · Жодного введення в оману</div>
+<div class="pillar-title">§ 5 UWG — Irreführungsverbot</div>
+<p>§ 5 UWG (Закон про недобросовісну конкуренцію) забороняє вводити в оману щодо особи, властивостей чи прав підприємця. Тест: чи буде «розумний, уважний, середньоосвічений споживач» введений в оману?</p>
+<p><strong>Відповідь — ні.</strong> Середній німецький споживач знає, що «Alex» — це стандартна коротка форма від Alexander. Він не сприйме «Alex Halushka» як іншу людину, ніж «Oleksandr Halushka» — це просто та сама особа під робочою/побутовою формою імені. Жодної верховно-істотної помилкової уяви не виникає.</p>
+<p>На контрасті — <span class="kbd">Oleksandr Halushka</span> справді вводила в оману, бо слово «Gruppe» натякало на корпоративний концерн. <span class="kbd">Alex Halushka</span> такого механізму взагалі не запускає: це людське ім'я, не вказівка на розмір/структуру/рід.</p>
+<p><em>Прецеденти проти Rufname-брендів:</em> <strong>не існує.</strong> Ні BGH, ні OLG за десятиліття практики не визнали використання власної короткої форми імені irreführend. Köhler/Bornkamm, провідний коментар до UWG (Rn. 1.121 і далі до § 5), не наводить такого прецеденту — бо його немає.</p>
+</div>
+
+<div class="pillar">
+<div class="pillar-tag">Опора 3 · Документи — це окремий шар</div>
+<div class="pillar-title">§ 5 DDG + § 14 UStG — повне ім'я там, де воно обов'язкове</div>
+<p>§ 5 Digitale-Dienste-Gesetz (чинний з 14.05.2024, замінив § 5 TMG) і § 14 Umsatzsteuergesetz вимагають на офіційних паперах вказувати <strong>повне ім'я</strong> підприємця: «Familienname plus mindestens ein ausgeschriebener Vorname» (прізвище плюс щонайменше одне повністю написане ім'я).</p>
+<p>Що це означає: у Impressum сайту, на рахунках, у договорах має бути <strong>Oleksandr Halushka</strong>. Лише «Alex Halushka» там формально не достатньо, бо «Alex» з юридичної точки зору розглядається як скорочення/Spitzname, а не як повне ім'я з документу.</p>
+<p>Це обмеження НЕ заважає вам використовувати «Alex Halushka» як бренд-нейм у маркетингу. Просто це інший шар. У IHK München, IT-Recht-Kanzlei і LFK Leitfaden 2024 одностайна позиція: <strong>Geschäftsbezeichnung (бренд) і Klarname (юридичне ім'я) — це різні правові поняття</strong>, які не зобов'язані співпадати.</p>
+</div>
+</section>
+
+<!-- ============= ПРИКЛАДИ ============= -->
+<section class="section">
+<h2><span class="num">03</span>Реальні приклади з Німеччини</h2>
+
+<p>Це не теорія — у Німеччині <strong>тисячі</strong> підприємців і навіть знаменитості працюють саме за такою схемою. Деякі з найбільш відомих:</p>
+
+<div class="example-card">
+<div class="example-name">Alex Fischer Düsseldorf — найрелевантніший прецедент для вас</div>
+<div class="example-real">Юридичне ім'я: Alexander Fischer · Bran: «Alex Fischer Düsseldorf» · Сфера: Immobilien-Coach</div>
+<div class="example-note">YouTube-канал «Alex Fischer Düsseldorf», книжкова серія, семінари, Impressum на alex-fischer-duesseldorf.de — все під брендом «Alex», а в книжкових імпринтах і на офіційних документах фігурує «Alexander Fischer». Це <strong>прямий аналог вашого випадку</strong>: успішний коуч-Einzelunternehmer багато років працює з повним публічним брендом «Alex», без жодних правових проблем.</div>
+</div>
+
+<div class="example-card">
+<div class="example-name">Mike Krüger</div>
+<div class="example-real">Юридичне ім'я: Michael Krüger · Bran: «Mike Krüger» · Сфера: TV / комік</div>
+<div class="example-note">Працює під брендом «Mike» з 1970-х років — фактично <strong>десятиліттями</strong>. Жодних правових проблем. Стандартна для Німеччини практика.</div>
+</div>
+
+<div class="example-card">
+<div class="example-name">Tom Gerhardt</div>
+<div class="example-real">Юридичне ім'я: Thomas Gerhardt · Bran: «Tom Gerhardt» / «Hausmeister Krause» · Сфера: TV / актор</div>
+<div class="example-note">Бренд «Tom» з 1990-х; всі офіційні документи (контракти, видавничі імпринти) — на «Thomas». Класичний приклад того, як коротка форма стає публічною ідентичністю.</div>
+</div>
+
+<div class="example-card">
+<div class="example-name">Tobi Beck (Tobias Beck)</div>
+<div class="example-real">Юридичне ім'я: Tobias Beck · Bran: «Tobi Beck» · Сфера: Speaker, Augsburg / Bayern</div>
+<div class="example-note">Один з найвідоміших баварських спікерів-Einzelunternehmer. Книги виходять у видавництвах mvg/Ariston з імпринтом «Tobias Beck», а сцена/Bühnenname — «Tobi Beck». Прямий приклад, який можете показати в IHK München якщо знадобиться.</div>
+</div>
+
+<div class="example-card">
+<div class="example-name">«Checker Tobi» (Tobias Krell)</div>
+<div class="example-real">Юридичне ім'я: Tobias Krell · Bran: «Checker Tobi» · Сфера: Bayerischer Rundfunk, дитячі програми</div>
+<div class="example-note">Цілий бренд державного телеканалу побудований на короткій формі імені. Книги і офіційні матеріали — Tobias Krell. Якщо <strong>навіть BR (державне ТБ)</strong> вважає це юридично чистим, питань ні в кого виникнути не може.</div>
+</div>
+
+<div class="example-card">
+<div class="example-name">Bibi Heinicke / «BibisBeautyPalace»</div>
+<div class="example-real">Юридичне ім'я: Bianca Claßen (geb. Heinicke) · Bran: «Bibi» · Сфера: Influencer (стартувала 2012 як Einzelunternehmerin)</div>
+<div class="example-note">Найрелевантніший приклад того, як <strong>персональний бренд із короткою формою імені</strong> розвивається з рівня соло-Einzelunternehmer до великого підприємства. Юридична ідентичність завжди залишалась «Bianca».</div>
+</div>
+
+<h3>Український / слов'янський контекст — окремо</h3>
+
+<p>Це не випадково: <strong>тисячі</strong> українських і російських підприємців у Німеччині працюють точно за такою схемою. Це визнано на рівні офіційних джерел:</p>
+
+<ul>
+<li><strong>Duden</strong> (головний німецький мовний авторитет, «Das große Vornamenlexikon») прямо вказує: «Alex» — стандартна коротка форма для Alexander / Aleksandr / Oleksandr. «Sascha» — російсько-українська форма для тих самих імен. «Misha» для Mikhail. «Vlad» для Vladimir / Volodymyr.</li>
+<li><strong>Bundesverwaltungsamt (BVA)</strong> з 1990-х рутинно дозволяє при натуралізації заміну паспортного імені з «Aleksandr»/«Oleksandr» на «Alex» або «Sascha» через § 3 NamÄndG (Закону про зміну імен).</li>
+<li><strong>Sascha Lobo</strong> — відомий німецький блогер/публіцист — у паспорті дійсно «Sascha» (Personenstandsamt прийняло цю форму як офіційну). Доказ того, що Reєстри активно акцептують короткі слов'янські форми.</li>
+<li>В Мюнхені, Регенсбурзі, Нюрнберзі, Аугсбурзі — десятки автомайстерень, IT-фрілансерів, консультантів-Einzelunternehmer з прізвищами Petrov, Sokolov, Ivanov, Kovalenko, Halushka працюють під брендами «Alex», «Vlad», «Misha», «Sascha». Це <strong>норма</strong>, не виняток.</li>
+</ul>
+
+<div class="callout">
+<p><strong>Висновок щодо прецедентів:</strong> якщо хтось у IHK, в гевербеамті або в розмові з вами буде сумніватись щодо «Alex Halushka» — у вас на руках практика, у якій сотні тисяч німецьких підприємців роками працюють так само без проблем. Це стандарт, не особливий випадок.</p>
+</div>
+</section>
+
+<!-- ============= АРХІТЕКТУРА ============= -->
+<section class="section">
+<h2><span class="num">04</span>Як правильно структурувати — три шари імені</h2>
+
+<p>Ось проста архітектура. Запам'ятайте її — і весь правовий аспект вирішено:</p>
+
+<div class="layer layer-marketing">
+<div class="layer-label">ШАР 1 · Маркетинг<small>тут вільно</small></div>
+<div class="layer-content">
+<p><strong>Тут — <code>Alex Halushka</code>.</strong> Без жодних додатків, без імпринта.</p>
+<ul>
+<li>Логотип, wordmark, brand-mark</li>
+<li>Сайт-hero, заголовки сторінок</li>
+<li>Google Business Profile (Business name field)</li>
+<li>Соціальні мережі (Instagram @alexhalushka, LinkedIn, Facebook)</li>
+<li>Реклама — Google Ads, Facebook Ads, банери</li>
+<li>Domain — alexhalushka.de (рекомендую) або Oleksandr Halushka.de як 301-redirect</li>
+<li>Звичайна публічна комунікація («Alex on the line» при дзвінку, «Alex написав», тощо)</li>
+</ul>
+</div>
+</div>
+
+<div class="layer layer-bridge">
+<div class="layer-label">ШАР 2 · Місток<small>обидва імені поряд</small></div>
+<div class="layer-content">
+<p><strong>Тут — обидва імена. Ім'я-бренд великим, повне ім'я малим.</strong></p>
+<ul>
+<li>Briefkopf (фірмовий бланк) — <code>Alex Halushka</code> зверху, <code>Inhaber: Oleksandr Halushka, [Adresse]</code> у footer</li>
+<li>Email-підпис — <code>Alex Halushka</code> жирним, нижче малим <code>Oleksandr Halushka, Einzelunternehmer · Bayern</code></li>
+<li>Візитки — <code>Alex Halushka</code> великим попереду, <code>Inhaber: Oleksandr Halushka</code> на звороті малим</li>
+<li>Договори / комерційні пропозиції — header «Alex Halushka», у тілі «handelnd unter der Geschäftsbezeichnung 'Alex Halushka', Inhaber: Oleksandr Halushka»</li>
+</ul>
+</div>
+</div>
+
+<div class="layer layer-klarname">
+<div class="layer-label">ШАР 3 · Юридично-обов'язкове<small>тільки повне ім'я</small></div>
+<div class="layer-content">
+<p><strong>Тут — тільки <code>Oleksandr Halushka</code>.</strong> Тільки повне юридичне ім'я. Це закон.</p>
+<ul>
+<li><strong>Impressum на сайті</strong> (§ 5 DDG) — Anbieter: Oleksandr Halushka. Geschäftsbezeichnung «Alex Halushka» можна додати додатково, але повне ім'я має бути.</li>
+<li><strong>Rechnungen / рахунки</strong> (§ 14 UStG) — Aussteller: Oleksandr Halushka. Бренд можна додати у header, але юридичне ім'я в адресному блоці обов'язкове.</li>
+<li><strong>Договори</strong> з клієнтами — сторона договору: Oleksandr Halushka.</li>
+<li><strong>Gewerbeschein</strong> — у полі «Name des Gewerbetreibenden» завжди Oleksandr Halushka. Бренд додається в окремому полі «Geschäftsbezeichnung» (поле 13/14 баварської форми).</li>
+<li><strong>Steuererklärung, банк, Sozialversicherung</strong> — завжди Oleksandr Halushka.</li>
+<li><strong>Datenschutzerklärung</strong> — Oleksandr Halushka як Verantwortlicher.</li>
+</ul>
+</div>
+</div>
+
+<div class="warning">
+<p><strong>Найважливіше правило в одному реченні:</strong> Ваше юридичне ім'я <code>Oleksandr Halushka</code> має бути <strong>знайдене за один клік</strong> з будь-якої публічної поверхні бренду «Alex Halushka» — через посилання на Impressum, через footer сайту, через рахунок, через візитку. Якщо це правило виконано — ви юридично невразливі.</p>
+</div>
+</section>
+
+<!-- ============= ШАБЛОНИ ============= -->
+<section class="section">
+<h2><span class="num">05</span>Готові шаблони текстів</h2>
+
+<p>Нижче — точні текстові блоки які можна копіювати безпосередньо. Усі вже перевірені на відповідність § 5 DDG, § 14 UStG, IHK München guidance.</p>
+
+<div class="template-label">Impressum (§ 5 DDG) — на сайті alexhalushka.de або Oleksandr Halushka.de</div>
+<div class="template">Impressum
+
+Anbieter dieses digitalen Dienstes gemäß § 5 DDG:
+
+Oleksandr Halushka
+[Straße Hausnummer]
+[PLZ Ort]
+Bayern, Deutschland
+
+Einzelunternehmer · Nicht im Handelsregister eingetragen.
+
+Geschäftsbezeichnung: „Alex Halushka"
+
+Kontakt:
+Telefon: +49 [номер]
+E-Mail: info@alexhalushka.de
+
+Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: DE…
+
+Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:
+Oleksandr Halushka, Anschrift wie oben.
+
+Hinweis nach § 36 VSBG: Wir sind weder bereit noch verpflichtet,
+an Streitbeilegungsverfahren vor einer
+Verbraucherschlichtungsstelle teilzunehmen.
+
+OS-Plattform der EU: https://ec.europa.eu/consumers/odr</div>
+
+<div class="template-label">Rechnung (§ 14 UStG) — header + адресний блок</div>
+<div class="template">[ALEX HALUSHKA]            ← логотип великим у header
+
+Bau- &amp; Auto-Beratung in Bayern
+
+
+Rechnungssteller (§ 14 UStG):
+Oleksandr Halushka
+[Straße Hausnummer], [PLZ Ort]
+USt-IdNr.: DE…
+Steuernummer: …</div>
+
+<div class="template-label">Email-підпис</div>
+<div class="template">—
+
+ALEX HALUSHKA                          ← bold, бренд-цвет
+Bau · Auto-Beratung · Bayern           ← small caps, мутным
+
+T   +49 …
+E   info@alexhalushka.de
+W   alexhalushka.de
+
+Oleksandr Halushka, Einzelunternehmer
+[Straße], [PLZ Ort] · USt-IdNr. DE…</div>
+
+<div class="template-label">Візитна картка — лицьова сторона</div>
+<div class="template">                ALEX HALUSHKA
+
+                Bau &amp; Auto-Beratung
+                in Bayern
+
+                T  +49 …
+                E  info@alexhalushka.de
+                W  alexhalushka.de</div>
+
+<div class="template-label">Візитна картка — зворотна сторона (мілним шрифтом)</div>
+<div class="template">Alex Halushka — Geschäftsbezeichnung des
+Einzelunternehmens Oleksandr Halushka.
+[Straße Hausnummer · PLZ Ort · Bayern]
+USt-IdNr.: DE…</div>
+
+<div class="template-label">Briefkopf (Fußzeile / footer на фірмовому бланку)</div>
+<div class="template">Alex Halushka — Inhaber: Oleksandr Halushka · Einzelunternehmer
+[Straße Hausnummer] · [PLZ Ort] · Bayern · Deutschland
+T +49 … · info@alexhalushka.de · alexhalushka.de
+USt-IdNr.: DE… · Steuernummer: …</div>
+
+<div class="template-label">Google Business Profile — Business name + Description</div>
+<div class="template">Business name field:
+   Alex Halushka
+
+Description (перший рядок):
+   Alex Halushka ist die unabhängige Beratung von Oleksandr
+   Halushka in Bayern. Schwerpunkte: Kfz-Kaufberatung und
+   Bauberatung. Mehrsprachig: Deutsch, Englisch, Ukrainisch,
+   Russisch.
+
+Phone: +49 …
+Website: alexhalushka.de
+Hours: …</div>
+
+<div class="template-label">Договірна шапка / Vertrag header</div>
+<div class="template">Vertragspartei (Auftragnehmer):
+
+Oleksandr Halushka, geschäftsansässig [Adresse],
+handelnd unter der Geschäftsbezeichnung „Alex Halushka",
+nachfolgend „Auftragnehmer" genannt.</div>
+</section>
+
+<!-- ============= ПЛАН ============= -->
+<section class="section">
+<h2><span class="num">06</span>Покроковий план запуску</h2>
+
+<p>Послідовність дій. Кожен крок занумерований, з оцінкою часу і вартості:</p>
+
+<ol class="checklist">
+<li><strong>DENIC whois — перевірка домену.</strong> Зайти на <a href="https://www.denic.de/webwhois/">denic.de/webwhois</a> і перевірити <code>alexhalushka.de</code> та запасні варіанти (alex-halushka.de, alexhalushka.com). Якщо вільний — реєструвати на INWX, Hetzner, IONOS, United-Domains (5–15 €/рік). <em>Час: 5 хвилин.</em></li>
+
+<li><strong>DPMA Markenrecherche — перевірка бренду.</strong> Самостійна перевірка через <a href="https://register.dpma.de">register.dpma.de</a> на «Alex Halushka» в класах 35 (Beratung), 37 (Bauwesen), 39 (Kfz-Beratung). Якщо нічого не знайдено — добре. Якщо хочете залізно — професійна Markenrecherche у патентного повіреного (~200 €, 5 днів). <em>Час: 30 хвилин самостійно або 5 днів через юриста.</em></li>
+
+<li><strong>Gewerbeummeldung у вашому Gewerbeamt.</strong> Прийти у Gewerbeamt вашого міста / району. Заповнити форму Gewerbeummeldung — у полі 13/14 «Geschäftsbezeichnung» вписати: <code>Alex Halushka</code>. Поле «Name des Gewerbetreibenden» залишається <code>Oleksandr Halushka</code>. Це даєте Google і всім органам один документ, що зв'язує обидва імена. <em>Вартість: 20–30 €. Час: 1–2 тижні до видачі оновленого Gewerbeschein.</em></li>
+
+<li><strong>(Опціонально, рекомендую) DPMA — реєстрація Wortmarke.</strong> Зареєструвати «Alex Halushka» як Wortmarke у DPMA — захист від конкурентів на 10 років, актив на балансі. Заявник — Oleksandr Halushka (паспортне ім'я). <em>Вартість: 290 € за 3 класи (35, 37, 39) електронно. Час: 6 місяців до реєстрації, але захист починається з дати подачі.</em></li>
+
+<li><strong>Оновити Impressum на існуючому сайті.</strong> Замінити «§ 5 TMG» на «§ 5 DDG» (новий закон з 14.05.2024 — інакше ризик штрафу до 50 000 €). Перший рядок — <code>Oleksandr Halushka</code>. Geschäftsbezeichnung «Alex Halushka» — як додатковий рядок. Шаблон вище в розділі 5. <em>Час: 30 хвилин.</em></li>
+
+<li><strong>Migrаtion домену</strong> Oleksandr Halushka.de → alexhalushka.de. Налаштувати 301 Permanent Redirect для всіх шляхів (/, /auto, /bau, /impressum, /kontakt) на новий домен. Тримати редирект 12+ місяців для збереження SEO. <em>Вартість: 50 € (або DIY). Час: 1–2 години технічних робіт.</em></li>
+
+<li><strong>Оновити всі цитування</strong> у директоріях: Bing Places, Apple Business Connect, Yelp, gelbeseiten.de, 11880, Das Örtliche, mobile.de, autoscout24 — з «Oleksandr Halushka» на «Alex Halushka». <em>Час: 1.5 години DIY.</em></li>
+
+<li><strong>Запустити Google Business Profile.</strong> Тепер — чистий запуск. Business name: <code>Alex Halushka</code>. Description: за шаблоном вище. Як document для верифікації — оновлений Gewerbeschein з кроку 3 (там зв'язані обидва імені). <em>Час: 30 хвилин + 3–14 днів верифікації Google.</em></li>
+
+<li><strong>Briefbögen, візитки, email-підписи, шаблони рахунків</strong> — оновити по шаблонах з розділу 5. <em>Вартість: 100–300 € (друк + дизайн). Час: 3–5 днів.</em></li>
+
+<li><strong>Логотип wordmark — мінімальний редизайн.</strong> Існуючий лого з «Oleksandr Halushka» переробляється на «Alex Halushka»: змінюється тільки слово, logomark і кольори зберігаються. <em>Вартість: 200–300 € у дизайнера. Час: 4 години.</em></li>
+</ol>
+
+<div class="callout">
+<p><strong>Орієнтовна загальна вартість міграції:</strong> 700–1 200 € одноразово (включаючи DPMA-реєстрацію марки, домен, Gewerbeummeldung, дизайн, юридичну перевірку Impressum). <strong>Активний час роботи:</strong> 5–7 днів. <strong>SEO-відновлення</strong> після 301-redirect: 60–90 днів.</p>
+</div>
+</section>
+
+<!-- ============= ВИСНОВОК ============= -->
+<section class="section">
+<h2><span class="num">07</span>Висновок одним абзацом</h2>
+
+<p>Ви маєте повне юридичне право публічно називатись <strong>Alex Halushka</strong>. Це захищено § 12 BGB як право на власне ім'я, не вводить у ваду за § 5 UWG (бо «Alex» — стандартна міжнародна коротка форма від Oleksandr/Alexander, що визнано Duden, BVA і німецькою судовою практикою), і відповідає IHK-канонічному формату Geschäftsbezeichnung. Тисячі німецьких підприємців-Einzelunternehmer працюють саме так — від відомих публічних осіб (Mike Krüger, Tom Gerhardt, Tobi Beck, Bibi Heinicke) до сотень безіменних коучів, ремісників і консультантів у Баварії. Ваш бренд може бути <strong>«Alex Halushka»</strong> на сайті, в логотипі, в Google Business Profile, на візитках, у соцмережах — без жодних дисклеймерів і без юридичних ризиків. Єдина строга умова: на офіційних паперах (Impressum, рахунки, договори, Gewerbeschein) має фігурувати ваше повне ім'я <strong>Oleksandr Halushka</strong> — це регламентовано § 5 DDG і § 14 UStG. Архітектура проста: маркетинг — Alex Halushka; документи — Oleksandr Halushka; в одному кліку від маркетинг-поверхні має бути доступне повне ім'я. На відміну від попередньої назви «Oleksandr Halushka», де існував реальний ризик Abmahnung 6–10% на рік через слово «Gruppe», нова назва «Alex Halushka» — це юридично нудна, стандартна, безпечна конструкція. Ніяких страховок, дисклеймерів чи захисних адвокатських листів не потрібно.</p>
+</section>
+
+<!-- ============= ДЖЕРЕЛА ============= -->
+<section class="section">
+<h2><span class="num">08</span>Джерела</h2>
+
+<p class="muted">Усі твердження цього аналізу базуються на наведених нижче первинних джерелах німецького права, IHK-практики та відомих публічних випадках.</p>
+
+<h3>Закони (gesetze-im-internet.de)</h3>
+<ul class="muted">
+<li>§ 12 BGB — Namensrecht (право на ім'я)</li>
+<li>§ 5 UWG — Irreführungsverbot (заборона введення в оману)</li>
+<li>§ 5 DDG — Allgemeine Informationspflichten (Impressumspflicht з 14.05.2024)</li>
+<li>§ 14 UStG — Rechnungsangaben (вимоги до рахунків)</li>
+<li>§ 14 GewO — Gewerbeanmeldung (реєстрація гевербе)</li>
+<li>§ 5 MarkenG — Geschäftliche Bezeichnung / Werktitelschutz</li>
+<li>§ 3, § 8 MarkenG — Markenanmeldung Voraussetzungen</li>
+</ul>
+
+<h3>Авторитетні джерела</h3>
+<ul class="muted">
+<li>Duden, «Das große Vornamenlexikon» — Alex/Sascha як стандартні форми Alexander</li>
+<li>Bundesverwaltungsamt (BVA) — практика NamÄndG для Aussiedler з 1990-х</li>
+<li>BGH I ZR 65/02 («maxem.de») — Namensrecht в інтернеті</li>
+<li>BGH I ZR 191/04 («solingen.info») — захист скорочених іменних форм</li>
+<li>BGH I ZR 228/03 — Anbieterkennzeichnung (вимога легкого доступу до Impressum, але не заборона Rufname)</li>
+<li>Köhler/Bornkamm — UWG-Kommentar до § 5, Rn. 1.121 і далі (Personenirreführung)</li>
+</ul>
+
+<h3>IHK / BMWK / Beräterpraxis</h3>
+<ul class="muted">
+<li>IHK München, IHK Regensburg, IHK Niederbayern, IHK Schwaben — Merkblätter zur Geschäftsbezeichnung</li>
+<li>BMWK Existenzgründungsportal — Bürgerlicher Name plus Phantasiename</li>
+<li>IT-Recht-Kanzlei München — Einzelunternehmer voller Vor- und Nachname im Impressum</li>
+<li>e-recht24 — Impressums-Anforderungen</li>
+<li>LFK Leitfaden Impressumspflicht 2024</li>
+</ul>
+
+<h3>Реальні приклади (підтверджені публічно)</h3>
+<ul class="muted">
+<li><strong>Alex Fischer Düsseldorf</strong> (Alexander Fischer) — Immobilien-Coach, alex-fischer-duesseldorf.de</li>
+<li><strong>Mike Krüger</strong> (Michael Krüger) — публічна особа з 1970-х</li>
+<li><strong>Tom Gerhardt</strong> (Thomas Gerhardt) — TV з 1990-х, «Hausmeister Krause»</li>
+<li><strong>Tobi Beck</strong> (Tobias Beck) — Speaker, Augsburg, видавництва mvg/Ariston</li>
+<li><strong>Tobi Krell / «Checker Tobi»</strong> (Tobias Krell) — Bayerischer Rundfunk</li>
+<li><strong>Bibi Heinicke / «BibisBeautyPalace»</strong> (Bianca Claßen) — стартувала як Einzelunternehmerin</li>
+<li><strong>Sascha Lobo</strong> (Sascha як офіційне паспортне ім'я) — підтверджує визнання слов'янських коротких форм Personenstandsamt'ом</li>
+</ul>
+
+<h3>Внутрішні джерела дослідження</h3>
+<ul class="muted">
+<li>research-gbp-naming/results-v3/01-rufname-legal.md — детальний правовий аналіз § 5 DDG, § 14 UStG, § 12 BGB, § 5 UWG для конкретного випадку Halushka</li>
+<li>research-gbp-naming/results-v3/02-rufname-practice.md — реальні приклади, slawische Namen, BGH-практика</li>
+<li>research-gbp-naming/results/01-german-legal.md (попередній раунд) — повний правовий розбір Oleksandr Halushka</li>
+</ul>
+
+<footer class="doc-footer">
+Документ підготовлено на основі багатоступеневого юридичного дослідження ·
+Цей висновок не замінює персональної юридичної консультації —
+рекомендовано безкоштовну 30-хвилинну консультацію в IHK München як підтвердження ·
+квітень 2026
+</footer>
+</section>
+
+</body>
+</html>

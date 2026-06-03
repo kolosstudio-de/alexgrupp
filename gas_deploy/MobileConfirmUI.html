@@ -52,7 +52,7 @@
       function submit(status) {
         var finalTime = document.getElementById('finalTime').value;
         var notes = document.getElementById('notes').value;
-        var rowId = <?= rowId ?>;
+        var leadId = "<?= leadId ?>";
         var source = "<?= source ?>";
         
         if (status === 'Confirmed' && !finalTime) { 
@@ -79,7 +79,7 @@
             document.getElementById('rejectBtn').disabled = false;
             document.getElementById('submitBtn').innerText = 'NOCHMAL VERSUCHEN';
           })
-          .executeFinalConfirmation(rowId, finalTime, notes, source, status);
+          .executeFinalConfirmation(leadId, finalTime, notes, status);
       }
     </script>
   </body>

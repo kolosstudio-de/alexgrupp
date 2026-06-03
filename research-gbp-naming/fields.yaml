@@ -1,0 +1,80 @@
+fields:
+  basic:
+    - name: source_name
+      description: "Official name of the law / Google policy / IHK source / case decision"
+      detail_level: brief
+    - name: source_url
+      description: "Direct URL to the authoritative source (gesetze-im-internet.de, support.google.com, ihk.de, …)"
+      detail_level: brief
+    - name: jurisdiction
+      description: "DE federal / Bayern state / EU / Google global"
+      detail_level: brief
+    - name: last_updated
+      description: "Year of latest amendment or check"
+      detail_level: brief
+
+  legal:
+    - name: applies_to
+      description: "Who is bound: Einzelunternehmer (Kleingewerbe), eingetragener Kaufmann (e.K.), Freiberufler, GmbH, etc."
+      detail_level: moderate
+    - name: required_name_format
+      description: "What exactly the law/policy requires the business name to look like"
+      detail_level: detailed
+    - name: penalty_if_violated
+      description: "Specific consequence — Bußgeld amount, Abmahnung typical cost, suspension, etc."
+      detail_level: moderate
+    - name: real_world_cases
+      description: "Concrete examples or court decisions illustrating how the rule is enforced"
+      detail_level: detailed
+
+  google_policy:
+    - name: gbp_required_name
+      description: "Exact wording Google uses about what the GBP name must be"
+      detail_level: detailed
+    - name: verification_evidence
+      description: "What document(s) Google requests during verification — must the name on Gewerbeschein match GBP?"
+      detail_level: detailed
+    - name: suspension_triggers
+      description: "Common naming patterns that trigger automatic suspension"
+      detail_level: moderate
+    - name: appeal_path
+      description: "How to appeal a suspension caused by name mismatch"
+      detail_level: brief
+
+  practice:
+    - name: common_pattern
+      description: "What format real German Einzelunternehmer most often use on GBP"
+      detail_level: detailed
+    - name: examples
+      description: "2-3 concrete profiles (anonymised if needed) with their public name format"
+      detail_level: moderate
+
+  seo_ux:
+    - name: ranking_impact
+      description: "Local-SEO ranking effect of using brand vs personal name"
+      detail_level: moderate
+    - name: trust_signal
+      description: "Effect on click-through and conversion in trust-heavy services"
+      detail_level: moderate
+    - name: nap_consistency
+      description: "NAP consistency considerations across web properties"
+      detail_level: brief
+
+  recommendation:
+    - name: legal_risk_score
+      description: "1–5 scale: how risky each name format is under DE law"
+      detail_level: brief
+    - name: google_policy_score
+      description: "1–5 scale: alignment with GBP policies"
+      detail_level: brief
+    - name: brand_value_score
+      description: "1–5 scale: branding & memorability"
+      detail_level: brief
+    - name: trust_score
+      description: "1–5 scale: perceived trustworthiness for advisory service"
+      detail_level: brief
+    - name: final_verdict
+      description: "Bottom-line recommendation with 1-paragraph rationale and exact name string to register"
+      detail_level: detailed
+
+uncertain: []

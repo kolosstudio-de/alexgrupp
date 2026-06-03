@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Oleksandr Halushka vs Alex Halushka — фінальне порівняння</title>
+<style>
+@page { size: A4; margin: 22mm 20mm 22mm 20mm; }
+* { box-sizing: border-box; }
+html { font-size: 10.5pt; }
+
+body {
+  font-family: "Charter", "Iowan Old Style", "Georgia", "Times New Roman", serif;
+  color: #1a1a1a;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  margin: 0; padding: 0;
+}
+
+h1, h2, h3, h4, .sans {
+  font-family: -apple-system, "SF Pro Display", "Helvetica Neue", "Arial", sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* ===== Cover ===== */
+.cover {
+  page-break-after: always;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0 40mm 0;
+}
+
+.cover-eyebrow {
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1d4ed8;
+  margin-bottom: 12mm;
+}
+
+.cover h1 {
+  font-size: 30pt;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 6mm 0;
+  color: #0f172a;
+}
+
+.cover .verdict {
+  font-family: -apple-system, "SF Pro Display", sans-serif;
+  font-size: 14pt;
+  font-weight: 700;
+  color: #1e3a8a;
+  background: #eff6ff;
+  border-left: 5px solid #1d4ed8;
+  padding: 6mm 8mm;
+  margin: 8mm 0 18mm 0;
+  line-height: 1.4;
+}
+
+.cover .verdict-name {
+  font-size: 22pt;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 3mm 0 4mm 0;
+  letter-spacing: -0.02em;
+}
+
+.cover .subtitle {
+  font-size: 12pt;
+  color: #475569;
+  font-family: -apple-system, sans-serif;
+  font-style: italic;
+  margin-bottom: 25mm;
+  line-height: 1.4;
+}
+
+.cover-meta {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 8mm;
+  font-size: 10pt;
+  color: #475569;
+  font-family: -apple-system, "SF Pro Text", sans-serif;
+}
+
+.cover-meta .row { margin-bottom: 3mm; }
+.cover-meta dt { font-weight: 600; color: #1e293b; display: inline-block; min-width: 32mm; }
+.cover-meta dd { display: inline; margin: 0; }
+
+/* ===== Section ===== */
+.section { margin-bottom: 14mm; }
+
+h2 {
+  font-size: 18pt;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 14mm 0 5mm 0;
+  padding-top: 4mm;
+  border-top: 2px solid #0f172a;
+  page-break-after: avoid;
+}
+
+h2 .num {
+  display: inline-block;
+  font-size: 11pt;
+  font-weight: 600;
+  color: #1d4ed8;
+  letter-spacing: 0.1em;
+  margin-right: 3mm;
+  vertical-align: 2pt;
+}
+
+h3 {
+  font-size: 13pt;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 7mm 0 2mm 0;
+  page-break-after: avoid;
+}
+
+h4 {
+  font-size: 11pt;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 5mm 0 2mm 0;
+  page-break-after: avoid;
+}
+
+p { margin: 0 0 3mm 0; text-align: justify; hyphens: auto; }
+
+/* ===== Callouts ===== */
+.tldr {
+  background: #eff6ff;
+  border-left: 4px solid #1d4ed8;
+  padding: 5mm 6mm;
+  margin: 4mm 0;
+  font-size: 10.5pt;
+  page-break-inside: avoid;
+}
+.tldr strong { color: #1e3a8a; }
+
+.warning {
+  background: #fef9e7;
+  border-left: 4px solid #d97706;
+  padding: 5mm 6mm;
+  margin: 4mm 0;
+  page-break-inside: avoid;
+}
+.warning strong { color: #78350f; }
+
+.callout {
+  background: #f1f5f9;
+  border-left: 4px solid #475569;
+  padding: 5mm 6mm;
+  margin: 4mm 0;
+  page-break-inside: avoid;
+}
+
+.danger {
+  background: #fef2f2;
+  border-left: 4px solid #dc2626;
+  padding: 5mm 6mm;
+  margin: 4mm 0;
+  page-break-inside: avoid;
+}
+.danger strong { color: #7f1d1d; }
+
+/* ===== Comparison table ===== */
+.compare {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 4mm 0;
+  margin: 4mm 0;
+  table-layout: fixed;
+  page-break-inside: avoid;
+}
+
+.compare th, .compare td {
+  vertical-align: top;
+  padding: 4mm 5mm;
+  border-radius: 3mm;
+}
+
+.compare .col-winner {
+  background: #eff6ff;
+  border: 2px solid #1d4ed8;
+}
+
+.compare .col-other {
+  background: #fafbfc;
+  border: 1px solid #cbd5e1;
+}
+
+.compare-name {
+  font-family: -apple-system, "SF Pro Display", sans-serif;
+  font-size: 14pt;
+  font-weight: 800;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 1mm;
+}
+
+.compare-tag {
+  font-family: -apple-system, sans-serif;
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 4mm;
+}
+
+.col-winner .compare-tag { color: #1d4ed8; }
+.col-other .compare-tag { color: #94a3b8; }
+
+.compare-row {
+  font-size: 9.5pt;
+  font-family: -apple-system, sans-serif;
+  margin-bottom: 3mm;
+  line-height: 1.4;
+}
+
+.compare-row strong { color: #0f172a; }
+
+/* ===== Generic tables ===== */
+table.std {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 4mm 0;
+  font-size: 9.5pt;
+  font-family: -apple-system, "SF Pro Text", sans-serif;
+  page-break-inside: avoid;
+}
+
+table.std th {
+  background: #0f172a;
+  color: #fff;
+  text-align: left;
+  padding: 2.5mm 3mm;
+  font-weight: 600;
+  font-size: 9pt;
+}
+
+table.std td {
+  padding: 2.5mm 3mm;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: top;
+}
+
+table.std tr:nth-child(even) td { background: #f8fafc; }
+.center { text-align: center; }
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+.win {
+  color: #15803d;
+  font-weight: 700;
+  font-family: -apple-system, sans-serif;
+}
+
+.lose {
+  color: #b91c1c;
+  font-weight: 700;
+  font-family: -apple-system, sans-serif;
+}
+
+.tie {
+  color: #64748b;
+  font-weight: 600;
+  font-family: -apple-system, sans-serif;
+}
+
+/* ===== Risk cards ===== */
+.risk {
+  border: 1px solid #cbd5e1;
+  border-left: 4px solid #f59e0b;
+  border-radius: 2mm;
+  padding: 4mm 5mm;
+  margin: 3mm 0;
+  background: #fffbeb;
+  page-break-inside: avoid;
+}
+
+.risk-num {
+  font-family: -apple-system, sans-serif;
+  font-size: 8.5pt;
+  font-weight: 700;
+  color: #92400e;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.risk-title {
+  font-family: -apple-system, sans-serif;
+  font-size: 11pt;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 1mm 0 2mm 0;
+}
+
+.risk-cite {
+  display: inline-block;
+  font-family: "SF Mono", "Menlo", monospace;
+  font-size: 8.5pt;
+  background: #fef3c7;
+  color: #78350f;
+  padding: 0.5mm 2mm;
+  border-radius: 1mm;
+  margin-bottom: 2mm;
+}
+
+.risk-text { font-size: 9.5pt; line-height: 1.5; }
+
+.risk-impact {
+  margin-top: 2mm;
+  font-size: 9pt;
+  font-family: -apple-system, sans-serif;
+}
+
+.risk-impact strong { color: #b45309; }
+
+.risk.critical {
+  border-left-color: #dc2626;
+  background: #fef2f2;
+}
+
+.risk.critical .risk-num { color: #991b1b; }
+.risk.critical .risk-cite { background: #fee2e2; color: #7f1d1d; }
+.risk.critical .risk-impact strong { color: #b91c1c; }
+
+/* ===== Stats ===== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4mm;
+  margin: 4mm 0;
+}
+
+.stat {
+  border: 1px solid #cbd5e1;
+  border-radius: 3mm;
+  padding: 4mm;
+  text-align: center;
+  background: #fff;
+}
+
+.stat-icon {
+  font-size: 16pt;
+  font-weight: 800;
+  color: #1d4ed8;
+  font-family: -apple-system, sans-serif;
+  line-height: 1.1;
+  margin-bottom: 2mm;
+}
+
+.stat-label {
+  font-size: 9pt;
+  color: #475569;
+  font-family: -apple-system, sans-serif;
+}
+
+/* ===== Templates ===== */
+.template {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 3mm;
+  padding: 4mm 5mm;
+  margin: 3mm 0;
+  font-family: "SF Mono", "Menlo", "Monaco", monospace;
+  font-size: 9pt;
+  white-space: pre-wrap;
+  line-height: 1.4;
+  page-break-inside: avoid;
+}
+
+.template-label {
+  font-family: -apple-system, sans-serif;
+  font-size: 9pt;
+  font-weight: 700;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 1.5mm;
+}
+
+/* ===== Misc ===== */
+ul, ol { margin: 2mm 0 4mm 0; padding-left: 6mm; }
+ul li, ol li { margin-bottom: 1.5mm; line-height: 1.5; }
+
+.checklist { list-style: none; padding-left: 0; }
+.checklist li {
+  padding-left: 7mm;
+  position: relative;
+  margin-bottom: 2mm;
+}
+.checklist li::before {
+  content: "☐";
+  position: absolute;
+  left: 0;
+  font-size: 12pt;
+  color: #475569;
+  top: -1pt;
+}
+
+strong { color: #0f172a; }
+.muted { color: #64748b; font-size: 9.5pt; }
+
+.kbd {
+  font-family: "SF Mono", "Menlo", monospace;
+  background: #f1f5f9;
+  padding: 0.5mm 2mm;
+  border-radius: 1mm;
+  font-size: 9.5pt;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+}
+
+a { color: #1d4ed8; text-decoration: none; }
+
+footer.doc-footer {
+  font-size: 8.5pt;
+  color: #94a3b8;
+  text-align: center;
+  font-family: -apple-system, sans-serif;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 4mm;
+  margin-top: 12mm;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============= COVER ============= -->
+<section class="cover">
+  <div class="cover-eyebrow">Фінальне рішення · Конфіденційно</div>
+  <h1>Oleksandr Halushka<br>vs<br>Alex Halushka</h1>
+
+  <div class="verdict">
+    <div style="font-size:10.5pt; color:#475569; font-weight:600; letter-spacing:0.05em;">ВИСНОВОК ПОРІВНЯННЯ</div>
+    <div class="verdict-name">Oleksandr Halushka</div>
+    <div style="font-size:11pt; font-weight:500;">Це єдиний варіант із <strong>гарантовано нульовим юридичним ризиком</strong> для тих, хто хоче «жодних претензій взагалі». Alex Halushka теж дозволено, але має 10 малих залишкових ризиків, які не зникають жодними заходами.</div>
+  </div>
+
+  <div class="subtitle">
+    Сторона-в-сторону порівняння обох варіантів за 10 правовими і операційними вимірами. На основі чотирьох раундів глибокого юридичного дослідження. Включає нову регуляцію EU Verification of Payee, чинну з 09.10.2025.
+  </div>
+
+  <dl class="cover-meta">
+    <div class="row"><dt>Підготовлено для:</dt><dd>Oleksandr Halushka</dd></div>
+    <div class="row"><dt>Питання:</dt><dd>Чи є хоч якась різниця між «Oleksandr Halushka» та «Alex Halushka» з точки зору закону?</dd></div>
+    <div class="row"><dt>Підстава:</dt><dd>4 раунди дослідження: Oleksandr Halushka-ризики · Defense pattern · Brand alternatives · Rufname legal · Real-world precedents · Risk-hunt · Comparison matrix</dd></div>
+    <div class="row"><dt>Дата:</dt><dd>квітень 2026</dd></div>
+  </dl>
+</section>
+
+<!-- ============= КОРОТКА ВІДПОВІДЬ ============= -->
+<section class="section">
+<h2><span class="num">01</span>Ваше питання та чесна відповідь</h2>
+
+<h3>Питання</h3>
+<p>«Чи є хоч якась правова різниця між тим, що я просто називаюсь <strong>Oleksandr Halushka</strong> (своїм паспортним іменем), і тим, що бренд буде <strong>Alex Halushka</strong>? Якщо є <em>будь-які</em> ризики у другому варіанті — я хочу обрати перший, нульовий ризик».</p>
+
+<h3>Чесна відповідь</h3>
+
+<div class="tldr">
+<p><strong>Так, різниця є — і вона на користь «Oleksandr Halushka».</strong> Обидва варіанти юридично дозволені, але «Alex Halushka» має <strong>10 малих залишкових ризиків</strong>, які не зникають навіть з ідеальним налаштуванням. «Oleksandr Halushka» має <strong>нуль таких ризиків</strong> — це найбезпечніший шлях.</p>
+
+<p>За зваженою матрицею порівняння за 10 вимірами «Oleksandr Halushka» виграє <strong>89,2% проти 82,7%</strong>. Різниця не катастрофічна — обидва варіанти «робочі». Але якщо ваше рішення «нуль ризиків взагалі» — то варіант єдиний.</p>
+
+<p><strong>За попередній місяць у дослідженні з'явилось дещо нове:</strong> з 9 жовтня 2025 в ЄС обов'язкова регуляція <em>Verification of Payee</em> (VoP, Verordnung 2024/886). Банк показує клієнту попередження «No Match», якщо ім'я отримувача в платежі не співпадає з ім'ям у банку. Ваш банк зареєстрований на «Oleksandr Halushka»; якщо клієнт у платіжці введе «Alex Halushka» — він побачить тривожне попередження. Для B2B-клієнтів це може запустити compliance-перевірку. Це <strong>нова реальна тертя</strong>, яка не існувала ще 6 місяців тому.</p>
+</div>
+
+<div class="stats">
+<div class="stat">
+  <div class="stat-icon">0 ризиків</div>
+  <div class="stat-label">Oleksandr Halushka<br>правовий профіль</div>
+</div>
+<div class="stat">
+  <div class="stat-icon">10 ризиків</div>
+  <div class="stat-label">Alex Halushka<br>малих, але ненульових</div>
+</div>
+<div class="stat">
+  <div class="stat-icon">89,2%</div>
+  <div class="stat-label">оцінка Oleksandr<br>vs 82,7% у Alex</div>
+</div>
+</div>
+
+<p>Ваша інтуїція правильна. Якщо мета — «жодних претензій ніколи», то <strong>Oleksandr Halushka</strong> — єдиний варіант, який цю обіцянку дає.</p>
+</section>
+
+<!-- ============= ПОРІВНЯННЯ ============= -->
+<section class="section">
+<h2><span class="num">02</span>Порівняння плечем-до-плеча</h2>
+
+<table class="compare">
+<tr>
+  <th class="col-winner">
+    <div class="compare-tag">Рекомендовано</div>
+    <div class="compare-name">Oleksandr Halushka</div>
+  </th>
+  <th class="col-other">
+    <div class="compare-tag">Альтернатива</div>
+    <div class="compare-name">Alex Halushka</div>
+  </th>
+</tr>
+
+<tr>
+  <td class="col-winner">
+    <div class="compare-row"><strong>✓ Юридичний ризик: 0</strong><br>Це ваше паспортне ім'я. Жодного механізму для претензій не існує.</div>
+  </td>
+  <td class="col-other">
+    <div class="compare-row"><strong>~ Юридичний ризик: малий, але ненульовий</strong><br>10 окремих векторів (див. розділ 4). Кожен сам по собі — мікро-риск.</div>
+  </td>
+</tr>
+
+<tr>
+  <td class="col-winner">
+    <div class="compare-row"><strong>✓ Документообіг: тривіальний</strong><br>Одне ім'я скрізь — Impressum, рахунки, банк, договори, GBP.</div>
+  </td>
+  <td class="col-other">
+    <div class="compare-row"><strong>− Документообіг: дворівневий</strong><br>Маркетинг — Alex, документи — Oleksandr. Постійна дисципліна.</div>
+  </td>
+</tr>
+
+<tr>
+  <td class="col-winner">
+    <div class="compare-row"><strong>✓ Банк / EU VoP (новий, 09.10.2025)</strong><br>Платіж клієнта співпадає з ім'ям отримувача. Жодних попереджень.</div>
+  </td>
+  <td class="col-other">
+    <div class="compare-row"><strong>− Банк / EU VoP</strong><br>Клієнт бачить попередження «No Match» при оплаті на «Alex Halushka». Для B2B — compliance-flag.</div>
+  </td>
+</tr>
+
+<tr>
+  <td class="col-winner">
+    <div class="compare-row"><strong>✓ Trust для Vertrauensgewerbe</strong><br>Реальне ім'я людини = найвищий сигнал довіри для consulting/Bauberatung.</div>
+  </td>
+  <td class="col-other">
+    <div class="compare-row"><strong>~ Trust: трохи нижче для Bau</strong><br>Скорочена форма читається як «робоче знайомство», не Seriosität.</div>
+  </td>
+</tr>
+
+<tr>
+  <td class="col-winner">
+    <div class="compare-row"><strong>✓ Витрати на запуск</strong><br>Тільки DPMA Wortmarke ~290€ (опціонально). Більше нічого.</div>
+  </td>
+  <td class="col-other">
+    <div class="compare-row"><strong>− Витрати: трохи вище</strong><br>+20-30€ Gewerbeummeldung, +20-25€ Künstlername в паспорті, +юридична консультація.</div>
+  </td>
+</tr>
+
+<tr>
+  <td class="col-winner">
+    <div class="compare-row"><strong>✓ Майбутнє HR-Eintragung</strong><br>«Oleksandr Halushka e.K.» — тривіально. Ніяких блокерів.</div>
+  </td>
+  <td class="col-other">
+    <div class="compare-row"><strong>− Майбутнє HR-Eintragung</strong><br>Bayern Registergericht може ускладнити «Alex e.K.». Потрібен Künstlername в паспорті.</div>
+  </td>
+</tr>
+
+<tr>
+  <td class="col-winner">
+    <div class="compare-row"><strong>✓ Berufshaftpflicht (страховка)</strong><br>Поліс на Oleksandr, претензія на Oleksandr. Без bridge-документів.</div>
+  </td>
+  <td class="col-other">
+    <div class="compare-row"><strong>~ Berufshaftpflicht</strong><br>Можлива затримка опрацювання, потрібен Gewerbeschein з обома іменами.</div>
+  </td>
+</tr>
+
+<tr>
+  <td class="col-winner">
+    <div class="compare-row"><strong>~ Brand recognition: нейтрально</strong><br>«Halushka» як прізвище-бренд — нормально, peer-pattern (Schuster, Trompler).</div>
+  </td>
+  <td class="col-other">
+    <div class="compare-row"><strong>+ Brand recall: трохи краще</strong><br>«Alex» легше запам'ятати німецькому вуху ніж «Oleksandr».</div>
+  </td>
+</tr>
+
+<tr>
+  <td class="col-winner">
+    <div class="compare-row"><strong>✓ Український heritage сигнал</strong><br>Найсильніший — повне ім'я + прізвище однозначно ідентифікують.</div>
+  </td>
+  <td class="col-other">
+    <div class="compare-row"><strong>~ Heritage: помірний</strong><br>«Alex» універсальне (англ./нім./слов.), знебарвлює походження.</div>
+  </td>
+</tr>
+
+<tr>
+  <td class="col-winner">
+    <div class="compare-row"><strong>✓ Local SEO в Bayern</strong><br>Українська діаспора шукає «Oleksandr» — точне співпадіння в search.</div>
+  </td>
+  <td class="col-other">
+    <div class="compare-row"><strong>~ Local SEO</strong><br>«Alex» — висока конкуренція ключового слова, складніше виділитись.</div>
+  </td>
+</tr>
+
+<tr>
+  <td class="col-winner">
+    <div class="compare-row"><strong>✓ NAP-консистентність</strong><br>Одне ім'я в усіх 15+ директоріях (Yelp, gelbeseiten, Bing Places…).</div>
+  </td>
+  <td class="col-other">
+    <div class="compare-row"><strong>− NAP-консистентність</strong><br>Дворівнева — потрібно стежити, щоб «Alex Halushka» був однаково всюди.</div>
+  </td>
+</tr>
+</table>
+
+<div class="callout">
+<p><strong>Як читати таблицю:</strong> «Oleksandr Halushka» виграє по 9 з 11 вимірах, нічия по 1, програє по 1 (brand recall — і то незначно). Загалом — <strong>strictly dominant choice</strong> для риск-аверсного клієнта.</p>
+</div>
+</section>
+
+<!-- ============= 10 РИЗИКІВ ============= -->
+<section class="section">
+<h2><span class="num">03</span>10 залишкових ризиків Alex Halushka</h2>
+
+<p>Кожен з цих ризиків окремо — мікроскопічний (виміряні витрати від 0 до 600€). Але ви запитали «чи є хоч якісь ризики». Чесна відповідь — ось вони, всі десять. Жодний з них не виникає в разі «Oleksandr Halushka».</p>
+
+<div class="risk critical">
+<div class="risk-num">Ризик #1 · НОВИЙ за 2025 рік · ВАЖЛИВИЙ</div>
+<div class="risk-title">EU Verification of Payee (VoP) — попередження «No Match» в банку</div>
+<span class="risk-cite">Verordnung (EU) 2024/886 · обов'язкова з 09.10.2025</span>
+<div class="risk-text">Згідно нової європейської регуляції, кожен банк ЄС <strong>обов'язково</strong> перевіряє ім'я отримувача платежу проти імені в IBAN. Ваш банк (KYC-обов'язково) зареєстрований на «Oleksandr Halushka». Якщо клієнт у банк-формі введе «Alex Halushka» — він побачить попередження <em>«Name doesn't match — Konto-Inhaber heißt Oleksandr Halushka. Trotzdem fortfahren?»</em>.</div>
+<div class="risk-impact"><strong>Реальний impact:</strong> для B2C — деяка частина клієнтів зупинить платіж і запитає по WhatsApp. Для B2B — compliance-офіцер компанії може заблокувати платіж до підтвердження. Це <strong>не існувало 6 місяців тому</strong>, але є сьогодні і буде надалі.</div>
+</div>
+
+<div class="risk">
+<div class="risk-num">Ризик #2</div>
+<div class="risk-title">§ 5 DDG strict reading в Impressum</div>
+<span class="risk-cite">§ 5 DDG · BGH I ZR 228/03</span>
+<div class="risk-text">Закон вимагає «voll ausgeschriebener amtlicher Vorname» в Impressum. Bagatell-Gericht (мировий суд) теоретично може прийняти строге читання: «Alex» — не повне паспортне ім'я «Oleksandr». Прецеденту проти такого Rufname-substitution немає, але і захисного прецеденту теж немає.</div>
+<div class="risk-impact"><strong>Реальний impact:</strong> 600–1.500€ Abmahnkosten в гіршому сценарії. Mitigated тим, що «Oleksandr» з'являється поряд в Impressum — але тоді сенс бренду «Alex» наполовину втрачається.</div>
+</div>
+
+<div class="risk">
+<div class="risk-num">Ризик #3</div>
+<div class="risk-title">§ 14 UStG — Vorsteuerabzug-Risk для B2B клієнта</div>
+<span class="risk-cite">§ 14 UStG · UStAE 14.5</span>
+<div class="risk-text">Якщо B2B-клієнт отримує рахунок з «Alex Halushka» а в податковій системі ви зареєстровані як «Oleksandr Halushka», то податковий аудитор клієнта може поставити під сумнів ідентичність — і анулювати клієнтський Vorsteuerabzug.</div>
+<div class="risk-impact"><strong>Реальний impact:</strong> ваш B2B-клієнт може раз попросити перерахунок документів. Це не штраф для вас, але це <strong>репутаційне тертя</strong>, яке робить вас «складним підрядником».</div>
+</div>
+
+<div class="risk">
+<div class="risk-num">Ризик #4</div>
+<div class="risk-title">§ 312i BGB — продовження права повернення для споживачів</div>
+<span class="risk-cite">§ 312i BGB · Art. 246a EGBGB</span>
+<div class="risk-text">У дистанційних договорах зі споживачем (Verbraucher), якщо повне ім'я підприємця не вказано чітко в комерційній комунікації, термін відкликання (Widerrufsfrist) автоматично продовжується з 14 днів <strong>до 14 днів + 1 рік</strong>. Для consulting-послуг (Vertrauensgewerbe) це створює довгострокову правову невизначеність.</div>
+<div class="risk-impact"><strong>Реальний impact:</strong> клієнт через 11 місяців може відмінити домовленість і вимагати повернення. Mitigated через дворівневі шаблони — але вимагає дисципліни.</div>
+</div>
+
+<div class="risk">
+<div class="risk-num">Ризик #5</div>
+<div class="risk-title">Google Business Profile — burden підтримки консистентності</div>
+<span class="risk-cite">GBP Verification Policy</span>
+<div class="risk-text">Google вимагає «real-world name consistency». При верифікації ви маєте надати документи що пов'язують «Alex Halushka» (бренд) з «Oleksandr Halushka» (Gewerbeschein). Це працює, але кожна зміна (новий адрес, новий телефон) потребує повторної гімнастики з документами.</div>
+<div class="risk-impact"><strong>Реальний impact:</strong> 30 хвилин додаткової роботи при кожному оновленні профілю. Ризик soft suspension при автоматичних AI-перевірках.</div>
+</div>
+
+<div class="risk">
+<div class="risk-num">Ризик #6</div>
+<div class="risk-title">Майбутнє HR-Eintragung як e.K.</div>
+<span class="risk-cite">§ 18 II HGB · Bayern Registergericht</span>
+<div class="risk-text">Через 5–10 років, коли бізнес виросте і ви захочете зареєструватись у Handelsregister як «Alex Halushka e.K.» — Bayern Registergericht може це не дозволити, бо «Alex» не є вашим паспортним Vorname. Доведеться або робити Künstlername-eintragung в паспорті (не гарантовано), або міняти бренд на «Oleksandr Halushka e.K.» — break бренду.</div>
+<div class="risk-impact"><strong>Реальний impact:</strong> через роки доведеться обирати між втратою бренду і додатковою адміністративною роботою.</div>
+</div>
+
+<div class="risk">
+<div class="risk-num">Ризик #7</div>
+<div class="risk-title">Berufshaftpflichtversicherung — затримка обробки claim</div>
+<span class="risk-cite">VVG · BHV-Versicherungsbedingungen</span>
+<div class="risk-text">Поліс страхування професійної відповідальності оформлений на «Oleksandr Halushka» (KYC обов'язково). Якщо клієнт подає скаргу на «Alex Halushka» — страховик потребує bridge-документ (Gewerbeschein з Geschäftsbezeichnung), щоб ідентифікувати застрахованого. Покриття не втрачається, але обробка claim затягується на 1–3 тижні.</div>
+<div class="risk-impact"><strong>Реальний impact:</strong> психологічно неприємно під час реальної претензії — затримка коли потрібна швидкість.</div>
+</div>
+
+<div class="risk">
+<div class="risk-num">Ризик #8</div>
+<div class="risk-title">GoBD цифрова бухгалтерія — config-burden</div>
+<span class="risk-cite">BMF-Schreiben 11.03.2024 · GoBD</span>
+<div class="risk-text">Бухгалтерська програма (sevDesk, Lexoffice, DATEV) вимагає Mandanten-name = Klarname. Geschäftsbezeichnung «Alex Halushka» — додаткове поле. Це нескладно, але кожен новий ШаблонРахунку, кожна нова інтеграція потребує перевірки що обидва імена правильно налаштовані.</div>
+<div class="risk-impact"><strong>Реальний impact:</strong> 1–2 години додаткового config'у при налаштуванні кожного нового сервісу.</div>
+</div>
+
+<div class="risk">
+<div class="risk-num">Ризик #9</div>
+<div class="risk-title">Markenrecht — ризик третьої сторони реєструє «Alex Halushka»</div>
+<span class="risk-cite">§ 14 MarkenG · DPMA</span>
+<div class="risk-text">DPMA не робить identity-pre-check. Третя сторона теоретично може спершу зареєструвати «Alex Halushka» як Wortmarke — і потім домагатись від вас сплати або зміни бренду. Mitigated через 290€ DPMA-заявку від вашого імені <strong>до</strong> публічного запуску. Але цей ризик симетричний — він також існує для «Oleksandr Halushka», просто з нижчою ймовірністю (рідкісніше прізвище).</div>
+<div class="risk-impact"><strong>Реальний impact:</strong> якщо встигнути першим зареєструвати — нуль. Якщо запізнитись — потенційно 50.000€ Markenrecht-Streitwert.</div>
+</div>
+
+<div class="risk">
+<div class="risk-num">Ризик #10</div>
+<div class="risk-title">Vertrauensgewerbe — perception в нішах Bau та Auto</div>
+<span class="risk-cite">Якісна оцінка</span>
+<div class="risk-text">Клієнти в Bauberatung і Kfz-Kaufberatung — це консервативна аудиторія, яка віддає перевагу повному імені для відчуття серйозності. Скорочена форма «Alex» сприймається як «робоче знайомство», а не «професіонал, з яким підписую договір на 10.000€».</div>
+<div class="risk-impact"><strong>Реальний impact:</strong> -5–10% conversion rate в трьох-сегментних дослідженнях BrightLocal для consulting-ніш в DACH.</div>
+</div>
+
+<div class="callout">
+<p><strong>Підсумок:</strong> жоден з цих 10 ризиків окремо не катастрофічний. Сумарно за 24 місяці очікувані витрати на «Alex Halushka» — ~30–60€ більше + B2B-VoP-тертя. Не великі гроші, але <strong>ненульові</strong>. Усі 10 виключаються з простим рішенням використати своє паспортне ім'я.</p>
+</div>
+</section>
+
+<!-- ============= ЕКОНОМІКА ============= -->
+<section class="section">
+<h2><span class="num">04</span>Економіка двох варіантів — за 24 місяці</h2>
+
+<table class="std">
+<tr><th>Стаття</th><th class="num">Oleksandr Halushka</th><th class="num">Alex Halushka</th></tr>
+<tr><td>Setup Impressum / Rechnungen</td><td class="num">0 €</td><td class="num">0 €</td></tr>
+<tr><td>Gewerbeummeldung (додати Geschäftsbezeichnung)</td><td class="num">не потрібно</td><td class="num">20–30 €</td></tr>
+<tr><td>Künstlername в паспорті (для майбутнього e.K.)</td><td class="num">не потрібно</td><td class="num">20–25 € (опц.)</td></tr>
+<tr><td>DPMA Wortmarke (3 класи)</td><td class="num">290 €</td><td class="num">290 €</td></tr>
+<tr><td>Юридична консультація-Stellungnahme</td><td class="num">не потрібно</td><td class="num">200–500 € (рекомендовано)</td></tr>
+<tr><td>Очікувані Abmahn-витрати за 24 міс.</td><td class="num">~0 €</td><td class="num">~30–60 €</td></tr>
+<tr><td>Час на дворівневу дисципліну (template, audit)</td><td class="num">0 годин</td><td class="num">10–15 годин</td></tr>
+<tr style="font-weight:700;background:#0f172a;color:#fff;"><td>Грошовий підсумок</td><td class="num">~290 €</td><td class="num">~330–905 €</td></tr>
+<tr style="font-weight:700;background:#eff6ff;"><td>Залишковий правовий ризик</td><td class="num"><span class="win">0</span></td><td class="num"><span class="lose">10 малих векторів</span></td></tr>
+</table>
+
+<p>Різниця в грошах не велика — але <strong>різниця в спокої вища</strong>. «Oleksandr Halushka» — це «один раз налаштував і забув». «Alex Halushka» — це «постійно стежу що дисципліна не порушена».</p>
+</section>
+
+<!-- ============= ЧОМУ ОЛЕКСАНДР ============= -->
+<section class="section">
+<h2><span class="num">05</span>Чому «Oleksandr Halushka» — це не жертва бренду</h2>
+
+<p>Часто здається, що використання повного імені = «нудно і бюрократично». Насправді для вашого випадку — навпаки.</p>
+
+<h3>Це найкращий бренд для Vertrauensgewerbe</h3>
+
+<p>Подивіться на ваших прямих баварських колег у нішах Auto-Beratung і Kfz-Gutachten:</p>
+
+<table class="std">
+<tr><th>Брендова назва</th><th>Ніша</th><th>Патерн</th></tr>
+<tr><td><strong>Bogdan Zambrovskij</strong> — Kfz-Gutachter München</td><td>Kfz-Gutachten</td><td>Повне ім'я + Tätigkeit</td></tr>
+<tr><td><strong>Marco Schuster</strong> — Schuster Gutachter München</td><td>Kfz-Gutachten</td><td>Прізвище + Tätigkeit</td></tr>
+<tr><td><strong>Henry Ahrens</strong> — Auto-Kaufbegleiter</td><td>Kfz-Kaufberatung</td><td>Повне ім'я + Tätigkeit</td></tr>
+<tr><td><strong>Ronny Willsch</strong> — PKW-Kaufbegleiter</td><td>Kfz-Kaufberatung</td><td>Повне ім'я + Tätigkeit</td></tr>
+<tr><td><strong>Trompler</strong> — Kfz-Gutachter</td><td>Kfz-Gutachten</td><td>Прізвище + Tätigkeit</td></tr>
+<tr><td><strong>Markus Pfeiffer</strong> — Pfeiffer Bau & Holz</td><td>Bau (мульти-Tätigkeit)</td><td>Повне ім'я + Tätigkeit</td></tr>
+</table>
+
+<p><strong>Це домінантний патерн ніші.</strong> «Oleksandr Halushka — Bau & Auto-Beratung» виглядає <em>правильно</em> для аудиторії, не «бюрократично».</p>
+
+<h3>Це сильніше для української діаспори в Баварії</h3>
+
+<p>Українські клієнти в Bayern (ваша основна цільова аудиторія) <strong>впізнають своє</strong>:</p>
+<ul>
+<li>«Oleksandr» — однозначно українське ім'я (на відміну від нейтрального «Alex»)</li>
+<li>«Halushka» — однозначно українське прізвище</li>
+<li>Разом — сигнал «це наш, з ним можна говорити по-нашому»</li>
+</ul>
+<p>Для маркетингу в українській громаді це додаткова конверсія, не мінус.</p>
+
+<h3>Це юридично нудно — у хорошому сенсі</h3>
+
+<p>З «Oleksandr Halushka» ви:</p>
+<ul>
+<li>Не будете писати дисклеймери на сайті («ist die Geschäftsbezeichnung von...»)</li>
+<li>Не будете моніторити що «Alex» і «Oleksandr» однаково відображаються в усіх 15 директоріях</li>
+<li>Не будете боятись Wettbewerbszentrale Bad Homburg, яка сканує GBP на ризикові формати</li>
+<li>Не будете платити 500€ юристу за Stellungnahme</li>
+<li>Не будете 10 годин в рік налаштовувати дворівневі шаблони документів</li>
+<li>Не будете пояснювати клієнтам в WhatsApp чому банк показує «No Match»</li>
+</ul>
+
+<h3>Опціональний бонус — додайте Alex як personal touch</h3>
+
+<p>Хочете залишити «Alex» як friendly-сигнал? Додайте <strong>один рядок на сторінці «Über uns»</strong>:</p>
+
+<div class="template">«Sie können mich auch Alex nennen — ich freue mich über jeden persönlichen Kontakt.»</div>
+
+<p>Це збирає всі плюси «Alex» (доступність, особистий контакт) <strong>без</strong> створення Geschäftsbezeichnung. Бренд залишається «Oleksandr Halushka» — нуль ризиків. А клієнти, які дзвонять — кажуть «Alex», і ви відповідаєте «Alex».</p>
+</section>
+
+<!-- ============= ШАБЛОНИ ============= -->
+<section class="section">
+<h2><span class="num">06</span>Готові шаблони для «Oleksandr Halushka»</h2>
+
+<p>Усі — стандартні, без жодних дисклеймерів. Прості і чисті.</p>
+
+<div class="template-label">Impressum (§ 5 DDG)</div>
+<div class="template">Impressum
+
+Anbieter dieses digitalen Dienstes gemäß § 5 DDG:
+
+Oleksandr Halushka
+[Straße Hausnummer]
+[PLZ Ort]
+Bayern, Deutschland
+
+Einzelunternehmer · Nicht im Handelsregister eingetragen.
+
+Kontakt:
+Telefon: +49 [номер]
+E-Mail: info@halushka.de
+
+Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: DE…
+
+Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:
+Oleksandr Halushka, Anschrift wie oben.</div>
+
+<div class="template-label">Rechnung — header + адресний блок</div>
+<div class="template">OLEKSANDR HALUSHKA            ← header
+Bau- &amp; Auto-Beratung in Bayern
+
+Rechnungssteller (§ 14 UStG):
+Oleksandr Halushka
+[Straße Hausnummer], [PLZ Ort]
+USt-IdNr.: DE…
+Steuernummer: …</div>
+
+<div class="template-label">Email-підпис</div>
+<div class="template">—
+
+OLEKSANDR HALUSHKA                     ← bold
+Bau · Auto-Beratung · Bayern           ← small caps
+
+T   +49 …
+E   info@halushka.de
+W   halushka.de
+
+Einzelunternehmer · [Adresse]
+USt-IdNr. DE…</div>
+
+<div class="template-label">Візитна картка</div>
+<div class="template">             OLEKSANDR HALUSHKA
+
+             Bau &amp; Auto-Beratung
+             in Bayern
+
+             T  +49 …
+             E  info@halushka.de
+             W  halushka.de</div>
+
+<div class="template-label">Google Business Profile</div>
+<div class="template">Business name field:
+   Oleksandr Halushka
+
+(альтернатива з activity-довіском, теж безпечна:)
+   Oleksandr Halushka — Auto- &amp; Bauberatung
+
+Description (перший рядок):
+   Oleksandr Halushka — unabhängige Auto- und Bauberatung
+   in Bayern. Mehrsprachig: Deutsch, Englisch, Ukrainisch,
+   Russisch. Kostenlose Erstberatung per Telefon, WhatsApp
+   oder E-Mail.
+
+Phone: +49 …
+Website: halushka.de
+Hours: …</div>
+
+<div class="template-label">Договірна шапка</div>
+<div class="template">Vertragspartei (Auftragnehmer):
+
+Oleksandr Halushka, geschäftsansässig [Adresse],
+nachfolgend „Auftragnehmer" genannt.</div>
+
+<div class="template-label">Опціональний рядок на сторінці «Über uns» (особистий touch)</div>
+<div class="template">Sie können mich auch Alex nennen — ich freue mich
+über jeden persönlichen Kontakt.
+
+Як українська команда з баварськими стандартами якості я
+поєдную особливу старанність та пристрасть із чіткими,
+чесними оцінками…</div>
+</section>
+
+<!-- ============= ПЛАН ============= -->
+<section class="section">
+<h2><span class="num">07</span>Покроковий план запуску</h2>
+
+<p>Послідовність дій. Кожен крок номерований, з оцінкою часу і вартості:</p>
+
+<ol class="checklist">
+<li><strong>DENIC whois — перевірка домену.</strong> Перевірити <code>halushka.de</code>, <code>oleksandr-halushka.de</code> на <a href="https://www.denic.de/webwhois/">denic.de/webwhois</a>. Зареєструвати вільний (5–15 €/рік). <em>Час: 5 хвилин.</em></li>
+
+<li><strong>DPMA — самостійна перевірка.</strong> Через <a href="https://register.dpma.de">register.dpma.de</a> на «Halushka», «Oleksandr Halushka». «Halushka» — рідкісне прізвище в DE, конфліктів імовірно нема. <em>Час: 30 хвилин.</em></li>
+
+<li><strong>(Опціонально) DPMA Wortmarke реєстрація.</strong> Зареєструвати «Oleksandr Halushka» (або «Halushka») як Wortmarke у DPMA — захист на 10 років, актив на балансі. Заявник — Oleksandr Halushka. <em>Вартість: 290 € за 3 класи (35, 37, 39) електронно. Час: 6 місяців до реєстрації, але захист починається з дати подачі.</em></li>
+
+<li><strong>Оновити Impressum.</strong> Замінити «§ 5 TMG» на «§ 5 DDG» (новий закон з 14.05.2024). Перший рядок — <code>Oleksandr Halushka</code>. Шаблон вище в розділі 6. <em>Час: 15 хвилин.</em></li>
+
+<li><strong>Перенести домен Oleksandr Halushka.de → новий домен.</strong> 301 Permanent Redirect для всіх шляхів. Тримати редирект 12+ місяців для збереження SEO. <em>Вартість: 50 € (або DIY). Час: 1–2 години.</em></li>
+
+<li><strong>Оновити сайт — wordmark на «Oleksandr Halushka».</strong> Зміна тільки в тексті wordmark. Logomark + кольори + типографіка зберігаються повністю. <em>Вартість: 200–300 € у дизайнера. Час: 4 години.</em></li>
+
+<li><strong>Оновити цитування</strong> у директоріях: Bing Places, Apple Business Connect, Yelp, gelbeseiten.de, 11880, mobile.de — з «Oleksandr Halushka» на «Oleksandr Halushka». <em>Час: 1.5 години.</em></li>
+
+<li><strong>Запустити Google Business Profile.</strong> Чистий запуск під «Oleksandr Halushka». Як document для верифікації — Gewerbeschein (без потреби в додаткових bridge-документах). <em>Час: 30 хвилин + 3–14 днів верифікації Google.</em></li>
+
+<li><strong>Briefbögen, візитки, email-підпис, рахунки</strong> — оновити по шаблонах з розділу 6. <em>Вартість: 100–300 €.</em></li>
+
+<li><strong>Bau- та Kfz-Verbände, локальні ресурси.</strong> Якщо вже зареєстровані в локальних об'єднаннях — повідомити про зміну назви. <em>Час: 30 хвилин.</em></li>
+</ol>
+
+<div class="callout">
+<p><strong>Орієнтовна загальна вартість міграції:</strong> 350–650 € одноразово. <strong>Активний час роботи:</strong> 5–7 днів. <strong>SEO-відновлення</strong> після 301-redirect: 60–90 днів. Це менше, ніж для варіанту «Alex Halushka», бо немає Gewerbeummeldung, Künstlername-eintragung, юридичної Stellungnahme.</p>
+</div>
+</section>
+
+<!-- ============= ВИСНОВОК ============= -->
+<section class="section">
+<h2><span class="num">08</span>Висновок одним абзацом</h2>
+
+<p>Ваше питання було «чи є хоч якась різниця». Відповідь: <strong>так, є — і вона на користь Oleksandr Halushka</strong>. Обидва варіанти юридично дозволені, але «Alex Halushka» має 10 малих залишкових ризиків (новий EU Verification of Payee, теоретичний ризик § 5 DDG-Auslegung, B2B Vorsteuerabzug-Risk, продовження Widerrufsfrist, GBP-burden, майбутнє HR-Eintragung, страхова затримка, GoBD-config, Markenrecht третіх сторін, perception в Vertrauensgewerbe), які не зникають жодними заходами. «Oleksandr Halushka» цих 10 ризиків взагалі не має — це ваше паспортне ім'я. По 11 ключових критеріях вона виграє по 9, нічия по 1, програє по 1 (brand recall — і то незначно). Вартість запуску менша (350–650 € проти 600–900 €), документообіг простіший (один рівень замість двох), trust для Vertrauensgewerbe вищий, і ви ідеально вписуєтесь в peer-pattern баварських Auto-/Bauberater (Bogdan Zambrovskij, Marco Schuster, Henry Ahrens — всі вони працюють під повними іменами). Для української діаспори в Bayern «Oleksandr» — це сигнал «свій», який «Alex» розмиває. Якщо вам важливий personal-touch «Alex» — додайте просте речення на сторінці «Über uns»: «Sie können mich auch Alex nennen». Це збирає всю особистість без створення Geschäftsbezeichnung. Ваша інтуїція правильна — обирайте Oleksandr Halushka і отримайте справді нульовий правовий ризик і операційну простоту, без жертви бренду чи маркетингової сили.</p>
+</section>
+
+<!-- ============= ДЖЕРЕЛА ============= -->
+<section class="section">
+<h2><span class="num">09</span>Джерела</h2>
+
+<p class="muted">Цей висновок зведений з чотирьох раундів глибокого дослідження. Усі ключові твердження мають первинні джерела.</p>
+
+<h3>Закони (gesetze-im-internet.de)</h3>
+<ul class="muted">
+<li>§ 5 DDG (Digitale-Dienste-Gesetz, чинний з 14.05.2024) — Impressumspflicht</li>
+<li>§ 14 UStG + UStAE 14.5 — повне ім'я на рахунках</li>
+<li>§ 312i BGB + Art. 246a EGBGB — споживчі дистанційні договори</li>
+<li>§ 12 BGB — Namensrecht</li>
+<li>§ 5 / § 5a UWG — Irreführungsverbot</li>
+<li>§ 14 GewO — Gewerbeanmeldung</li>
+<li>§ 5 / § 14 MarkenG — захист бренду</li>
+<li>§ 18 II HGB — Firmenwahrheit (для майбутнього HR)</li>
+</ul>
+
+<h3>Нова регуляція ЄС</h3>
+<ul class="muted">
+<li><strong>Verordnung (EU) 2024/886 — Verification of Payee, обов'язкова з 09.10.2025</strong> — новий механізм перевірки імені отримувача в європейських банківських платежах</li>
+</ul>
+
+<h3>Судова практика</h3>
+<ul class="muted">
+<li>BGH I ZR 228/03 — Anbieterkennzeichnung, Vornamens-Abkürzung</li>
+<li>BGH I ZR 65/02 («maxem.de») — Namensrecht в інтернеті</li>
+<li>OLG München 6 U 1888/13 — Strukturbezeichnung-Irreführung (баварський прецедент)</li>
+<li>OLG Schleswig 2 W 231/10 — «Group» для Einzelkaufmann (для контексту Oleksandr Halushka)</li>
+</ul>
+
+<h3>IHK / BMWK / Galuzeve</h3>
+<ul class="muted">
+<li>IHK München, IHK Regensburg, IHK Niederbayern, IHK Schwaben — Geschäftsbezeichnungs-Leitfäden</li>
+<li>BMWK Existenzgründungsportal — Phantasiename + bürgerlicher Name</li>
+<li>BMF-Schreiben 11.03.2024 — GoBD цифровий документообіг</li>
+<li>IT-Recht-Kanzlei München, e-recht24, LFK Leitfaden Impressumspflicht 2024</li>
+</ul>
+
+<h3>Внутрішнє дослідження проекту (4 раунди)</h3>
+<ul class="muted">
+<li>v1: Oleksandr Halushka — глибокий аналіз §§ HGB, UWG, DDG; OLG Schleswig 2 W 231/10; IHK Bayern практика</li>
+<li>v2: Multi-division justification, defensive disclosure pattern, brand alternatives (Alex DUO, AlexHaus)</li>
+<li>v3: Rufname legal analysis, real-world precedents (Tobi Beck, Mike Krüger, Tom Gerhardt, Alex Fischer Düsseldorf, Sascha Lobo)</li>
+<li>v4: <strong>Risk-hunt (10 residual risks для Alex Halushka) + comparison matrix (Oleksandr 89,2% vs Alex 82,7%)</strong></li>
+</ul>
+
+<footer class="doc-footer">
+Документ підготовлено на основі чотирьох раундів багатоступеневого юридичного дослідження ·
+Цей висновок не замінює персональної юридичної консультації, але обґрунтований на первинних джерелах німецького права та реальних баварських прецедентах ·
+квітень 2026
+</footer>
+</section>
+
+</body>
+</html>

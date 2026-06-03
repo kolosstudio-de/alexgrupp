@@ -3,10 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
+    <script>
+        (function() {
+            const stored = localStorage.getItem('ag-lang');
+            if (stored) {
+                document.documentElement.setAttribute('lang', stored);
+            }
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlexGruppe — KFZ-Service & Innenausbau</title>
+    <title>Oleksandr Halushka — Fahrzeugberatung &amp; Innenausbau</title>
     <meta name="description"
-        content="AlexGruppe — Ihr zuverlässiger Partner für professionellen KFZ-Service und erstklassigen Innenausbau in Bayern.">
+        content="Oleksandr Halushka — persönliche Fahrzeugberatung beim An- und Verkauf sowie professioneller Innenausbau in Bayern.">
+    <meta name="theme-color" content="#0d0d0d">
+    <link rel="canonical" href="https://oleksandrhalushka.de/">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Oleksandr Halushka — Fahrzeugberatung &amp; Innenausbau">
+    <meta property="og:description" content="Persönliche KFZ-Beratung und Innenausbau in Bayern. Ehrlich, kompetent, direkt.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oleksandrhalushka.de/">
+    <meta property="og:locale" content="de_DE">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -280,6 +296,13 @@
             .split-bau p {
                 font-size: 0.9rem;
             }
+
+            /* V-03 FIX: splash header always visible on mobile (no hover available) */
+            .global-header.splash-header {
+                opacity: 1 !important;
+                pointer-events: all !important;
+                transform: translateY(0) !important;
+            }
         }
 
         @media (max-width: 480px) {
@@ -300,14 +323,14 @@
     <!-- Fixed AG center divider — stays at 50% regardless of hover -->
     <div class="ag-divider" aria-hidden="true">
         <div class="ag-line"></div>
-        <div class="ag-badge">AG</div>
+        <div class="ag-badge">OH</div>
         <div class="ag-line"></div>
     </div>
 
     <!-- Header — auto-hides on splash, reveals on mouse approach -->
     <header class="global-header splash-header" id="mainHeader">
         <div class="logo">
-            <a href="index.html">ALEX<span>GRUPP</span></a>
+            <a href="index.html">OLEKSANDR<span>HALUSHKA</span></a>
         </div>
         <nav class="header-nav" id="headerNav">
             <!-- Root page nav implies going to either branch or kontakt -->
@@ -339,7 +362,7 @@
             <div class="overlay"></div>
             <div class="content-wrapper">
                 <p class="side-label" data-i18n="home-auto-label">Richtung wählen</p>
-                <h1 data-i18n="home-auto-title">KFZ-Service</h1>
+                <h1 data-i18n="home-auto-title">Auto kaufen und verkaufen</h1>
                 <p data-i18n="home-auto-desc">Professionelle Diagnose, Reparatur und Kaufberatung für Ihr Fahrzeug in
                     Bayern.</p>
                 <a class="btn btn-primary-auto" onclick="event.stopPropagation(); location.href='auto/index.html';"
@@ -388,6 +411,24 @@
                 location.href = isBau ? 'bau/index.html' : 'auto/index.html';
             });
         }
+    </script>
+
+    <script>
+    // Smooth page-exit transition
+    (function() {
+        document.addEventListener('click', function(e) {
+            var a = e.target.closest('a[href]');
+            if (!a) return;
+            var href = a.getAttribute('href');
+            if (!href || href.startsWith('#') || href.startsWith('javascript') ||
+                href.startsWith('http') || href.startsWith('mailto') ||
+                href.startsWith('tel') || a.target === '_blank') return;
+            e.preventDefault();
+            document.body.style.transition = 'opacity 0.12s ease';
+            document.body.style.opacity = '0';
+            setTimeout(function() { location.href = href; }, 120);
+        });
+    })();
     </script>
 </body>
 

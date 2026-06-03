@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Oleksandr Halushkae Auto – Aktualisierungsbericht V6+</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f4f6f9; color: #1e293b; line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 5%; }
+        .header-title { text-align: center; margin-bottom: 40px; }
+        .header-title h1 { color: #1e40af; font-size: 2rem; }
+        .header-title p { color: #64748b; font-size: 1.1rem; margin-top: 10px; }
+        .section { background: #fff; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid #1e40af; }
+        .section h2 { font-size: 1.3rem; color: #0f172a; margin-bottom: 15px; display: flex; align-items: center; gap: 12px; }
+        .section h2 .icon { background: #eff6ff; color: #1e40af; border-radius: 8px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+        .highlight-red { color: #e63946; font-weight: 700; background: #fff0f1; padding: 2px 6px; border-radius: 4px; border: 1px solid #ffccd0; }
+        .change-block { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px 20px; margin: 15px 0; }
+        .action-label { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.05em; }
+        .action-removed { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
+        .action-added { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+        .action-edited { background: #fef9c3; color: #a16207; border: 1px solid #fde047; }
+        .lang-row { margin-bottom: 12px; }
+        .lang-row:last-child { margin-bottom: 0; }
+        .de-text { color: #1e293b; font-weight: 600; margin-bottom: 4px; }
+        .ua-text { color: #475569; font-style: italic; font-size: 0.95rem; }
+        .tag-de { display: inline-block; background: #e2e8f0; color: #475569; border-radius: 4px; padding: 1px 6px; font-size: 0.7rem; font-weight: 700; margin-right: 8px; vertical-align: middle; }
+        .tag-ua { display: inline-block; background: #f1f5f9; color: #64748b; border-radius: 4px; padding: 1px 6px; font-size: 0.7rem; font-weight: 700; margin-right: 8px; vertical-align: middle; }
+        .screenshots-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 15px 0; }
+        .screenshot { width: 100%; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: block; }
+        .screenshot.full { grid-column: 1 / -1; }
+        .screenshot-caption { font-size: 0.75rem; color: #94a3b8; text-align: center; margin-top: 6px; }
+        .footer { text-align: center; padding: 30px; color: #94a3b8; font-size: 0.9rem; border-top: 1px solid #e2e8f0; margin-top: 20px; }
+        @page { size: A4; margin: 12mm; }
+        @media print {
+            body { background: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .container { max-width: 100% !important; padding: 0 !important; }
+            .section { box-shadow: none !important; border: 1px solid #e2e8f0 !important; border-left: 5px solid #1e40af !important; page-break-inside: avoid; break-inside: avoid; padding: 18px !important; margin-bottom: 16px !important; }
+            .highlight-red { color: #e63946 !important; background: #fff0f1 !important; -webkit-print-color-adjust: exact; }
+            .action-removed { background: #fee2e2 !important; color: #b91c1c !important; }
+            .action-added { background: #dcfce7 !important; color: #15803d !important; }
+            .action-edited { background: #fef9c3 !important; color: #a16207 !important; }
+            .screenshot { max-height: 9cm; object-fit: contain; page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header-title">
+        <h1>Oleksandr Halushkae Auto – Aktualisierungsbericht</h1>
+        <p>Звіт про оновлення контенту (Березень 2026)</p>
+    </div>
+
+    <!-- Section 1: Services & Modals -->
+    <div class="section">
+        <h2><span class="icon">💶</span> Interaktive Service-Details & Preise</h2>
+        <div class="change-block">
+            <span class="action-edited">Bearbeitet / Виправлено</span>
+            <div class="lang-row">
+                <div class="de-text"><span class="tag-de">DE</span> Alle Preise wurden als Startpreise mit <span class="highlight-red">"ab"</span> definiert.</div>
+                <div class="ua-text"><span class="tag-ua">UA</span> Всі ціни визначені як стартові — "від".</div>
+            </div>
+            <div class="lang-row" style="margin-top:10px;">
+                <div class="de-text"><span class="tag-de">DE</span> <span class="highlight-red">Reifenwechsel ab 90 €</span> für 4 Räder inkl. Auswuchten.</div>
+                <div class="ua-text"><span class="tag-ua">UA</span> Шиномонтаж від 90 € за 4 колеса з балансуванням.</div>
+            </div>
+            <div class="lang-row">
+                <div class="de-text"><span class="tag-de">DE</span> <span class="highlight-red">Klimaservice ab 22 € / 100g</span> Kältemittel.</div>
+                <div class="ua-text"><span class="tag-ua">UA</span> Клімат-сервіс від 22 € за 100г холодоагенту.</div>
+            </div>
+            <div class="lang-row">
+                <div class="de-text"><span class="tag-de">DE</span> Öl- & Filterwechsel → <span class="highlight-red">Kleiner Kundendienst ab 185 €</span> (inkl. Material).</div>
+                <div class="ua-text"><span class="tag-ua">UA</span> Заміна масла та фільтра → Мале ТО від 185 € (вкл. матеріали).</div>
+            </div>
+        </div>
+        <div class="change-block">
+            <span class="action-added">Hinzugefügt / Додано</span>
+            <div class="lang-row">
+                <div class="de-text"><span class="tag-de">DE</span> <span class="highlight-red">Dunkle interaktive Pop-ups</span>: Klick auf Servicekarte öffnet ein elegantes, dunkles Info-Fenster mit Preisdetails und CTA-Button.</div>
+                <div class="ua-text"><span class="tag-ua">UA</span> Темні інтерактивні вікна: натискання на картку послуги відкриває елегантне темне спливаюче вікно з деталями.</div>
+            </div>
+        </div>
+        <div class="screenshots-row">
+            <div>
+                <img src="../../../../.gemini/antigravity/brain/edba5273-94c8-4982-a0dd-6e1a174d9026/auto_service_cards_1773422493590.png" class="screenshot" alt="Service Cards">
+                <div class="screenshot-caption">Сервісні картки на головній</div>
+            </div>
+            <div>
+                <img src="../../../../.gemini/antigravity/brain/edba5273-94c8-4982-a0dd-6e1a174d9026/auto_reifenwechsel_modal_1773422505359.png" class="screenshot" alt="Reifenwechsel Dark Modal">
+                <div class="screenshot-caption">Темне вікно — Шиномонтаж</div>
+            </div>
+            <div>
+                <img src="../../../../.gemini/antigravity/brain/edba5273-94c8-4982-a0dd-6e1a174d9026/auto_klimaservice_modal_1773422518576.png" class="screenshot" alt="Klimaservice Modal">
+                <div class="screenshot-caption">Темне вікно — Клімат-сервіс</div>
+            </div>
+            <div>
+                <img src="../../../../.gemini/antigravity/brain/edba5273-94c8-4982-a0dd-6e1a174d9026/auto_kundendienst_modal_1773422536623.png" class="screenshot" alt="Kundendienst Modal">
+                <div class="screenshot-caption">Темне вікно — Мале ТО</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Services Adjustments -->
+    <div class="section">
+        <h2><span class="icon">⚙️</span> Anpassungen der Leistungen</h2>
+        <div class="change-block">
+            <span class="action-removed">Entfernt / Видалено</span>
+            <div class="lang-row">
+                <div class="de-text"><span class="tag-de">DE</span> <span class="highlight-red">Motor- und Getriebereparatur</span> komplett von Homepage und Leistungsseite entfernt.</div>
+                <div class="ua-text"><span class="tag-ua">UA</span> Ремонт двигуна та коробки передач повністю видалено з усіх сторінок.</div>
+            </div>
+        </div>
+        <div class="change-block">
+            <span class="action-added">Hinzugefügt / Додано</span>
+            <div class="lang-row">
+                <div class="de-text"><span class="tag-de">DE</span> Unter "Diagnose & Elektronik": <span class="highlight-red">Abschleppdienst für Kunden</span>.</div>
+                <div class="ua-text"><span class="tag-ua">UA</span> В "Діагностика": Послуги евакуатора для клієнтів.</div>
+            </div>
+            <div class="lang-row" style="margin-top:10px;">
+                <div class="de-text"><span class="tag-de">DE</span> TÜV-Vorbereitung: <span class="highlight-red">HU/AU-Vorabcheck inkl. Smart Repair & Schweißarbeiten</span>.</div>
+                <div class="ua-text"><span class="tag-ua">UA</span> Підготовка до TÜV: включає Smart Repair та дрібні зварювальні роботи (безпечне формулювання).</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3: About Us -->
+    <div class="section">
+        <h2><span class="icon">🇺🇦</span> Über Uns — Profilierung & Flagge</h2>
+        <div class="change-block">
+            <span class="action-added">Hinzugefügt / Додано</span>
+            <div class="lang-row">
+                <div class="de-text"><span class="tag-de">DE</span> Ukrainische Flagge 🇺🇦 wurde nach dem Wort <span class="highlight-red">"Fahrzeuge"</span> in der Überschrift eingefügt. Darunter: Betonung des ukrainisch-bayerischen Qualitätsanspruchs.</div>
+                <div class="ua-text"><span class="tag-ua">UA</span> Прапор 🇺🇦 доданий після слова "Fahrzeuge" у заголовку. Нижче — текст про українсько-баварський стандарт якості.</div>
+            </div>
+        </div>
+        <div class="change-block">
+            <span class="action-edited">Bearbeitet / Виправлено</span>
+            <div class="lang-row">
+                <div class="de-text"><span class="tag-de">DE</span> Im Block "Warum wir": <span class="highlight-red">"Zertifizierte Fachkräfte" → "Erfahrene Kfz-Profis"</span>.</div>
+                <div class="ua-text"><span class="tag-ua">UA</span> В блоці "Чому ми": "Сертифіковані фахівці" замінено на "Досвідчені автопрофесіонали".</div>
+            </div>
+        </div>
+        <div class="screenshots-row">
+            <img src="../../../../.gemini/antigravity/brain/edba5273-94c8-4982-a0dd-6e1a174d9026/auto_uber_uns_flag_1773422548991.png" class="screenshot full" alt="Auto Über Uns with flag">
+        </div>
+        <div class="screenshot-caption">Сторінка "Про нас" — флаг після слова "Fahrzeuge"</div>
+    </div>
+
+    <!-- Section 4: FAQ -->
+    <div class="section">
+        <h2><span class="icon">❓</span> FAQ auf der Kontaktseite</h2>
+        <div class="change-block">
+            <span class="action-edited">Bearbeitet / Виправлено</span>
+            <div class="lang-row">
+                <div class="de-text"><span class="tag-de">DE</span> Frage zu Fahrzeugmarken jetzt allgemein: <span class="highlight-red">europäischer, asiatischer und amerikanischer Markt</span>.</div>
+                <div class="ua-text"><span class="tag-ua">UA</span> Питання про марки авто тепер нейтральне: для Європейського, азіатського та американського ринків.</div>
+            </div>
+        </div>
+        <div class="change-block">
+            <span class="action-added">Hinzugefügt / Додано</span>
+            <div class="lang-row">
+                <div class="de-text"><span class="tag-de">DE</span> Neue FAQ: <span class="highlight-red">Haben Sie einen Abschleppdienst? — Ja.</span></div>
+                <div class="ua-text"><span class="tag-ua">UA</span> Нове питання: Чи є евакуатор? — Так.</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">Oleksandr Halushkae © 2026 &nbsp;|&nbsp; Aktualisierungsbericht vorbereitet für den Kunden</div>
+</body>
+</html>

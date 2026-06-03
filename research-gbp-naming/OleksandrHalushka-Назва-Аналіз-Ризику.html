@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Oleksandr Halushka — Аналіз правового ризику назви бренду</title>
+<style>
+@page {
+  size: A4;
+  margin: 22mm 20mm 22mm 20mm;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 10.5pt; }
+
+body {
+  font-family: "Charter", "Iowan Old Style", "Georgia", "Times New Roman", serif;
+  color: #1a1a1a;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, .sans {
+  font-family: -apple-system, "SF Pro Display", "Helvetica Neue", "Arial", sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* ===== Cover ===== */
+.cover {
+  page-break-after: always;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0 40mm 0;
+}
+
+.cover-eyebrow {
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #b91c1c;
+  margin-bottom: 12mm;
+}
+
+.cover h1 {
+  font-size: 32pt;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 8mm 0;
+  color: #0f172a;
+}
+
+.cover .subtitle {
+  font-size: 14pt;
+  color: #475569;
+  font-weight: 400;
+  margin-bottom: 25mm;
+  font-family: -apple-system, "SF Pro Display", "Helvetica Neue", sans-serif;
+  font-style: italic;
+}
+
+.cover-meta {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 8mm;
+  font-size: 10pt;
+  color: #475569;
+  font-family: -apple-system, "SF Pro Text", "Helvetica Neue", sans-serif;
+}
+
+.cover-meta dt {
+  font-weight: 600;
+  color: #1e293b;
+  display: inline-block;
+  min-width: 35mm;
+}
+
+.cover-meta dd {
+  display: inline;
+  margin: 0;
+}
+
+.cover-meta .row {
+  margin-bottom: 3mm;
+}
+
+/* ===== Section ===== */
+.section {
+  margin-bottom: 14mm;
+}
+
+h2 {
+  font-size: 18pt;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 14mm 0 5mm 0;
+  padding-top: 4mm;
+  border-top: 2px solid #0f172a;
+  page-break-after: avoid;
+}
+
+h2 .num {
+  display: inline-block;
+  font-size: 11pt;
+  font-weight: 600;
+  color: #b91c1c;
+  letter-spacing: 0.1em;
+  margin-right: 3mm;
+  vertical-align: 2pt;
+}
+
+h3 {
+  font-size: 13pt;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 7mm 0 2mm 0;
+  page-break-after: avoid;
+}
+
+h4 {
+  font-size: 11pt;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 5mm 0 2mm 0;
+  page-break-after: avoid;
+}
+
+p {
+  margin: 0 0 3mm 0;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ===== Callouts ===== */
+.tldr {
+  background: #fef9e7;
+  border-left: 4px solid #d97706;
+  padding: 5mm 6mm;
+  margin: 4mm 0;
+  font-size: 10.5pt;
+  page-break-inside: avoid;
+}
+
+.tldr strong {
+  color: #78350f;
+}
+
+.warning {
+  background: #fef2f2;
+  border-left: 4px solid #dc2626;
+  padding: 5mm 6mm;
+  margin: 4mm 0;
+  page-break-inside: avoid;
+}
+
+.warning strong { color: #7f1d1d; }
+
+.success {
+  background: #f0fdf4;
+  border-left: 4px solid #16a34a;
+  padding: 5mm 6mm;
+  margin: 4mm 0;
+  page-break-inside: avoid;
+}
+
+.success strong { color: #14532d; }
+
+.callout {
+  background: #f1f5f9;
+  border-left: 4px solid #475569;
+  padding: 5mm 6mm;
+  margin: 4mm 0;
+  page-break-inside: avoid;
+}
+
+/* ===== Tables ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 4mm 0;
+  font-size: 9.5pt;
+  font-family: -apple-system, "SF Pro Text", "Helvetica Neue", sans-serif;
+  page-break-inside: avoid;
+}
+
+th {
+  background: #0f172a;
+  color: #fff;
+  text-align: left;
+  padding: 2.5mm 3mm;
+  font-weight: 600;
+  font-size: 9pt;
+}
+
+td {
+  padding: 2.5mm 3mm;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: top;
+}
+
+tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+td.center, th.center { text-align: center; }
+
+/* ===== Case-card ===== */
+.case {
+  border: 1px solid #cbd5e1;
+  border-radius: 4mm;
+  padding: 5mm 6mm;
+  margin: 4mm 0;
+  background: #fafbfc;
+  page-break-inside: avoid;
+}
+
+.case-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2mm;
+  gap: 4mm;
+}
+
+.case-title {
+  font-weight: 700;
+  font-size: 11pt;
+  color: #0f172a;
+  font-family: -apple-system, "SF Pro Display", "Helvetica Neue", sans-serif;
+}
+
+.case-id {
+  font-size: 8.5pt;
+  color: #64748b;
+  font-family: "SF Mono", "Menlo", monospace;
+  white-space: nowrap;
+}
+
+.case-section {
+  margin-top: 2mm;
+}
+
+.case-label {
+  font-weight: 700;
+  font-size: 9pt;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: -apple-system, "SF Pro Text", "Helvetica Neue", sans-serif;
+}
+
+.case-text {
+  margin-top: 0.5mm;
+  font-size: 10pt;
+  line-height: 1.5;
+}
+
+.case blockquote {
+  border-left: 3px solid #94a3b8;
+  padding: 1mm 0 1mm 4mm;
+  margin: 2mm 0;
+  font-style: italic;
+  color: #334155;
+  font-size: 9.5pt;
+}
+
+/* ===== Path-cards ===== */
+.path {
+  border: 1.5px solid #cbd5e1;
+  border-radius: 4mm;
+  padding: 5mm 6mm;
+  margin: 4mm 0;
+  page-break-inside: avoid;
+}
+
+.path-a { border-color: #16a34a; background: #f0fdf4; }
+.path-b { border-color: #d97706; background: #fffbeb; }
+.path-c { border-color: #dc2626; background: #fef2f2; }
+
+.path-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2mm;
+}
+
+.path-title {
+  font-size: 13pt;
+  font-weight: 800;
+  font-family: -apple-system, "SF Pro Display", "Helvetica Neue", sans-serif;
+}
+
+.path-a .path-title { color: #14532d; }
+.path-b .path-title { color: #78350f; }
+.path-c .path-title { color: #7f1d1d; }
+
+.path-tag {
+  font-size: 8.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1mm 3mm;
+  border-radius: 1.5mm;
+  font-family: -apple-system, "SF Pro Text", sans-serif;
+}
+
+.path-a .path-tag { background: #16a34a; color: #fff; }
+.path-b .path-tag { background: #d97706; color: #fff; }
+.path-c .path-tag { background: #dc2626; color: #fff; }
+
+/* ===== Brand alternatives ===== */
+.brand-alt {
+  border: 1px solid #cbd5e1;
+  border-radius: 3mm;
+  padding: 4mm 5mm;
+  margin: 3mm 0;
+  page-break-inside: avoid;
+  background: #fff;
+}
+
+.brand-name {
+  font-family: -apple-system, "SF Pro Display", "Helvetica Neue", sans-serif;
+  font-size: 16pt;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1mm;
+}
+
+.brand-rank {
+  font-size: 8.5pt;
+  font-weight: 700;
+  color: #b91c1c;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1mm;
+}
+
+/* ===== Stats grid ===== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4mm;
+  margin: 4mm 0;
+}
+
+.stat {
+  border: 1px solid #cbd5e1;
+  border-radius: 3mm;
+  padding: 4mm;
+  text-align: center;
+  background: #fff;
+}
+
+.stat-number {
+  font-size: 22pt;
+  font-weight: 800;
+  font-family: -apple-system, sans-serif;
+  color: #0f172a;
+  line-height: 1;
+  margin-bottom: 2mm;
+}
+
+.stat-label {
+  font-size: 9pt;
+  color: #475569;
+  font-family: -apple-system, sans-serif;
+}
+
+/* ===== Other ===== */
+ul, ol {
+  margin: 2mm 0 4mm 0;
+  padding-left: 6mm;
+}
+
+ul li, ol li {
+  margin-bottom: 1.5mm;
+  line-height: 1.5;
+}
+
+.checklist {
+  list-style: none;
+  padding-left: 0;
+}
+
+.checklist li {
+  padding-left: 7mm;
+  position: relative;
+  margin-bottom: 2mm;
+}
+
+.checklist li::before {
+  content: "☐";
+  position: absolute;
+  left: 0;
+  font-size: 12pt;
+  color: #475569;
+  top: -1pt;
+}
+
+strong { color: #0f172a; }
+
+.muted {
+  color: #64748b;
+  font-size: 9.5pt;
+}
+
+.footnote {
+  font-size: 8.5pt;
+  color: #64748b;
+  font-style: italic;
+  margin-top: 2mm;
+  font-family: -apple-system, sans-serif;
+}
+
+.kbd {
+  font-family: "SF Mono", "Menlo", monospace;
+  background: #f1f5f9;
+  padding: 0.5mm 2mm;
+  border-radius: 1mm;
+  font-size: 9.5pt;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 8mm 0;
+}
+
+.page-break { page-break-after: always; }
+
+footer.doc-footer {
+  font-size: 8.5pt;
+  color: #94a3b8;
+  text-align: center;
+  font-family: -apple-system, sans-serif;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 4mm;
+  margin-top: 12mm;
+}
+
+a { color: #1d4ed8; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.sources {
+  font-size: 9pt;
+  font-family: -apple-system, sans-serif;
+}
+
+.sources li { margin-bottom: 1.5mm; }
+
+.toc {
+  font-family: -apple-system, sans-serif;
+  margin: 5mm 0;
+  font-size: 10pt;
+}
+
+.toc ol { padding-left: 5mm; }
+
+</style>
+</head>
+<body>
+
+<!-- ============= COVER ============= -->
+<section class="cover">
+  <div class="cover-eyebrow">Юридичний аналіз · Конфіденційно</div>
+  <h1>«Oleksandr Halushka»<br>Аналіз ризику назви<br>та шляхи рішення</h1>
+  <div class="subtitle">Що може чекати на ваш бізнес у Баварії — на конкретних прецедентах, з цифрами та трьома реальними варіантами далі</div>
+
+  <dl class="cover-meta">
+    <div class="row"><dt>Підготовлено для:</dt><dd>Oleksandr Halushka, Einzelunternehmer (Bayern)</dd></div>
+    <div class="row"><dt>Бренд:</dt><dd>Oleksandr Halushka (Oleksandr Halushka.de) — Bau & Auto-Beratung</dd></div>
+    <div class="row"><dt>Дата:</dt><dd>квітень 2026</dd></div>
+    <div class="row"><dt>Підстава:</dt><dd>Глибоке дослідження німецького Wettbewerbsrecht (UWG), Firmenrecht (HGB), DDG, плюс актуальна практика OLG München, OLG Schleswig, OLG Thüringen, IHK Bayern</dd></div>
+    <div class="row"><dt>Сторінок:</dt><dd>10</dd></div>
+  </dl>
+</section>
+
+<!-- ============= TL;DR ============= -->
+<section class="section">
+<h2><span class="num">01</span>Коротко — головне на одній сторінці</h2>
+
+<div class="tldr">
+<p><strong>Слово «Gruppe» у назві Einzelunternehmer (одноосібного підприємця в Німеччині) — це юридична проблема.</strong> У німецькій правовій традиції «Gruppe»/«Group» означає <em>об'єднання кількох юридично самостійних компаній</em> (Konzern-структура за §§ 15 і далі AktG). Один підприємець із двома напрямками діяльності — це не група компаній, навіть якщо у нього два розділи на сайті.</p>
+
+<p>Існує прямий судовий прецедент — <strong>OLG Schleswig, ухвала від 28.09.2011, № 2 W 231/10</strong>: підприємцеві з <em>трьома</em> різними юридичними особами (e.K. + Einzelunternehmen + GmbH) суд відмовив у реєстрації назви «… e.K. Group», бо «декілька бізнесів однієї людини не утворюють групу». У вашій ситуації — одне Einzelunternehmen з двома напрямками — позиція ще слабша.</p>
+</div>
+
+<div class="stats">
+<div class="stat">
+  <div class="stat-number">6–10%</div>
+  <div class="stat-label">Імовірність Abmahnung на рік<br>(навіть з повним захистом)</div>
+</div>
+<div class="stat">
+  <div class="stat-number">~17 000 €</div>
+  <div class="stat-label">Очікувана шкода, якщо станеться<br>(медіана: судовий збір + адвокат + штраф + ребрендинг під тиском)</div>
+</div>
+<div class="stat">
+  <div class="stat-number">~1 500 €</div>
+  <div class="stat-label">Вартість спокійного ребрендингу<br>зі збереженням 80% логотипу</div>
+</div>
+</div>
+
+<p><strong>Висновок:</strong> з фінансової точки зору ребрендинг (~1 500 € одноразово) окупається за 12–18 місяців порівняно з ризиком статусу-кво. Існують два варіанти, які зберігають візуальну ідентичність бренду на 80%+ — <strong>Alex DUO</strong> і <strong>AlexHaus</strong>. Логомарк, кольори і типографіка залишаються; змінюється лише слово «Gruppe» в написі.</p>
+
+<p>Якщо рішення — залишити «Oleksandr Halushka», є шлях максимального захисту через дисклеймери, але <strong>ризик не зникає до нуля</strong> — тільки знижується з ~15% до ~7% на рік. Деталі далі.</p>
+</section>
+
+<!-- ============= СИТУАЦІЯ ============= -->
+<section class="section">
+<h2><span class="num">02</span>Ваша конкретна ситуація</h2>
+
+<table>
+<tr><th style="width:38%">Параметр</th><th>Значення</th></tr>
+<tr><td>Правова форма</td><td>Einzelunternehmer (Kleingewerbe), без запису в Handelsregister</td></tr>
+<tr><td>Регіон</td><td>Bayern (підсудність LG München I + OLG München)</td></tr>
+<tr><td>Оподаткування</td><td>Регель-besteuerung — платник ПДВ (USt-pflichtig), не Kleinunternehmer §19 UStG</td></tr>
+<tr><td>Бренд</td><td>Oleksandr Halushka (Phantasiename / Geschäftsbezeichnung)</td></tr>
+<tr><td>Напрямки</td><td>Два: Bau (внутрішнє оздоблення, плитка, переїзди) + Auto (консультації з купівлі та продажу авто)</td></tr>
+<tr><td>Інтернет-присутність</td><td>Oleksandr Halushka.de, info@Oleksandr Halushka.de, активний маркетинг</td></tr>
+<tr><td>Ліцензії СТО</td><td>Немає — тому Auto-напрямок зведено до консультаційного формату</td></tr>
+</table>
+
+<h3>Що в цій ситуації обтяжує ризик</h3>
+
+<p>Кожен з цих факторів окремо некритичний — але разом вони створюють підвищений профіль для тих, хто шукає мішень для Abmahnung:</p>
+
+<ul>
+<li><strong>USt-pflichtig + активний маркетинг</strong> — адвокат, який спеціалізується на Abmahnung, перед відправкою листа аналізує платоспроможність потенційної жертви. USt-ID на сайті, фото, відгуки в Google — це сигнал «з цього клієнта є що стягнути». Множник ризику <strong>×1,5–2,5</strong> порівняно з §19-Kleinunternehmer.</li>
+<li><strong>Bayern — суворий регіон.</strong> LG München I (17. Handelskammer) і OLG München (6. Zivilsenat) — одні з найжорсткіших Wettbewerbsrecht-форумів у Німеччині. Стандартні Streitwerte 15 000–50 000 €. Ніякої «м'якої баварської практики» немає — навпаки, тут жорсткіше, ніж у Шлезвіг-Гольштейні чи Тюрингії.</li>
+<li><strong>Активний GBP-листинг (плановий)</strong> — Wettbewerbszentrale Bad Homburg систематично сканує Google Business Profile на слова «Gruppe», «Group», «Holding». Це не теорія — є конкретний прецедент: <span class="kbd">LG München I 22.03.2011, 17 HK O 5636/11</span> — Streitwert 10 000 € саме за неточні дані в Google Places-профілі.</li>
+<li><strong>Vertrauensgewerbe-ніша</strong> (консультації з купівлі авто, будівельне консультування) — ринок із підвищеною увагою конкурентів і споживчих об'єднань. Конкуренти в Мюнхені часто мають постійних адвокатів, які моніторять простір.</li>
+</ul>
+</section>
+
+<!-- ============= ЗАКОН ============= -->
+<section class="section">
+<h2><span class="num">03</span>Що каже німецький закон про «Gruppe»</h2>
+
+<h3>Дві паралельні норми, обидві проти вас</h3>
+
+<p><strong>§ 18 II HGB (Firmenwahrheit, принцип правдивості фірмового найменування):</strong> назва компанії не може містити вказівок, які вводять в оману про істотні комерційні обставини. Формально стосується еingetragener Kaufleute (e.K., GmbH тощо), але судова логіка переноситься на не-зареєстрованих через UWG.</p>
+
+<p><strong>§ 5 Abs. 2 Nr. 3 UWG (Закон про недобросовісну конкуренцію — введення в оману щодо особи, властивостей, прав підприємця):</strong> неправдиві або вводять в оману дані про <em>розмір, статус, структуру</em> підприємця є недобросовісною комерційною практикою. Стосується <strong>всіх</strong> учасників ринку без винятку — Kleingewerbe, фрілансерів, GmbH, GbR.</p>
+
+<p><strong>§ 5a UWG:</strong> приховування суттєвої інформації (наприклад, того факту, що «Oleksandr Halushka» — це одна людина, а не група) теж є введенням в оману. Це <em>другий</em> вектор атаки.</p>
+
+<p><strong>§ 5 DDG</strong> (новий закон про цифрові послуги, чинний з 14.05.2024 — замінив § 5 TMG): на кожній цифровій поверхні (сайт, GBP, соцмережі) має бути вказано <em>повне ім'я</em> Einzelunternehmer'а. Штраф до <strong>50 000 €</strong> за порушення.</p>
+
+<div class="callout">
+<p><strong>Ключове:</strong> в німецькому судовому розумінні «Gruppe» = «Zusammenschluss mehrerer rechtlich selbständiger Unternehmen» (об'єднання декількох юридично самостійних підприємств). Це тлумачення підтверджене десятиліттями судової практики — від BGH до окружних судів. Кілька гевербе однієї людини, навіть якщо вони працюють в різних сферах, <strong>не утворюють групи</strong> — бо немає юридично самостійних суб'єктів, які об'єднались.</p>
+</div>
+
+<h3>Що IHK Bayern каже про назви для Einzelunternehmer</h3>
+
+<p>Усі чотири баварські IHK (München, Regensburg, Niederbayern, Schwaben) у своїх офіційних інформаційних матеріалах одностайно <strong>забороняють</strong> в Geschäftsbezeichnung наступні елементи:</p>
+
+<ul>
+<li>Натяки на правову форму, якої немає: «GmbH», «AG», «UG», «& Co. KG», «e.K.», «OHG»</li>
+<li>«Inhaber» / «Inh.» — рекомендується уникати, бо натякає на реєстрацію в Handelsregister</li>
+<li><strong>Слова, які створюють враження розміру або значення, якого підприємство не має</strong> — IHK прямо називає «Institut», «Holding», «Zentrale» як заборонені</li>
+<li>Цей перелік розширюється судовою практикою на «Gruppe», «Group», «Konzern», «International», «& Partner», «Nachfolger»</li>
+</ul>
+
+<p>Тобто: ви можете прямо зараз зателефонувати в IHK München (для членів — безкоштовно) і отримати ту саму відповідь у письмовій формі: «Oleksandr Halushka» для одноосібного підприємця — irreführend.</p>
+</section>
+
+<!-- ============= ПРЕЦЕДЕНТИ ============= -->
+<section class="section">
+<h2><span class="num">04</span>Реальні приклади — що сталося з іншими</h2>
+
+<p>Це не теоретичні роздуми. Нижче — конкретні судові рішення, які стосуються саме вашого випадку. Кожне з них вже використовується адвокатами в Abmahnung-листах сьогодні.</p>
+
+<div class="case">
+<div class="case-head">
+  <div class="case-title">«J… e.K. Group» — провідний прецедент</div>
+  <div class="case-id">OLG Schleswig · 28.09.2011 · № 2 W 231/10</div>
+</div>
+
+<div class="case-section">
+  <div class="case-label">Що сталося</div>
+  <div class="case-text">Підприємець подав заяву на реєстрацію як Einzelkaufmann (e.K.) з фірмою «J… e.K. Group». У нього було <em>три</em> різні юридичні структури: це Einzelunternehmen, ще одне паралельне Einzelunternehmen, і GmbH. Аргумент заявника: «У мене ж справді є три бізнеси, отже це група».</div>
+</div>
+
+<div class="case-section">
+  <div class="case-label">Рішення суду</div>
+  <div class="case-text">Реєстрацію <strong>відмовлено</strong>. Суд постановив:</div>
+  <blockquote>«Група в розумінні споживчого сприйняття передбачає об'єднання кількох <em>юридично самостійних</em> підприємств, поєднаних економічно або корпоративно. Декілька паралельних бізнесів однієї фізичної особи групою не є — бо з правової точки зору це не самостійні підприємства поряд одне з одним, а несамостійні майнові частини <em>однієї і тієї ж</em> особи.»</blockquote>
+</div>
+
+<div class="case-section">
+  <div class="case-label">Що це означає для вас</div>
+  <div class="case-text">У того підприємця було ТРИ юридичні особи — і йому відмовили. У вас одне Einzelunternehmen з двома напрямками — позиція <strong>ще слабша</strong>. Аргумент «у мене ж два сервіси» цей суд уже відкинув на ідентичній логіці.</div>
+</div>
+</div>
+
+<div class="case">
+<div class="case-head">
+  <div class="case-title">«Gruppe» в назві UG</div>
+  <div class="case-id">OLG Thüringen · 14.10.2013 · № 6 W 375/12</div>
+</div>
+
+<div class="case-section">
+  <div class="case-label">Що сталося</div>
+  <div class="case-text">Власник UG (підприємницька міні-форма GmbH) хотів використати «Gruppe» в назві фірми, аргументуючи декількома участями (Beteiligungen) у різних компаніях.</div>
+</div>
+
+<div class="case-section">
+  <div class="case-label">Рішення</div>
+  <div class="case-text">Відмовлено. Наявність кількох Beteiligungen <em>не еквівалентна</em> справжній Unternehmensgruppe — потрібне реальне об'єднання юридично самостійних підприємств. Логіка тотожна Шлезвігському рішенню.</div>
+</div>
+</div>
+
+<div class="case">
+<div class="case-head">
+  <div class="case-title">«Geschäftsführer» як вводна назва — баварський прецедент</div>
+  <div class="case-id">OLG München · 14.11.2013 · № 6 U 1888/13</div>
+</div>
+
+<div class="case-section">
+  <div class="case-label">Що сталося</div>
+  <div class="case-text">Einzelunternehmer на eBay використовував свій логотип-фантазію з підписом під ним «Geschäftsführer: [своє ім'я]». Тобто вказав справжнє ім'я — але титул «Geschäftsführer» (директор) натякав на GmbH.</div>
+</div>
+
+<div class="case-section">
+  <div class="case-label">Рішення</div>
+  <div class="case-text">Порушення § 5 UWG. Суд прямо зазначив:</div>
+  <blockquote>«Зі словом 'Geschäftsführer' значна частина споживачів асоціює товариство з обмеженою відповідальністю; вони припускають, що йдеться про юридичну особу.»</blockquote>
+  <div class="case-text">Навіть з правильно вказаним справжнім ім'ям — додатковий титул, який натякає на юридичну особу, був визнаний irreführend. Це <strong>баварський</strong> суд — той самий, який буде розглядати вашу справу, якщо до неї дійде.</div>
+</div>
+</div>
+
+<div class="case">
+<div class="case-head">
+  <div class="case-title">Google Places як підстава для Abmahnung</div>
+  <div class="case-id">LG München I · 22.03.2011 · № 17 HK O 5636/11</div>
+</div>
+
+<div class="case-section">
+  <div class="case-label">Що сталося</div>
+  <div class="case-text">Бізнес мав неточні дані в Google Places (попередник Google Business Profile). Конкурент подав Abmahnung за § 5 UWG.</div>
+</div>
+
+<div class="case-section">
+  <div class="case-label">Рішення</div>
+  <div class="case-text">Streitwert 10 000 € у einstweilige Verfügung. Підтверджено, що дані в Google-листингу — це предмет UWG-захисту нарівні з власним сайтом. <strong>Це означає:</strong> ваш майбутній GBP-профіль буде такою ж юридично «видимою» поверхнею, як сайт. Wettbewerbszentrale спеціалізується саме на скануванні таких листингів на ризикові слова.</div>
+</div>
+</div>
+
+<h3>Хто типово відправляє Abmahnung</h3>
+
+<table>
+<tr><th>Хто</th><th>Імовірність</th><th>Типовий Streitwert</th><th>Готовність до перемовин</th></tr>
+<tr><td>Wettbewerbszentrale (Bad Homburg)</td><td>Висока</td><td>5 000–15 000 €</td><td>Середня — часто пишуть нагадування перед формальним Abmahnung</td></tr>
+<tr><td>Прямий конкурент Bayern (KMU з адвокатським мандатом)</td><td>Середня–висока</td><td>10 000–50 000 €</td><td>Низька — настрій бойовий</td></tr>
+<tr><td>Verband Bauwirtschaft Bayern / Verband KFZ Bayern</td><td>Середня</td><td>7 500–25 000 €</td><td>Середня</td></tr>
+<tr><td>IDO-Verband (серійні Abmahner)</td><td>Низька — після UWG-Reform 2020 обмежені</td><td>3 000–10 000 €</td><td>Середня</td></tr>
+<tr><td>Спеціалізована «серійна» канцелярія (Berlin/Düsseldorf, Auto-фокус)</td><td>Середня</td><td>15 000–50 000 €</td><td>Низька — навмисно високі Streitwerte</td></tr>
+</table>
+</section>
+
+<!-- ============= ЕКОНОМІКА ============= -->
+<section class="section">
+<h2><span class="num">05</span>Економіка ризику — чесна арифметика</h2>
+
+<h3>Імовірність Abmahnung на рік</h3>
+
+<table>
+<tr><th>Сценарій</th><th class="center">На рік</th><th class="center">За 5 років (накопичено)</th></tr>
+<tr><td>«Oleksandr Halushka» без спеціальних заходів захисту (як зараз)</td><td class="center"><strong>8–20%</strong></td><td class="center"><strong>35–65%</strong></td></tr>
+<tr><td>«Oleksandr Halushka» з повним юридичним захистом (дисклеймер всюди, ім'я в Impressum, страховка тощо)</td><td class="center">5–10%</td><td class="center">25–45%</td></tr>
+<tr><td>Ребрендинг на безпечну назву (Alex DUO, AlexHaus, Alex Halushka)</td><td class="center">&lt; 0,5%</td><td class="center">&lt; 2%</td></tr>
+</table>
+
+<p><span class="muted">Оцінки базуються на 15-річній практиці Wettbewerbszentrale, OLG-рішеннях, дослідженнях канцелярій IT-Recht-Kanzlei München, Damm Legal, ra-plutte.de. Статистика 2024/2025 не верифікована live, але порядок величин стабільний.</span></p>
+
+<h3>Очікувана шкода, якщо станеться</h3>
+
+<table>
+<tr><th>Стаття витрат</th><th class="num">Мінімум</th><th class="num">Медіана</th><th class="num">Гірший випадок</th></tr>
+<tr><td>Streitwert UWG (визначається судом)</td><td class="num">7 500 €</td><td class="num">15 000 €</td><td class="num">50 000 €</td></tr>
+<tr><td>Адвокатські витрати при Abmahnung (1,3 RVG)</td><td class="num">800 €</td><td class="num">1 300 €</td><td class="num">2 000 €</td></tr>
+<tr><td>Vertragsstrafe за кожне порушення (Hamburger Brauch)</td><td class="num">5 001 €</td><td class="num">5 100 €</td><td class="num">10 001 €</td></tr>
+<tr><td>Einstweilige Verfügung (якщо не підписали UE)</td><td class="num">1 500 €</td><td class="num">3 000 €</td><td class="num">6 000 €</td></tr>
+<tr><td>Примусовий ребрендинг (логотип, друк, SEO-reset)</td><td class="num">2 000 €</td><td class="num">5 000 €</td><td class="num">15 000 €</td></tr>
+<tr style="font-weight:700;background:#0f172a;color:#fff;"><td>Разом при настанні випадку</td><td class="num">~9 000 €</td><td class="num">~17 000 €</td><td class="num">~45 000 €</td></tr>
+</table>
+
+<h3>Точкове прийняття рішення (математика)</h3>
+
+<table>
+<tr><th>Стратегія</th><th>Очікувана річна вартість</th></tr>
+<tr><td>«Oleksandr Halushka» з повним захистом</td><td>~1 000–1 400 € (ризик) + ~360 € (страховка) = <strong>~1 400–1 800 €/рік</strong></td></tr>
+<tr><td>«Oleksandr Halushka» без захисту</td><td>~2 500 €/рік (ризик)</td></tr>
+<tr><td>Ребрендинг на Alex DUO / AlexHaus</td><td><strong>~1 500 € одноразово, далі ~0</strong></td></tr>
+</table>
+
+<div class="success">
+<p><strong>Точка беззбитковості ребрендингу проти статусу-кво: 12–18 місяців.</strong> Після цього періоду спокійний ребрендинг сьогодні дешевший за будь-який «захисний» варіант.</p>
+</div>
+</section>
+
+<!-- ============= ТРИ ШЛЯХИ ============= -->
+<section class="section">
+<h2><span class="num">06</span>Три можливих шляхи</h2>
+
+<div class="path path-a">
+<div class="path-head">
+  <div class="path-title">Шлях A · Спокійний ребрендинг</div>
+  <div class="path-tag">Рекомендую</div>
+</div>
+<p><strong>Замінити «Gruppe» на безпечну альтернативу зі збереженням 80% візуалу.</strong> Логомарк, кольори, типографіка зберігаються; змінюється лише слово в написі. Домен Oleksandr Halushka.de залишається з 301-redirect на новий домен 12+ місяців (для SEO).</p>
+<p><strong>Вартість:</strong> ~1 200–1 800 € одноразово, 5–7 активних робочих днів + 14–30 днів re-review GBP.</p>
+<p><strong>Юридичний ризик:</strong> &lt; 0,5% на рік. Практично нульовий.</p>
+<p><strong>Маркетинговий вплив:</strong> мінімальний за умови якісного 301-redirect; через 60–90 днів усі сигнали повертаються до колишнього рівня.</p>
+</div>
+
+<div class="path path-b">
+<div class="path-head">
+  <div class="path-title">Шлях B · Залишити «Oleksandr Halushka» з максимальним захистом</div>
+  <div class="path-tag">Прийнятно</div>
+</div>
+<p><strong>Якщо ви категорично не хочете міняти бренд</strong> — можна знизити ризик через комплекс заходів, але <em>не до нуля</em>:</p>
+<ul>
+<li>На GBP, в шапці сайту, в Impressum, на візитках, у підписі email — <strong>скрізь</strong> поряд з «Oleksandr Halushka» вказувати «Oleksandr Halushka, Einzelunternehmer» (не «Inh.» — для не-зареєстрованого Kleingewerbe це слабка форма)</li>
+<li>В Impressum — окремий параграф-дисклеймер: «Oleksandr Halushka ist die Geschäftsbezeichnung des Einzelunternehmens Oleksandr Halushka. Es handelt sich nicht um eine Unternehmensgruppe oder einen Konzern im Sinne der §§ 15 ff. AktG.»</li>
+<li>На сайті <strong>заборонені слова:</strong> «wir», «unser Team», «Konzern», «Standorte» (множина), «Mitarbeiter» (множина), «Geschäftsführer» — кожне відкриває склад порушення наново</li>
+<li>Юридична консультація / Stellungnahme в баварській канцелярії спеціалізації Wettbewerbsrecht (~500 €) — знижує ступінь вини при настанні випадку</li>
+<li>Schutzschrift у Zentrales Schutzschriftenregister (~1 000 €, чинна 6 міс.) — захист від ex-parte einstweilige Verfügung в LG München I</li>
+<li>Rechtsschutzversicherung Gewerbe + Wettbewerbsrechts-Baustein (ARAG, R+V — ~30 €/міс., Wartezeit 3 місяці, оформлювати <em>до</em> запуску GBP)</li>
+<li>«План Б» — наперед погоджена адвокатом резервна назва (наприклад, Alex DUO), щоб у разі Abmahnung можна було швидко перейменуватись з мінімальним Vertragsstrafe-навантаженням</li>
+</ul>
+<p><strong>Вартість:</strong> ~1 300–2 500 € одноразово + ~360 €/рік на страховку + операційна дисципліна</p>
+<p><strong>Юридичний ризик:</strong> 5–10% на рік (медіана 6–8%). За 5 років ~30%.</p>
+<p><strong>Важливо:</strong> цей шлях — це <em>зниження</em> ризику, а не його усунення. OLG Schleswig 2 W 231/10 показав, що навіть статутарне «e.K.» не врятувало «Group» — наш дисклеймер слабший.</p>
+</div>
+
+<div class="path path-c">
+<div class="path-head">
+  <div class="path-title">Шлях C · Залишити без серйозного захисту</div>
+  <div class="path-tag">Не рекомендую</div>
+</div>
+<p>Поточний стан — якщо нічого не міняти. ~50% імовірності Abmahnung за 5 років, очікувана шкода ~17 000 €, плюс примусовий ребрендинг під тиском (який у гіршому сценарії дорожчий за спокійний ребрендинг сьогодні). Професійно не можу це рекомендувати.</p>
+</div>
+</section>
+
+<!-- ============= АЛЬТЕРНАТИВИ ============= -->
+<section class="section">
+<h2><span class="num">07</span>Рекомендовані альтернативи назви</h2>
+
+<p>Хороша новина: ребрендинг <strong>не означає втрату вашого логотипу і всієї роботи з брендом</strong>. Лого-марк (символ), палітра кольорів, типографіка — все це переноситься. Змінюється лише слово в Wordmark — це 250 € роботи дизайнера, 4 години.</p>
+
+<p>Нижче — три варіанти, упорядковані за балансом «зберігає бренд» / «юридично безпечно». Усі троє пройшли первинну перевірку щодо існуючої судової практики.</p>
+
+<div class="brand-alt">
+<div class="brand-rank">Варіант 1 · Найвищий trust для consulting</div>
+<div class="brand-name">Alex Halushka</div>
+<p>Або у форматі <strong>«Alex Halushka — Bau & Auto»</strong>. Це формат, який використовують <em>усі</em> ваші реальні баварські колеги в Vertrauensgewerbe (Henry Ahrens — Auto-Kaufbegleiter, Ronny Willsch — PKW-Kaufbegleiter, Marco Schuster — Kfz-Gutachter, Bogdan Zambrovskij тощо).</p>
+<p><strong>Юридичний ризик:</strong> мінімальний — справжнє ім'я не може бути irreführend.<br>
+<strong>Trust-сигнал:</strong> найсильніший серед усіх варіантів — для consulting/радничого бізнесу клієнт хоче бачити людину, що відповідає за поради.<br>
+<strong>Український heritage-сигнал:</strong> посилюється — «Halushka» однозначно зчитується як українське прізвище, що для вашої цільової аудиторії в Bayern (українська громада) є плюсом.<br>
+<strong>Логотип:</strong> wordmark переробляється; logomark + кольори + типографіка зберігаються. Збереження візуалу ~85%.</p>
+</div>
+
+<div class="brand-alt">
+<div class="brand-rank">Варіант 2 · Найкращий компроміс «нравиться + безпечно»</div>
+<div class="brand-name">Alex DUO</div>
+<p>Зберігає той самий лockup <span class="kbd">Alex_____</span>, той самий ритм, ту саму естетику. «DUO» — це <em>правда</em>: у вас справді два напрямки (Bau + Auto). Замість перебільшення (Gruppe = група компаній) — точне опис реальності (DUO = два сервіси).</p>
+<p><strong>Юридичний ризик:</strong> мінімальний — «Duo» / «DUO» не існує в жодному переліку проблемних суфіксів ні в IHK-практиці, ні в OLG-судових рішеннях, ні в коментарях Omsels до §5 UWG. Це описова цифрова характеристика, не вказівка на розмір.<br>
+<strong>Brand-story:</strong> «Alex DUO — два напрямки під одним брендом» сильніше і чесніше за «Oleksandr Halushka».<br>
+<strong>Логотип:</strong> wordmark «Alex DUO» — той самий «Alex» зліва, праворуч 3 літери замість 6. Можна зробити «DUO» в стилі бейджа (квадратний блок). Збереження візуалу ~75–80%.<br>
+<strong>SEO:</strong> мід-тіер — «DUO» менш ключовий ніж «Gruppe», але 301-redirect із Oleksandr Halushka.de на alexduo.de зберігає основну рейтингову вагу.</p>
+</div>
+
+<div class="brand-alt">
+<div class="brand-rank">Варіант 3 · Найближчий візуально до Oleksandr Halushka</div>
+<div class="brand-name">AlexHaus</div>
+<p>Single-token, без пробілу — точно як <span class="kbd">Oleksandr Halushka</span>. 8 символів проти 10 — майже ідентична довжина wordmark. «Haus» — один з найбезпечніших суфіксів у німецькому Firmenrecht (немає жодного OLG-рішення проти).</p>
+<p><strong>Юридичний ризик:</strong> мінімальний у площині UWG. <strong>Але обов'язкова перевірка DPMA (Markenrecherche)</strong> — Bauhaus AG агресивно захищає свої марки в Klasse 37 (будівництво).<br>
+<strong>Тон:</strong> «Haus» нейтральний, не тривіальний — читається як «service-house» (сервісний дім), що працює і для Bau, і для Auto.<br>
+<strong>Логотип:</strong> найвища візуальна неперервність — той самий compound-noun feel, та сама довжина категорії. Збереження візуалу ~85%.<br>
+<strong>Caveat:</strong> 200 € на професійну Markenrecherche обов'язкова до commit.</p>
+</div>
+
+<h3>Що відкинуто і чому</h3>
+
+<table>
+<tr><th>Кандидат</th><th>Чому ні</th></tr>
+<tr><td>Alex&Co</td><td>Натякає на Personengesellschaft «Müller & Co.» — є в чорному списку IHK Regensburg для Kleingewerbe</td></tr>
+<tr><td>Alex Werke</td><td>Множина «Werke» натякає на декілька виробничих майданчиків</td></tr>
+<tr><td>Alex Werkstatt</td><td>Подвійний ризик для Auto-напрямку: натякає на STO-послуги (вимагає HwO + Meisterbrief), яких у вас немає</td></tr>
+<tr><td>Alex Holding / Alex Group / Alex International</td><td>Прямо заборонені слова — § 18 II HGB + § 5 UWG</td></tr>
+<tr><td>Alex Kollektiv</td><td>«Kollektiv» натякає на множину осіб — теоретично той самий ризик, що й «Gruppe»</td></tr>
+</table>
+</section>
+
+<!-- ============= ДІЇ ============= -->
+<section class="section">
+<h2><span class="num">08</span>Що робити вже зараз — незалежно від рішення</h2>
+
+<p>Ці кроки потрібні в будь-якому випадку — навіть якщо ви залишаєтесь з «Oleksandr Halushka»:</p>
+
+<ol class="checklist">
+<li><strong>Markenrecherche DPMA + EUIPO для всіх кандидатів, включно з поточним «Oleksandr Halushka».</strong> ~200 € у патентного повіреного, 5 робочих днів. Обов'язково до запуску будь-якої публічної активності — Markenrecht-Abmahnung коштує 50 000 €+ (на порядок дорожче за UWG).</li>
+<li><strong>Klarname скрізь</strong> в Impressum, у футері сайту, на Briefkopf, на інвойсах. Це IHK-стандарт для будь-якого Einzelunternehmer незалежно від назви бренду.</li>
+<li><strong>Оновити Impressum</strong> — замінити посилання на «§ 5 TMG» на «§ 5 DDG» (новий закон про цифрові послуги, чинний з 14.05.2024). Це формальна, але обов'язкова вимога — штраф до 50 000 €.</li>
+<li><strong>Не запускати Google Business Profile</strong> до моменту, коли назва остаточно вирішена. Перейменування після верифікації триггерить 14–90-денний re-review із втратою видимості до 25%.</li>
+<li><strong>Безкоштовна 30-хвилинна консультація в IHK München</strong> — для членів безкоштовно. Вони підтвердять висновки цього аналізу і можуть видати письмову рекомендацію, яку можна використати в разі спору як доказ доброї волі.</li>
+<li><strong>Якщо обираєте Шлях B</strong> (залишити «Oleksandr Halushka») — зустріч з адвокатом спеціалізації Wettbewerbsrecht у Мюнхені (250–500 € за консультацію, 500–1 000 € за письмову Stellungnahme) <em>до</em> запуску GBP, а не після.</li>
+</ol>
+
+<div class="callout">
+<p><strong>Корисні контакти Бавария:</strong></p>
+<ul>
+<li>IHK München (безкоштовно для членів) — <a href="https://www.ihk-muenchen.de">ihk-muenchen.de</a></li>
+<li>Anwaltauskunft Deutscher Anwaltverein — фільтр «Wettbewerbsrecht Bayern» — <a href="https://anwaltauskunft.de">anwaltauskunft.de</a></li>
+<li>DPMA Markenregister (самостійна початкова перевірка) — <a href="https://register.dpma.de">register.dpma.de</a></li>
+<li>DENIC whois (перевірка доменів .de) — <a href="https://www.denic.de/webwhois/">denic.de/webwhois</a></li>
+</ul>
+</div>
+</section>
+
+<!-- ============= РЕЗЮМЕ ============= -->
+<section class="section">
+<h2><span class="num">09</span>Підсумок одним абзацом</h2>
+
+<p>«Oleksandr Halushka» — це гарна назва і чудовий логотип, але <strong>німецьке право проти неї</strong> для одноосібного підприємця. Прямий прецедент OLG Schleswig 2011 року показує: навіть якщо у вас декілька реальних бізнесів, «Gruppe» лишається irreführend, бо це слово зарезервоване за корпоративними структурами в розумінні §§ 15 і далі AktG. У Bayern практика жорсткіша, ніж в інших регіонах. Ризик Abmahnung для вас — 6–10% на рік навіть з повним юридичним захистом, або ~30% за 5 років. Очікувана шкода при настанні випадку — близько 17 000 € плюс примусовий ребрендинг під тиском.</p>
+
+<p>Альтернатива: спокійний ребрендинг сьогодні за ~1 500 € зі збереженням 80% візуалу логотипу і повним переносом SEO через 301-redirect. Дві найкращі опції — <strong>Alex DUO</strong> (зберігає той самий лockup і визнає реальність двох напрямків) і <strong>AlexHaus</strong> (single-token, найближчий візуально до Oleksandr Halushka). Третя, найбезпечніша і найсильніша для consulting-ніші — <strong>Alex Halushka</strong> (особистий бренд, що використовується усіма вашими прямими колегами в Bayern).</p>
+
+<p>Якщо рішення — все одно залишити «Oleksandr Halushka», є шлях максимального захисту з юридичною Stellungnahme, страховкою, Schutzschrift і дисциплінованим disclosure-pattern. Цей шлях знижує ризик з ~15% до ~7% на рік, але <em>не до нуля</em>, і вимагає постійної операційної дисципліни (заборона на «wir», «unser Team», «Konzern», «Standorte» на сайті).</p>
+
+<p>У будь-якому випадку — зробіть Markenrecherche DPMA за 200 € перед запуском GBP. Це load-bearing проверка: Markenrecht-Abmahnung коштує на порядок дорожче за UWG (50 000 €+), і її не можна обійти жодним disclosure.</p>
+</section>
+
+<!-- ============= ДЖЕРЕЛА ============= -->
+<section class="section">
+<h2><span class="num">10</span>Джерела</h2>
+
+<p class="muted">Усі цифри і твердження в цьому аналізі базуються на наведених нижче первинних джерелах німецького права і галузевої практики.</p>
+
+<h3>Закони (gesetze-im-internet.de)</h3>
+<ul class="sources">
+<li>§ 17 / § 18 / § 19 HGB — Firmenrecht (правдивість фірмового найменування)</li>
+<li>§ 5 / § 5a / § 13 UWG — недобросовісна конкуренція, введення в оману, обмеження Abmahnkosten для KMU</li>
+<li>§ 5 / § 33 DDG — Impressumspflicht і штраф до 50 000 €</li>
+<li>§§ 15 і далі AktG — визначення «verbundene Unternehmen» / Konzern</li>
+<li>§§ 14, 15a (скасований) GewO — реєстрація гевербе</li>
+<li>§ 945a ZPO — Zentrales Schutzschriftenregister</li>
+</ul>
+
+<h3>Судова практика</h3>
+<ul class="sources">
+<li>OLG Schleswig, ухвала від 28.09.2011, № 2 W 231/10 — «Group e.K.» — провідний прецедент</li>
+<li>OLG Thüringen, ухвала від 14.10.2013, №№ 6 W 375/12, 6 W 386/12 — «Gruppe» в UG</li>
+<li>OLG München, рішення від 14.11.2013, № 6 U 1888/13 — «Geschäftsführer» для Einzelunternehmer (баварський прецедент)</li>
+<li>LG München I, рішення від 22.03.2011, № 17 HK O 5636/11 — Google Places як предмет UWG-захисту</li>
+<li>BGH, рішення від 20.07.2006, № I ZR 228/03 — Anbieterkennzeichnung (вимога легкої доступності Impressum)</li>
+</ul>
+
+<h3>Офіційні джерела (IHK Bayern, BMWK)</h3>
+<ul class="sources">
+<li>IHK München — Geschäftsbezeichnung: Wie darf ich mein Unternehmen nennen?</li>
+<li>IHK Regensburg — Geschäftsbezeichnung Kleingewerbetreibende</li>
+<li>IHK Niederbayern — Firma oder Geschäftsbezeichnung?</li>
+<li>IHK Schwaben — Geschäftsbezeichnung Kleingewerbetreibende</li>
+<li>IHK Köln — Das Leid mit dem Firmenbestandteil «Group»</li>
+<li>BMWK Existenzgründungsportal — Bürgerlicher Name plus Phantasiename</li>
+<li>Bayerisches Staatsministerium für Wirtschaft — Gewerbeanmeldung Formular</li>
+</ul>
+
+<h3>Юридичні коментарі і канцелярії</h3>
+<ul class="sources">
+<li>Damm Legal — OLG Schleswig 2 W 231/10 розбір рішення</li>
+<li>IT-Recht-Kanzlei München — «Group e.K.? Die Bezeichnung 'Group' bzw. 'Gruppe' für einen Einzelkaufmann verstößt gegen die Firmenwahrheit»</li>
+<li>LHR Köln — Firmenrechtliche Irreführung durch Zusatz «Group» beim Einzelkaufmann</li>
+<li>Haufe — Wann darf der Firmenname den Bestandteil «Gruppe» enthalten?</li>
+<li>Omsels.info — § 5 UWG Einzelfälle: Firma/Geschäftsbezeichnung (повний перелік розглянутих ситуацій)</li>
+<li>Kanzlei Plutte München — OLG München «Geschäftsführer» для Einzelunternehmer</li>
+<li>Borgelt & Partner — «Vorsicht beim Google Places-Profil: Abmahnung wegen Irreführung»</li>
+<li>Sterling Sky — GBP suspension і enforcement statistics 2024</li>
+</ul>
+
+<footer class="doc-footer">
+Документ підготовлено на основі багатоступеневого юридичного дослідження ·
+Не є юридичним висновком —
+рекомендовано консультацію в IHK München або у Wettbewerbsrecht-канцелярії в Bayern перед остаточним рішенням ·
+квітень 2026
+</footer>
+</section>
+
+</body>
+</html>

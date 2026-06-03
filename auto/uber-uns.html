@@ -3,11 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
+    <script>
+        (function() {
+            const stored = localStorage.getItem('ag-lang');
+            if (stored) {
+                document.documentElement.setAttribute('lang', stored);
+            }
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Über uns | AlexGruppe KFZ-Service</title>
+    <title>Über uns | Oleksandr Halushka · Fahrzeugberatung</title>
     <meta name="description"
-        content="Lernen Sie das Team von AlexGruppe kennen — erfahrene KFZ-Meister mit Leidenschaft für Fahrzeuge.">
-
+        content="Lernen Sie Oleksandr Halushka kennen — Ihr persönlicher Ansprechpartner für Fahrzeugberatung und Innenausbau in Bayern.">
+    <meta name="theme-color" content="#0e1117">
+    <link rel="canonical" href="https://oleksandrhalushka.de/auto/uber-uns.html">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Über uns | KFZ-Beratung Oleksandr Halushka">
+    <meta property="og:description" content="Wer ist Oleksandr Halushka? Ihre persönliche KFZ-Beratung in Bayern.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oleksandrhalushka.de/auto/uber-uns.html">
+    <meta property="og:locale" content="de_DE">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -94,7 +109,7 @@
             font-weight: 600;
             letter-spacing: 0.28em;
             text-transform: uppercase;
-            color: #e63946;
+            color: #3b7dd8;
             margin-bottom: 1rem;
             display: block;
         }
@@ -162,7 +177,7 @@
 
         .value-card i {
             font-size: 1.5rem;
-            color: #e63946;
+            color: #3b7dd8;
             margin-bottom: 1rem;
             display: block;
         }
@@ -233,7 +248,7 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: #e63946;
+            background: #3b7dd8;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -286,8 +301,8 @@
     <!-- Header -->
     <header class="global-header" id="mainHeader">
         <div class="logo">
-            <a href="../index.html"><img src="../assets/Photopea Logo Black.png" alt="AG"
-                    class="logo-icon">ALEX<span>GRUPP</span></a>
+            <a href="../index.html"><img src="../assets/Photopea Logo Black.png" alt="Oleksandr Halushka"
+                    class="logo-icon">OLEKSANDR<span>HALUSHKA</span></a>
         </div>
         <nav class="header-nav">
             <a href="index.html" data-i18n="nav-start">Startseite</a>
@@ -319,7 +334,7 @@
             </div>
             <span class="eyebrow" data-i18n="auto-about-eyebrow">Wer wir sind</span>
             <h1 data-i18n="auto-about-title">Beratung, der man vertrauen kann</h1>
-            <p data-i18n="auto-about-page-desc">Erfahren Sie mehr über das Team hinter AlexGruppe und was uns antreibt.</p>
+            <p data-i18n="auto-about-page-desc">Erfahren Sie mehr über das Team hinter Oleksandr Halushka und was uns antreibt.</p>
         </div>
     </section>
 
@@ -327,12 +342,12 @@
     <section class="about-intro">
         <div class="about-intro-inner">
             <div class="interactive-img-container" data-aos="fade-right">
-                <img src="../assets/auto_hero_v2.png" alt="AlexGruppe Beratungsteam" class="interactive-img">
+                <img src="../assets/auto_hero_v2.png" alt="Beratungsteam Oleksandr Halushka" class="interactive-img">
             </div>
             <div class="about-text" data-aos="fade-left">
                 <span class="eyebrow" data-i18n="auto-about-intro-eyebrow">Unsere Geschichte</span>
                 <h2 data-i18n="auto-about-intro-title">Gegründet aus Leidenschaft für Fahrzeuge 🇺🇦</h2>
-                <p data-i18n="auto-about-intro-p1">AlexGruppe entstand aus dem Wunsch, eine faire, ehrliche und kompetente Beratung rund um den Kauf und Verkauf von Fahrzeugen in Bayern anzubieten.</p>
+                <p data-i18n="auto-about-intro-p1">Oleksandr Halushka entstand aus dem Wunsch, eine faire, ehrliche und kompetente Beratung rund um den Kauf und Verkauf von Fahrzeugen in Bayern anzubieten.</p>
                 <p data-i18n="auto-about-intro-p2">Als ukrainisches Team mit bayerischem Qualitätsanspruch verbinden wir besonderen Fleiß und Leidenschaft mit klaren, ehrlichen Aussagen. Jeder Kunde verdient eine verständliche Einschätzung — ohne Fachchinesisch und ohne versteckte Kosten.</p>
                 <p data-i18n="auto-about-intro-p3">Heute begleiten wir Kunden aus der ganzen Region und sind bekannt für schnelle Reaktionszeiten, sorgfältige Recherche und persönliche Ansprechbarkeit.</p>
                 <a href="kontakt.html" class="btn btn-primary-auto"
@@ -396,8 +411,8 @@
             <div class="timeline-item" data-aos="fade-up" data-aos-delay="160">
                 <div class="timeline-dot">3</div>
                 <div class="timeline-content">
-                    <h4 data-i18n="auto-about-tl3-title">Expansion: AlexGruppe Bau</h4>
-                    <p data-i18n="auto-about-tl3-desc">Als logische Erweiterung eröffneten wir den Bereich Innenausbau — für den gleichen zuverlässigen Service in einem neuen Handwerk.</p>
+                    <h4 data-i18n="auto-about-tl3-title">Erweiterung um Innenausbau</h4>
+                    <p data-i18n="auto-about-tl3-desc">Als logische Erweiterung kam der Bereich Innenausbau dazu — für den gleichen zuverlässigen Service in einem neuen Handwerk.</p>
                 </div>
             </div>
             <div class="timeline-item" data-aos="fade-up" data-aos-delay="240">
@@ -413,19 +428,14 @@
     <!-- Footer -->
     <footer class="site-footer section" style="padding:40px 8%;">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap: wrap; gap: 1.5rem;">
-            <p style="margin:0;">&copy; 2026 AlexGruppe &middot; Alle Rechte vorbehalten</p>
+            <p style="margin:0;">&copy; 2026 Oleksandr Halushka &middot; Alle Rechte vorbehalten</p>
             <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
                 <div class="social-links" style="display:flex; gap: 1rem; align-items: center;">
-                    <a href="https://www.instagram.com/alexgruppee.auto/" target="_blank" rel="noopener"
+                    <a href="https://www.instagram.com/oleksandrhalushka.auto/" target="_blank" rel="noopener"
                         aria-label="Instagram"
                         style="color: rgba(255,255,255,0.4); font-size: 1.3rem; transition: color 0.2s;"
                         onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">
                         <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"
-                        style="color: rgba(255,255,255,0.4); font-size: 1.3rem; transition: color 0.2s;"
-                        onmouseover="this.style.color='#1877F2'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">
-                        <i class="fab fa-facebook-f"></i>
                     </a>
                 </div>
                 <div class="footer-links">
@@ -441,7 +451,25 @@
     <script src="../js/i18n.js"></script>
     <script src="../js/components/smart-header.js"></script>
     <script>
-        AOS.init({ duration: 650, easing: 'ease-out-cubic', once: true, offset: 80, startEvent: 'DOMContentLoaded' });
+        AOS.init({ duration: 700, easing: 'ease-out-quart', once: true, offset: 60, delay: 0 });
+    </script>
+
+    <script>
+    // Smooth page-exit transition
+    (function() {
+        document.addEventListener('click', function(e) {
+            var a = e.target.closest('a[href]');
+            if (!a) return;
+            var href = a.getAttribute('href');
+            if (!href || href.startsWith('#') || href.startsWith('javascript') ||
+                href.startsWith('http') || href.startsWith('mailto') ||
+                href.startsWith('tel') || a.target === '_blank') return;
+            e.preventDefault();
+            document.body.style.transition = 'opacity 0.12s ease';
+            document.body.style.opacity = '0';
+            setTimeout(function() { location.href = href; }, 120);
+        });
+    })();
     </script>
 </body>
 

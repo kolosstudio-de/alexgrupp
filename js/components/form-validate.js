@@ -1,5 +1,5 @@
 /**
- * AlexGruppe — German Form Validation
+ * Oleksandr Halushka — German Form Validation
  * Replaces browser's native English validation popups.
  * Adds red animated borders + German error messages below each invalid field.
  */

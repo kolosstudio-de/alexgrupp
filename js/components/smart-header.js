@@ -136,6 +136,14 @@ class SmartHeader {
                     document.body.style.overflow = '';
                 });
             });
+
+            // V-05: Inject empty lang switcher slot into mobile nav
+            // i18n.js v6 populates all .langSwitcher-clone divs automatically on DOMContentLoaded
+            if (!nav.querySelector('.langSwitcher-clone')) {
+                const mobileLang = document.createElement('div');
+                mobileLang.className = 'langSwitcher-clone';
+                nav.appendChild(mobileLang);
+            }
         }
     }
 }
@@ -145,8 +153,11 @@ class SmartHeader {
 // ==========================================
 class CookieBanner {
     constructor() {
-        this.bannerId = 'alexgrupp-cookie-banner';
-        this.storageKey = 'alexgrupp_cookie_consent';
+        this.bannerId = 'oh-cookie-banner';
+        this.storageKey = 'oh_cookie_consent';
+        // Compute root path dynamically so the Datenschutz link works on all pages
+        const depth = window.location.pathname.replace(/\/[^/]*$/, '').split('/').filter(Boolean).length;
+        this.rootPath = depth > 0 ? '../'.repeat(depth) : '';
         this.init();
     }
 
@@ -205,15 +216,16 @@ class CookieBanner {
     }
 
     render() {
+        const rootPath = this.rootPath;
         const banner = document.createElement('div');
         banner.id = this.bannerId;
         banner.innerHTML = `
-            <h3>🍪 Ihre Privatsphäre ist uns wichtig</h3>
-            <p>Wir verwenden Cookies zur Optimierung unserer Website. Mit „Alle akzeptieren" stimmen Sie allen Cookies zu. Sie können Ihre Auswahl jederzeit ändern.</p>
+            <h3 data-i18n="cookie-title">🍪 Ihre Privatsphäre ist uns wichtig</h3>
+            <p data-i18n="cookie-desc">Wir verwenden Cookies zur Optimierung unserer Website. Mit „Alle akzeptieren" stimmen Sie allen Cookies zu. Sie können Ihre Auswahl jederzeit ändern.</p>
             <div class="cookie-buttons">
-                <button class="btn-cookie-accept" id="btn-accept-all">Alle akzeptieren</button>
-                <button class="btn-cookie-necessary" id="btn-accept-necessary">Nur Notwendige</button>
-                <a href="../legal/datenschutz.html" class="cookie-more-link">Datenschutz</a>
+                <button class="btn-cookie-accept" id="btn-accept-all" data-i18n="cookie-accept">Alle akzeptieren</button>
+                <button class="btn-cookie-necessary" id="btn-accept-necessary" data-i18n="cookie-necessary">Nur Notwendige</button>
+                <a href="${rootPath}legal/datenschutz.html" class="cookie-more-link" data-i18n="cookie-privacy">Datenschutz</a>
             </div>
         `;
         document.body.appendChild(banner);

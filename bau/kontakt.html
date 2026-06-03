@@ -3,10 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
+    <script>
+        (function() {
+            const stored = localStorage.getItem('ag-lang');
+            if (stored) {
+                document.documentElement.setAttribute('lang', stored);
+            }
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt | AlexGruppe Innenausbau</title>
+    <title>Kontakt | Oleksandr Halushka · Innenausbau</title>
     <meta name="description"
-        content="AlexGruppe Innenausbau kontaktieren — Angebot anfragen, Terminvereinabrung, WhatsApp.">
+        content="Oleksandr Halushka · Innenausbau kontaktieren — Angebot anfragen, Terminvereinabrung, WhatsApp.">
+    <meta name="theme-color" content="#f8fafc">
+    <link rel="canonical" href="https://oleksandrhalushka.de/bau/kontakt.html">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kontakt | Innenausbau Oleksandr Halushka">
+    <meta property="og:description" content="Angebot anfragen — Fliesenarbeiten, Renovierung und Innenausbau in Bayern.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oleksandrhalushka.de/bau/kontakt.html">
+    <meta property="og:locale" content="de_DE">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -382,10 +398,10 @@
     </style>
 </head>
 
-<body>
+<body class="theme-bau bau-theme">
     <header class="global-header" id="mainHeader">
-        <div class="logo"><a href="../index.html"><img src="../assets/Photopea Logo Black.png" alt="AG"
-                    class="logo-icon logo-icon-bau">ALEX<span>GRUPP</span></a></div>
+        <div class="logo"><a href="../index.html"><img src="../assets/Photopea Logo Black.png" alt="Oleksandr Halushka"
+                    class="logo-icon">OLEKSANDR<span>HALUSHKA</span></a></div>
         <nav class="header-nav">
             <a href="index.html" data-i18n="nav-start">Startseite</a>
             <a href="leistungen.html" data-i18n="nav-services">Leistungen</a>
@@ -409,42 +425,42 @@
     <section class="page-hero">
         <div data-aos="fade-down" data-aos-duration="1000">
             <div class="breadcrumb">
-                <a href="index.html">Startseite</a>
+                <a href="index.html" data-i18n="nav-start">Startseite</a>
                 <span>›</span>
-                Kontakt & Angebot
+                <span data-i18n="nav-contact">Kontakt & Angebot</span>
             </div>
             <span class="eyebrow" data-i18n="bau-contact-eyebrow">Projekt besprechen</span>
             <h1 data-i18n="bau-contact-title">Wir bauen Ihre Vision</h1>
-            <p>Beschreiben Sie uns Ihr Bauvorhaben. Wir melden uns umgehend mit einem verbindlichen Angebot.</p>
+            <p data-i18n="bau-contact-desc">Beschreiben Sie uns Ihr Bauvorhaben. Wir melden uns umgehend mit einem verbindlichen Angebot.</p>
         </div>
     </section>
 
     <div class="contact-layout">
         <div class="contact-info" data-aos="fade-right">
-            <h2>Direkte Kontaktwege</h2>
-            <p>Wählen Sie den für Sie bequemsten Weg. Wir antworten innerhalb von einer Stunde.</p>
+            <h2 data-i18n="auto-kontakt-info-title">Direkte Kontaktwege</h2>
+            <p data-i18n="auto-kontakt-info-desc">Wählen Sie den für Sie bequemsten Weg. Wir antworten innerhalb von einer Stunde.</p>
             <div class="contact-method">
                 <div class="contact-method-icon"><i class="fas fa-phone"></i></div>
                 <div>
-                    <h4>Telefon</h4><a href="tel:+4916093409671">+49 160 9340 9671</a>
+                    <h4 data-i18n="auto-kontakt-tel-label">Telefon</h4><a href="tel:+4916093409671">+49 160 9340 9671</a>
                 </div>
             </div>
             <div class="contact-method">
                 <div class="contact-method-icon"><i class="fab fa-whatsapp"></i></div>
                 <div>
-                    <h4>WhatsApp</h4><a href="https://wa.me/4916093409671">Nachricht senden</a>
+                    <h4 data-i18n="auto-kontakt-wa-label">WhatsApp</h4><a href="https://wa.me/4916093409671" data-i18n="auto-kontakt-wa-text">Nachricht senden</a>
                 </div>
             </div>
             <div class="contact-method">
                 <div class="contact-method-icon"><i class="fas fa-envelope"></i></div>
                 <div>
-                    <h4>E-Mail</h4><a href="mailto:info@alexgruppee.de">info@alexgruppee.de</a>
+                    <h4 data-i18n="auto-kontakt-email-label">E-Mail</h4><a href="mailto:info@oleksandrhalushka.de">info@oleksandrhalushka.de</a>
                 </div>
             </div>
             <div class="contact-method">
                 <div class="contact-method-icon"><i class="fas fa-map-marker-alt"></i></div>
                 <div>
-                    <h4>Einsatzgebiet</h4>
+                    <h4 data-i18n="auto-kontakt-loc-label">Einsatzgebiet</h4>
                     <p>Industriestraße 22<br>93077 Bad Abbach, Deutschland</p>
                 </div>
             </div>
@@ -455,15 +471,15 @@
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2638.4!2d12.0432!3d48.9338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f9c4b7e83a34b%3A0x0!2sIndustriestr.%2022%2C%2093077%20Bad%20Abbach!5e0!3m2!1sde!2sde!4v1234567890"
                     width="100%" height="220" style="border:0; display:block;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
-                    title="AlexGruppe Innenausbau — Industriestr. 22, Bad Abbach">
+                    title="Oleksandr Halushka · Innenausbau — Industriestr. 22, Bad Abbach">
                 </iframe>
             </div>
         </div>
 
         <div data-aos="fade-left">
             <div class="contact-form-card">
-                <h3>Angebot anfragen</h3>
-                <p>Beschreiben Sie kurz Ihr Vorhaben — wir erstellen Ihnen ein kostenloses Angebot.</p>
+                <h3 data-i18n="bau-contact-title">Angebot anfragen</h3>
+                <p data-i18n="bau-contact-desc">Beschreiben Sie kurz Ihr Vorhaben — wir erstellen Ihnen ein kostenloses Angebot.</p>
                 <!-- Advanced Booking Form -->
                 <form action="#" method="POST" id="bookingFormBau">
                     <div aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;">
@@ -472,98 +488,90 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="firstName" class="required">Vorname</label>
+                            <label for="firstName" class="required" data-i18n="auto-form-firstName">Vorname</label>
                             <input type="text" id="firstName" name="firstName" placeholder="Max" required>
                         </div>
                         <div class="form-group">
-                            <label for="lastName" class="required">Nachname</label>
+                            <label for="lastName" class="required" data-i18n="auto-form-lastName">Nachname</label>
                             <input type="text" id="lastName" name="lastName" placeholder="Mustermann" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="email" class="required">E-Mail</label>
+                            <label for="email" class="required" data-i18n="auto-form-email">E-Mail</label>
                             <input type="email" id="email" name="email" placeholder="max@beispiel.de" required>
                         </div>
                         <div class="form-group" id="phoneGroup">
-                            <label for="phone">Handy / Telefon</label>
+                            <label for="phone" data-i18n="auto-form-phone">Handy / Telefon</label>
                             <input type="tel" id="phone" name="phone" placeholder="+49 151 1234567">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="contactPref" class="required">Bevorzugter Kontaktweg</label>
+                            <label for="contactPref" class="required" data-i18n="auto-form-contactPref">Bevorzugter Kontaktweg</label>
                             <select id="contactPref" name="contactPref" required onchange="togglePhoneReq(this)">
-                                <option value="email">E-Mail</option>
-                                <option value="wa_text">WhatsApp (Text)</option>
-                                <option value="wa_audio">WhatsApp (Audio)</option>
-                                <option value="phone">Telefonanruf</option>
+                                <option value="email" data-i18n="auto-form-cp-email">E-Mail</option>
+                                <option value="wa_text" data-i18n="auto-form-cp-wa-text">WhatsApp (Text)</option>
+                                <option value="wa_audio" data-i18n="auto-form-cp-wa-audio">WhatsApp (Audio)</option>
+                                <option value="phone" data-i18n="auto-form-cp-phone">Telefonanruf</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="topic" class="required">Gewünschte Leistung</label>
+                            <label for="topic" class="required" data-i18n="auto-form-topic">Gewünschte Leistung</label>
                             <select id="topic" name="topic" required>
-                                <option value="" disabled selected>Bitte wählen</option>
-                                <option value="fliesen">Exklusive Fliesenarbeiten</option>
-                                <option value="boden">Bodenverlegung</option>
-                                <option value="naturstein">Naturstein & Terrassen</option>
-                                <option value="feinarbeiten">Montage & Feinarbeiten</option>
-                                <option value="montage">Möbelmontage</option>
-                                <option value="other">Sonstiges</option>
+                                <option value="" disabled selected data-i18n="auto-form-topic-placeholder">Bitte wählen</option>
+                                <option value="fliesen" data-i18n="bau-svc1-title">Exklusive Fliesenarbeiten</option>
+                                <option value="boden" data-i18n="bau-svc2-title">Bodenverlegung</option>
+                                <option value="naturstein" data-i18n="bau-svc3-title">Naturstein & Terrassen</option>
+                                <option value="feinarbeiten" data-i18n="bau-svc4-title">Montage & Feinarbeiten</option>
+                                <option value="montage" data-i18n="bau-tl3-title">Möbelmontage</option>
+                                <option value="other" data-i18n="auto-form-topic-other">Sonstiges</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="prefDate" class="required">Wunschdatum Bemusterung/Start</label>
+                            <label for="prefDate" class="required" data-i18n="auto-form-prefDate">Wunschdatum Bemusterung/Start</label>
                             <input type="date" id="prefDate" name="prefDate" required>
                         </div>
                         <div class="form-group">
-                            <label for="prefTime">Uhrzeit Rückruf (optional)</label>
+                            <label for="prefTime" data-i18n="auto-form-prefTime">Uhrzeit Rückruf (optional)</label>
                             <select id="prefTime" name="prefTime">
-                                <option value="any">Egal</option>
-                                <option value="08-10">08:00 - 10:00 Uhr</option>
-                                <option value="10-12">10:00 - 12:00 Uhr</option>
-                                <option value="13-15">13:00 - 15:00 Uhr</option>
-                                <option value="15-17">15:00 - 17:00 Uhr</option>
+                                <option value="any" data-i18n="auto-form-time-any">Egal</option>
+                                <option value="08-10" data-i18n="auto-form-time-08-10">08:00 - 10:00 Uhr</option>
+                                <option value="10-12" data-i18n="auto-form-time-10-12">10:00 - 12:00 Uhr</option>
+                                <option value="13-15" data-i18n="auto-form-time-13-15">13:00 - 15:00 Uhr</option>
+                                <option value="15-17" data-i18n="auto-form-time-15-17">15:00 - 17:00 Uhr</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="message">Details zum Vorhaben</label>
+                        <label for="message" data-i18n="auto-form-message">Details zum Vorhaben</label>
                         <textarea id="message" name="message"
                             placeholder="Bitte beschreiben Sie kurz Ihr Projekt, z.B. Raumgröße, gewünschtes Material..."></textarea>
                     </div>
 
-                    <div class="form-group"
-                        style="flex-direction: row; gap: 12px; align-items: flex-start; margin-top: 1rem;">
-                        <input type="checkbox" id="gdpr" name="gdpr" required
-                            style="width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px;">
-                        <label for="gdpr"
-                            style="text-transform: none; letter-spacing: normal; font-weight: 400; line-height: 1.5; cursor: pointer;">
+                    <div class="checkbox-row">
+                        <input type="checkbox" id="gdpr" name="gdpr" required>
+                        <label for="gdpr">
                             Ich stimme zu, dass meine Daten gemäß der <a href="../legal/datenschutz.html"
                                 style="color:var(--color-bau-primary); text-decoration:underline;">Datenschutzerklärung</a>
                             verarbeitet werden. *
                         </label>
                     </div>
 
-                    <div class="form-group"
-                        style="flex-direction: row; gap: 12px; align-items: flex-start; margin-top: 0.75rem;">
-                        <input type="checkbox" id="newsletter" name="newsletter"
-                            style="width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px;">
-                        <label for="newsletter"
-                            style="text-transform: none; letter-spacing: normal; font-weight: 400; line-height: 1.5; cursor: pointer;">
-                            Ja, ich möchte mich für den Newsletter anmelden und <strong
-                                style="color:var(--color-bau-primary);">10%
-                                Rabatt</strong> auf den nächsten Service erhalten (Optional).
+                    <div class="checkbox-row" style="margin-top:0.75rem; margin-bottom:1.5rem;">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">
+                            Ja, ich möchte über neue Projekte, Tipps und Angebote informiert werden — <strong>Newsletter erscheint bald</strong> (optional).
                         </label>
                     </div>
 
-                    <button type="submit" class="form-submit btn-primary-bau" style="border:none;">Angebot kostenfrei
+                    <button type="submit" class="form-submit btn-primary-bau" style="border:none;" data-i18n="bau-cta-btn">Angebot kostenfrei
                         anfragen</button>
 
                     <script>
@@ -586,55 +594,45 @@
 
     <section class="faq-section">
         <div class="section-head" data-aos="fade-up">
-            <span class="eyebrow">Häufige Fragen</span>
-            <h2>Was Sie wissen möchten</h2>
+            <span class="eyebrow" data-i18n="bau-faq-eyebrow">Häufige Fragen</span>
+            <h2 data-i18n="bau-faq-title">Was Sie wissen möchten</h2>
         </div>
         <div class="faq-list">
             <div class="faq-item" data-aos="fade-up">
-                <h4>Erstellen Sie kostenlose Angebote?</h4>
-                <p>Ja, immer. Kostenvoranschläge sind für uns selbstverständlich und unverbindlich.</p>
+                <h4 data-i18n="bau-faq1-q">Erstellen Sie kostenlose Angebote?</h4>
+                <p data-i18n="bau-faq1-a">Ja, immer. Kostenvoranschläge sind für uns selbstverständlich und unverbindlich.</p>
             </div>
             <div class="faq-item" data-aos="fade-up">
-                <h4>Arbeiten Sie mit Festpreisen?</h4>
-                <p>Wir arbeiten sowohl mit Festpreisen als auch auf Stundenbasis, je nach Art und Umfang des Projekts und Ihren individuellen Wünschen.</p>
+                <h4 data-i18n="bau-faq2-q">Arbeiten Sie mit Festpreisen?</h4>
+                <p data-i18n="bau-faq2-a">Wir arbeiten sowohl mit Festpreisen als auch auf Stundenbasis, je nach Art und Umfang des Projekts und Ihren individuellen Wünschen.</p>
             </div>
             <div class="faq-item" data-aos="fade-up">
-                <h4>Wie lange dauert eine typische Badsanierung?</h4>
-                <p>Je nach Umfang zwischen 3 und 10 Werktagen. Genaue Planung erhalten Sie im Angebot.</p>
+                <h4 data-i18n="bau-faq3-q">Wie lange dauert eine typische Badsanierung?</h4>
+                <p data-i18n="bau-faq3-a">Je nach Umfang zwischen 3 und 10 Werktagen. Genaue Planung erhalten Sie im Angebot.</p>
             </div>
             <div class="faq-item" data-aos="fade-up">
-                <h4>Haben Sie Erfahrung mit Großformat-Fliesen?</h4>
-                <p>Ja, wir verlegen Fliesen bis 120×260 cm und haben spezielles Werkzeug dafür.</p>
+                <h4 data-i18n="bau-faq4-q">Haben Sie Erfahrung mit Großformat-Fliesen?</h4>
+                <p data-i18n="bau-faq4-a">Ja, wir verlegen Fliesen bis 120×260 cm und haben spezielles Werkzeug dafür.</p>
             </div>
         </div>
     </section>
 
     <footer class="site-footer section" style="padding:40px 8%;">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap: wrap; gap: 1.5rem;">
-            <p style="margin:0;">&copy; 2026 AlexGruppe &middot; Alle Rechte vorbehalten</p>
+            <p style="margin:0;">&copy; 2026 Oleksandr Halushka &middot; <span data-i18n="footer-copy">Alle Rechte vorbehalten</span></p>
             <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
                 <div class="social-links" style="display:flex; gap: 1rem; align-items: center;">
-                    <a href="https://www.instagram.com/alexgruppee.innenausbau/" target="_blank" rel="noopener"
+                    <a href="https://www.instagram.com/oleksandrhalushka.bau/" target="_blank" rel="noopener"
                         aria-label="Instagram" title="Instagram"
                         style="color: #94a3b8; font-size: 1.3rem; transition: color 0.2s;"
                         onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='#94a3b8'">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"
-                        title="Facebook" style="color: #94a3b8; font-size: 1.3rem; transition: color 0.2s;"
-                        onmouseover="this.style.color='#1877F2'" onmouseout="this.style.color='#94a3b8'">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"
-                        title="LinkedIn" style="color: #94a3b8; font-size: 1.3rem; transition: color 0.2s;"
-                        onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='#94a3b8'">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
                 </div>
                 <div class="footer-links">
-                    <a href="../index.html">Hauptseite</a>
-                    <a href="../legal/impressum.html">Impressum</a>
-                    <a href="../legal/datenschutz.html">Datenschutz</a>
+                    <a href="../index.html" data-i18n="footer-home">Hauptseite</a>
+                    <a href="../legal/impressum.html" data-i18n="footer-impressum">Impressum</a>
+                    <a href="../legal/datenschutz.html" data-i18n="footer-datenschutz">Datenschutz</a>
                 </div>
             </div>
         </div>
@@ -646,7 +644,25 @@
     <script src="../js/booking-system.js"></script>
     <script src="../js/components/form-validate.js"></script>
     <script>
-        AOS.init({ duration: 650, easing: 'ease-out-cubic', once: true, offset: 80, startEvent: 'DOMContentLoaded' });
+        AOS.init({ duration: 700, easing: 'ease-out-quart', once: true, offset: 60, delay: 0 });
+    </script>
+
+    <script>
+    // Smooth page-exit transition
+    (function() {
+        document.addEventListener('click', function(e) {
+            var a = e.target.closest('a[href]');
+            if (!a) return;
+            var href = a.getAttribute('href');
+            if (!href || href.startsWith('#') || href.startsWith('javascript') ||
+                href.startsWith('http') || href.startsWith('mailto') ||
+                href.startsWith('tel') || a.target === '_blank') return;
+            e.preventDefault();
+            document.body.style.transition = 'opacity 0.12s ease';
+            document.body.style.opacity = '0';
+            setTimeout(function() { location.href = href; }, 120);
+        });
+    })();
     </script>
 </body>
 

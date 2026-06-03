@@ -1,9 +1,9 @@
 /**
- * AlexGruppe — Booking System Handler
+ * Oleksandr Halushka — Booking System Handler
  * Handles form submission to Google Apps Script (GAS).
  */
 
-const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyvRINsLOaXopVX9vns-bLzcAEBoXMJp7SLSc_v7udnk0GDa8mzcoUCvFsNVJcLWwXbWA/exec';
+const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycby80l8o7Th7ZtUE2rBZ7bLdvv8-wMSxJAbhX8AHjBe3izeDll7KavfIAMhVCdL9E0cW4Q/exec';
 const GAS_REQUEST_TIMEOUT_MS = 10000;
 
 const ERROR_MESSAGES = {

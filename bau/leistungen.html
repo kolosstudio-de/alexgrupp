@@ -3,10 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
+    <script>
+        (function() {
+            const stored = localStorage.getItem('ag-lang');
+            if (stored) {
+                document.documentElement.setAttribute('lang', stored);
+            }
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leistungen Innenausbau | AlexGruppe</title>
+    <title>Leistungen Innenausbau | Oleksandr Halushka</title>
     <meta name="description"
-        content="Alle Bauleistungen von AlexGruppe — Fliesenarbeiten, Renovierung, Umzug, Möbelmontage und mehr.">
+        content="Alle Bauleistungen von Oleksandr Halushka — Fliesenarbeiten, Renovierung, Umzug, Möbelmontage und mehr.">
+    <meta name="theme-color" content="#f8fafc">
+    <link rel="canonical" href="https://oleksandrhalushka.de/bau/leistungen.html">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Leistungen | Innenausbau Oleksandr Halushka">
+    <meta property="og:description" content="Exklusive Fliesenarbeiten, Bodenverlegung, Naturstein und Feinarbeiten in Bayern.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oleksandrhalushka.de/bau/leistungen.html">
+    <meta property="og:locale" content="de_DE">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -185,7 +201,7 @@
 
         .cta-band {
             padding: 80px 8%;
-            background: white;
+            background: #0f172a;
             border-top: 4px solid #d97706;
             text-align: center;
         }
@@ -198,19 +214,20 @@
         }
 
         .cta-band p {
-            color: rgba(217, 119, 6, 0.85);
+            color: rgba(255, 255, 255, 0.7);
             margin-bottom: 2rem;
         }
 
         .cta-band .btn {
-            background: #fff;
-
-            border-color: #fff;
+            background: #f59e0b;
+            color: #0f172a;
+            border-color: #f59e0b;
             font-weight: 700;
         }
 
         .cta-band .btn:hover {
-            background: #f0f0f0;
+            background: #d97706;
+            border-color: #d97706;
         }
 
         .site-footer {
@@ -229,10 +246,10 @@
     </style>
 </head>
 
-<body>
+<body class="theme-bau bau-theme">
     <header class="global-header" id="mainHeader">
-        <div class="logo"><a href="../index.html"><img src="../assets/Photopea Logo Black.png" alt="AG"
-                    class="logo-icon logo-icon-bau">ALEX<span>GRUPP</span></a></div>
+        <div class="logo"><a href="../index.html"><img src="../assets/Photopea Logo Black.png" alt="Oleksandr Halushka"
+                    class="logo-icon">OLEKSANDR<span>HALUSHKA</span></a></div>
         <nav class="header-nav">
             <a href="index.html" data-i18n="nav-start">Startseite</a>
             <a href="leistungen.html" class="active" data-i18n="nav-services">Leistungen</a>
@@ -260,9 +277,9 @@
                 <span>›</span>
                 Leistungen
             </div>
-            <span class="eyebrow" data-i18n="bau-services-eyebrow">Unsere Expertise</span>
-            <h1 data-i18n="bau-services-title">Hochwertiger Innenausbau</h1>
-            <p>Ob Renovierung, Trockenbau oder Akustiklösungen — wir realisieren Ihr Projekt termingerecht.</p>
+            <span class="eyebrow" data-i18n="bau-leist-eyebrow">Unsere Expertise</span>
+            <h1 data-i18n="bau-leist-title">Hochwertiger Innenausbau</h1>
+            <p data-i18n="bau-leist-desc">Ob Renovierung, Trockenbau oder Akustiklösungen — wir realisieren Ihr Projekt termingerecht.</p>
         </div>
     </section>
 
@@ -271,35 +288,35 @@
         <div class="service-category" data-aos="fade-up">
             <div class="category-header">
                 <div class="category-icon"><i class="fas fa-gem"></i></div>
-                <h2>Exklusive Fliesenarbeiten</h2>
+                <h2 data-i18n="bau-cat1-title">Exklusive Fliesenarbeiten</h2>
             </div>
             <div class="service-items">
                 <div class="service-item" data-modal="modal-fliesen" style="cursor: pointer;">
                     <div class="service-item-icon"><i class="fas fa-shower"></i></div>
                     <div>
-                        <h4>Abdichtungsarbeiten</h4>
-                        <p>Professionelle Abdichtungen für Nasszellen nach neuesten Standards.</p>
+                        <h4 data-i18n="bau-item-abdichtung-title">Abdichtungsarbeiten</h4>
+                        <p data-i18n="bau-item-abdichtung-desc">Professionelle Abdichtungen für Nasszellen nach neuesten Standards.</p>
                     </div>
                 </div>
                 <div class="service-item" data-modal="modal-fliesen" style="cursor: pointer;">
                     <div class="service-item-icon"><i class="fas fa-border-all"></i></div>
                     <div>
-                        <h4>Großformate</h4>
-                        <p>Nahtlose Optik durch die Verlegung von XXL-Fliesen und Keramikplatten.</p>
+                        <h4 data-i18n="bau-item-grossformat-title">Großformate</h4>
+                        <p data-i18n="bau-item-grossformat-desc">Nahtlose Optik durch die Verlegung von XXL-Fliesen und Keramikplatten.</p>
                     </div>
                 </div>
                 <div class="service-item" data-modal="modal-fliesen" style="cursor: pointer;">
                     <div class="service-item-icon"><i class="fas fa-cut"></i></div>
                     <div>
-                        <h4>45-Grad-Gehrungsschnitte</h4>
-                        <p>Exklusiver Jollyschnitt für makellose Kanten ganz ohne Profilschienen.</p>
+                        <h4 data-i18n="bau-item-gehrung-title">45-Grad-Gehrungsschnitte</h4>
+                        <p data-i18n="bau-item-gehrung-desc">Exklusiver Jollyschnitt für makellose Kanten ganz ohne Profilschienen.</p>
                     </div>
                 </div>
                 <div class="service-item" data-modal="modal-fliesen" style="cursor: pointer;">
                     <div class="service-item-icon"><i class="fas fa-link"></i></div>
                     <div>
-                        <h4>Spezialanfertigungen</h4>
-                        <p>Verdeckte Wandhaken, Epoxidharzfugen und Abwicklung von Großprojekten (1000+ m²).</p>
+                        <h4 data-i18n="bau-item-spezial-title">Spezialanfertigungen</h4>
+                        <p data-i18n="bau-item-spezial-desc">Verdeckte Wandhaken, Epoxidharzfugen und Abwicklung von Großprojekten (1000+ m²).</p>
                     </div>
                 </div>
             </div>
@@ -308,21 +325,21 @@
         <div class="service-category" data-aos="fade-up">
             <div class="category-header">
                 <div class="category-icon"><i class="fas fa-layer-group"></i></div>
-                <h2>Bodenverlegung</h2>
+                <h2 data-i18n="bau-cat2-title">Bodenverlegung</h2>
             </div>
             <div class="service-items">
                 <div class="service-item" data-modal="modal-boden" style="cursor: pointer;">
                     <div class="service-item-icon"><i class="fas fa-water"></i></div>
                     <div>
-                        <h4>Epoxidharz-Bodenbeschichtung</h4>
-                        <p>Fugenlose, hochbelastbare und moderne Gießböden für Wohn- und Industriebereiche.</p>
+                        <h4 data-i18n="bau-item-epoxy-title">Epoxidharz-Bodenbeschichtung</h4>
+                        <p data-i18n="bau-item-epoxy-desc">Fugenlose, hochbelastbare und moderne Gießböden für Wohn- und Industriebereiche.</p>
                     </div>
                 </div>
                 <div class="service-item" data-modal="modal-boden" style="cursor: pointer;">
                     <div class="service-item-icon"><i class="fas fa-bars"></i></div>
                     <div>
-                        <h4>Laminat & Vinyl</h4>
-                        <p>Präzise Verlegung von hochwertigen Bodenbelägen inklusive Trittschalldämmung.</p>
+                        <h4 data-i18n="bau-item-laminat-title">Laminat & Vinyl</h4>
+                        <p data-i18n="bau-item-laminat-desc">Präzise Verlegung von hochwertigen Bodenbelägen inklusive Trittschalldämmung.</p>
                     </div>
                 </div>
             </div>
@@ -331,21 +348,21 @@
         <div class="service-category" data-aos="fade-up">
             <div class="category-header">
                 <div class="category-icon"><i class="fas fa-cubes"></i></div>
-                <h2>Naturstein & Terrassen</h2>
+                <h2 data-i18n="bau-cat3-title">Naturstein & Terrassen</h2>
             </div>
             <div class="service-items">
                 <div class="service-item" data-modal="modal-naturstein" style="cursor: pointer;">
                     <div class="service-item-icon"><i class="fas fa-gem"></i></div>
                     <div>
-                        <h4>Natursteinverlegung</h4>
-                        <p>Bearbeitung und Verlegung unterschiedlicher, hochwertiger Natursteine.</p>
+                        <h4 data-i18n="bau-item-naturstein-title">Natursteinverlegung</h4>
+                        <p data-i18n="bau-item-naturstein-desc">Bearbeitung und Verlegung unterschiedlicher, hochwertiger Natursteine.</p>
                     </div>
                 </div>
                 <div class="service-item" data-modal="modal-naturstein" style="cursor: pointer;">
                     <div class="service-item-icon"><i class="fas fa-sun"></i></div>
                     <div>
-                        <h4>Designer-Terrassen</h4>
-                        <p>Individuelle Terrassenkonzepte, fachgerechte Entwässerung und perfektes Finish.</p>
+                        <h4 data-i18n="bau-item-terrasse-title">Designer-Terrassen</h4>
+                        <p data-i18n="bau-item-terrasse-desc">Individuelle Terrassenkonzepte, fachgerechte Entwässerung und perfektes Finish.</p>
                     </div>
                 </div>
             </div>
@@ -354,28 +371,28 @@
         <div class="service-category" data-aos="fade-up">
             <div class="category-header">
                 <div class="category-icon"><i class="fas fa-tools"></i></div>
-                <h2>Montage & Feinarbeiten</h2>
+                <h2 data-i18n="bau-cat4-title">Montage & Feinarbeiten</h2>
             </div>
             <div class="service-items">
                 <div class="service-item" data-modal="modal-feinarbeiten" style="cursor: pointer;">
                     <div class="service-item-icon"><i class="fas fa-door-open"></i></div>
                     <div>
-                        <h4>Türeinbau</h4>
-                        <p>Exakte Montage von Innentüren, Zargen und hochwertigen Beschlägen.</p>
+                        <h4 data-i18n="bau-item-tuer-title">Türeinbau</h4>
+                        <p data-i18n="bau-item-tuer-desc">Exakte Montage von Innentüren, Zargen und hochwertigen Beschlägen.</p>
                     </div>
                 </div>
                 <div class="service-item" data-modal="modal-feinarbeiten" style="cursor: pointer;">
                     <div class="service-item-icon"><i class="fas fa-ruler-horizontal"></i></div>
                     <div>
-                        <h4>Sockelleisten</h4>
-                        <p>Maßgeschneiderte Anbringung von Sockelleisten für den perfekten Wandabschluss.</p>
+                        <h4 data-i18n="bau-item-sockel-title">Sockelleisten</h4>
+                        <p data-i18n="bau-item-sockel-desc">Maßgeschneiderte Anbringung von Sockelleisten für den perfekten Wandabschluss.</p>
                     </div>
                 </div>
                 <div class="service-item" data-modal="modal-feinarbeiten" style="cursor: pointer;">
                     <div class="service-item-icon"><i class="fas fa-stairs"></i></div>
                     <div>
-                        <h4>Designer-Treppenverlegung</h4>
-                        <p>Exklusive Belegung von Treppenstufen mit Fliesen oder Naturstein.</p>
+                        <h4 data-i18n="bau-item-treppe-title">Designer-Treppenverlegung</h4>
+                        <p data-i18n="bau-item-treppe-desc">Exklusive Belegung von Treppenstufen mit Fliesen oder Naturstein.</p>
                     </div>
                 </div>
             </div>
@@ -384,33 +401,31 @@
     </main>
 
     <section class="cta-band">
-        <h2>Interesse an einem Angebot?</h2>
-        <p>Kontaktieren Sie uns — kostenlose Beratung und verbindlicher Kostenvoranschlag.</p>
-        <a href="kontakt.html" class="btn">Jetzt anfragen</a>
+        <h2 data-i18n="bau-leist-cta-title">Interesse an einem Angebot?</h2>
+        <p data-i18n="bau-leist-cta-desc">Kontaktieren Sie uns — kostenlose Beratung und verbindlicher Kostenvoranschlag.</p>
+        <a href="kontakt.html" class="btn" data-i18n="bau-leist-cta-btn">Jetzt anfragen</a>
     </section>
     <!-- Modals -->
     <div class="ag-modal-overlay" id="modal-fliesen">
         <div class="ag-modal-content">
             <div class="ag-modal-close"><i class="fas fa-times"></i></div>
             <div class="ag-modal-header">
-                <h3>Exklusive Fliesenarbeiten</h3>
+                <h3 data-i18n="bau-svc1-title">Exklusive Fliesenarbeiten</h3>
             </div>
             <div class="ag-modal-body">
-                <p>Wir realisieren individuelle und anspruchsvolle Fliesenprojekte jeder Größenordnung.</p>
+                <p data-i18n="bau-services-desc">Von der Einzelfliese bis zur kompletten Raumsanierung — wir setzen Ihre Vorstellungen um.</p>
                 <ul>
-                    <li><strong>Abdichtungsarbeiten</strong> nach aktuellen Standards</li>
-                    <li>Verlegung von <strong>Großformaten</strong> für nahtlose Optik</li>
-                    <li>Besondere <strong>45-Grad-Gehrungsschnitte</strong> (Jollyschnitt) für makellose Kanten</li>
-                    <li>Einbau von <strong>verdeckten Wandhaken</strong> (z.B. für Handtücher in der Dusche)</li>
-                    <li>Hochbelastbare <strong>Epoxidharzfugen</strong></li>
-                    <li>Übernahme von <strong>Großprojekten</strong> (z.B. 1000+ m²)</li>
+                    <li><strong data-i18n="bau-item-abdichtung-title">Abdichtungsarbeiten</strong>: <span data-i18n="bau-item-abdichtung-desc">Professionelle Abdichtungen für Nasszellen nach neuesten Standards.</span></li>
+                    <li><strong data-i18n="bau-item-grossformat-title">Großformate</strong>: <span data-i18n="bau-item-grossformat-desc">Nahtlose Optik durch die Verlegung von XXL-Fliesen und Keramikplatten.</span></li>
+                    <li><strong data-i18n="bau-item-gehrung-title">45-Grad-Gehrungsschnitte</strong>: <span data-i18n="bau-item-gehrung-desc">Exklusiver Jollyschnitt für makellose Kanten ganz ohne Profilschienen.</span></li>
+                    <li><strong data-i18n="bau-item-spezial-title">Spezialanfertigungen</strong>: <span data-i18n="bau-item-spezial-desc">Verdeckte Wandhaken, Epoxidharzfugen und Abwicklung von Großprojekten (1000+ m²).</span></li>
                 </ul>
                 <p style="font-size:0.85rem; color:#64748b; margin-top:20px;">
-                    <em>Hinweis: Für ein detailliertes Angebot zu Ihrem Bauvorhaben, füllen Sie bitte unser Kontaktformular aus. Wir melden uns umgehend bei Ihnen für eine präzise Kalkulation.</em>
+                    <em data-i18n="bau-contact-desc">Beschreiben Sie kurz Ihr Vorhaben — wir melden uns innerhalb von 24 Stunden mit ersten Vorschlägen.</em>
                 </p>
             </div>
             <div class="ag-modal-action">
-                <a href="kontakt.html" class="btn btn-primary-bau">Projekt anfragen</a>
+                <a href="kontakt.html" class="btn btn-primary-bau" data-i18n="bau-cta-btn">Projekt anfragen</a>
             </div>
         </div>
     </div>
@@ -419,21 +434,20 @@
         <div class="ag-modal-content">
             <div class="ag-modal-close"><i class="fas fa-times"></i></div>
             <div class="ag-modal-header">
-                <h3>Bodenverlegung</h3>
+                <h3 data-i18n="bau-svc2-title">Bodenverlegung</h3>
             </div>
             <div class="ag-modal-body">
-                <p>Der richtige Boden prägt das Raumgefühl. Wir verlegen fachgerecht und sauber:</p>
+                <p data-i18n="bau-svc2-desc">Von hochwertigem Laminat bis hin zu fugenlosen Epoxidharzböden.</p>
                 <ul>
-                    <li>Hochwertiges <strong>Laminat</strong> und Vinyl</li>
-                    <li>Fugenlose <strong>Epoxidharz-Bodenbeschichtungen</strong> für moderne, pflegeleichte Industrie- oder Wohnräume</li>
-                    <li>Untergrundvorbereitung und Trittschalldämmung</li>
+                    <li><strong data-i18n="bau-item-epoxy-title">Epoxidharz-Bodenbeschichtung</strong>: <span data-i18n="bau-item-epoxy-desc">Fugenlose, hochbelastbare und moderne Gießböden für Wohn- und Industriebereiche.</span></li>
+                    <li><strong data-i18n="bau-item-laminat-title">Laminat & Vinyl</strong>: <span data-i18n="bau-item-laminat-desc">Präzise Verlegung von hochwertigen Bodenbelägen inklusive Trittschalldämmung.</span></li>
                 </ul>
                 <p style="font-size:0.85rem; color:#64748b; margin-top:20px;">
-                    <em>Hinweis: Für ein detailliertes Angebot zu Ihrem Bauvorhaben, füllen Sie bitte unser Kontaktformular aus. Wir melden uns umgehend bei Ihnen für eine präzise Kalkulation.</em>
+                    <em data-i18n="bau-contact-desc">Beschreiben Sie kurz Ihr Vorhaben — wir melden uns innerhalb von 24 Stunden mit ersten Vorschlägen.</em>
                 </p>
             </div>
             <div class="ag-modal-action">
-                <a href="kontakt.html" class="btn btn-primary-bau">Projekt anfragen</a>
+                <a href="kontakt.html" class="btn btn-primary-bau" data-i18n="bau-cta-btn">Projekt anfragen</a>
             </div>
         </div>
     </div>
@@ -442,21 +456,20 @@
         <div class="ag-modal-content">
             <div class="ag-modal-close"><i class="fas fa-times"></i></div>
             <div class="ag-modal-header">
-                <h3>Naturstein & Terrassen</h3>
+                <h3 data-i18n="bau-svc3-title">Naturstein & Terrassen</h3>
             </div>
             <div class="ag-modal-body">
-                <p>Naturstein verleiht jedem Bereich eine zeitlose Eleganz und Beständigkeit.</p>
+                <p data-i18n="bau-svc3-desc">Designer-Terrassen und Steinverlegung für den Innen- und Außenbereich.</p>
                 <ul>
-                    <li>Verlegung unterschiedlichster Arten von <strong>Natursteinen</strong></li>
-                    <li>Gestaltung und Konstruktion von <strong>Designer-Terrassen</strong></li>
-                    <li>Präzise Anpassung an örtliche Gegebenheiten (Gefälle, Entwässerung)</li>
+                    <li><strong data-i18n="bau-item-naturstein-title">Natursteinverlegung</strong>: <span data-i18n="bau-item-naturstein-desc">Bearbeitung und Verlegung unterschiedlicher, hochwertiger Natursteine.</span></li>
+                    <li><strong data-i18n="bau-item-terrasse-title">Designer-Terrassen</strong>: <span data-i18n="bau-item-terrasse-desc">Individuelle Terrassenkonzepte, fachgerechte Entwässerung und perfektes Finish.</span></li>
                 </ul>
                 <p style="font-size:0.85rem; color:#64748b; margin-top:20px;">
-                    <em>Hinweis: Für ein detailliertes Angebot zu Ihrem Bauvorhaben, füllen Sie bitte unser Kontaktformular aus. Wir melden uns umgehend bei Ihnen für eine präzise Kalkulation.</em>
+                    <em data-i18n="bau-contact-desc">Beschreiben Sie kurz Ihr Vorhaben — wir melden uns innerhalb von 24 Stunden mit ersten Vorschlägen.</em>
                 </p>
             </div>
             <div class="ag-modal-action">
-                <a href="kontakt.html" class="btn btn-primary-bau">Projekt anfragen</a>
+                <a href="kontakt.html" class="btn btn-primary-bau" data-i18n="bau-cta-btn">Projekt anfragen</a>
             </div>
         </div>
     </div>
@@ -465,41 +478,40 @@
         <div class="ag-modal-content">
             <div class="ag-modal-close"><i class="fas fa-times"></i></div>
             <div class="ag-modal-header">
-                <h3>Montage & Feinarbeiten</h3>
+                <h3 data-i18n="bau-svc4-title">Montage & Feinarbeiten</h3>
             </div>
             <div class="ag-modal-body">
-                <p>Die Qualität eines Innenausbaus zeigt sich im Detail. Wir übernehmen erstklassige Feinarbeiten:</p>
+                <p data-i18n="bau-svc4-desc">Türeinbau, Sockelleisten und exklusive Designer-Treppenverlegung.</p>
                 <ul>
-                    <li>Fachgerechte <strong>Türenmontage</strong></li>
-                    <li>Maßgefertigte Anbringung von <strong>Sockelleisten</strong></li>
-                    <li>Präzise und elegante <strong>Designer-Treppenverlegung</strong></li>
-                    <li>Kleinere Ausbesserungen und Anpassungsarbeiten</li>
+                    <li><strong data-i18n="bau-item-tuer-title">Türeinbau</strong>: <span data-i18n="bau-item-tuer-desc">Exakte Montage von Innentüren, Zargen und hochwertigen Beschlägen.</span></li>
+                    <li><strong data-i18n="bau-item-sockel-title">Sockelleisten</strong>: <span data-i18n="bau-item-sockel-desc">Maßgeschneiderte Anbringung von Sockelleisten für den perfekten Wandabschluss.</span></li>
+                    <li><strong data-i18n="bau-item-treppe-title">Designer-Treppenverlegung</strong>: <span data-i18n="bau-item-treppe-desc">Exklusive Belegung von Treppenstufen mit Fliesen oder Naturstein.</span></li>
                 </ul>
                 <p style="font-size:0.85rem; color:#64748b; margin-top:20px;">
-                    <em>Hinweis: Für ein detailliertes Angebot zu Ihrem Bauvorhaben, füllen Sie bitte unser Kontaktformular aus. Wir melden uns umgehend bei Ihnen für eine präzise Kalkulation.</em>
+                    <em data-i18n="bau-contact-desc">Beschreiben Sie kurz Ihr Vorhaben — wir melden uns innerhalb von 24 Stunden mit ersten Vorschlägen.</em>
                 </p>
             </div>
             <div class="ag-modal-action">
-                <a href="kontakt.html" class="btn btn-primary-bau">Projekt anfragen</a>
+                <a href="kontakt.html" class="btn btn-primary-bau" data-i18n="bau-cta-btn">Projekt anfragen</a>
             </div>
         </div>
     </div>
     <!-- Footer -->
     <footer class="site-footer section" style="padding:40px 8%;">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap: wrap; gap: 1.5rem;">
-            <p style="margin:0;">&copy; 2026 AlexGruppe &middot; Alle Rechte vorbehalten</p>
+            <p style="margin:0;">&copy; 2026 Oleksandr Halushka &middot; <span data-i18n="footer-copy">Alle Rechte vorbehalten</span></p>
             <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
                 <div class="social-links" style="display:flex; gap: 1rem; align-items: center;">
-                    <a href="https://www.instagram.com/alexgruppee.innenausbau/" target="_blank" rel="noopener"
+                    <a href="https://www.instagram.com/oleksandrhalushka.bau/" target="_blank" rel="noopener"
                         aria-label="Instagram" style="color: #94a3b8; font-size: 1.3rem; transition: color 0.2s;"
                         onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='#94a3b8'">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
                 <div class="footer-links">
-                    <a href="../index.html">Hauptseite</a>
-                    <a href="../legal/impressum.html">Impressum</a>
-                    <a href="../legal/datenschutz.html">Datenschutz</a>
+                    <a href="../index.html" data-i18n="footer-home">Hauptseite</a>
+                    <a href="../legal/impressum.html" data-i18n="footer-impressum">Impressum</a>
+                    <a href="../legal/datenschutz.html" data-i18n="footer-datenschutz">Datenschutz</a>
                 </div>
             </div>
         </div>
@@ -510,7 +522,25 @@
     <script src="../js/components/smart-header.js"></script>
     <script src="../js/components/modal.js"></script>
     <script>
-        AOS.init({ duration: 650, easing: 'ease-out-cubic', once: true, offset: 80, startEvent: 'DOMContentLoaded' });
+        AOS.init({ duration: 700, easing: 'ease-out-quart', once: true, offset: 60, delay: 0 });
+    </script>
+
+    <script>
+    // Smooth page-exit transition
+    (function() {
+        document.addEventListener('click', function(e) {
+            var a = e.target.closest('a[href]');
+            if (!a) return;
+            var href = a.getAttribute('href');
+            if (!href || href.startsWith('#') || href.startsWith('javascript') ||
+                href.startsWith('http') || href.startsWith('mailto') ||
+                href.startsWith('tel') || a.target === '_blank') return;
+            e.preventDefault();
+            document.body.style.transition = 'opacity 0.12s ease';
+            document.body.style.opacity = '0';
+            setTimeout(function() { location.href = href; }, 120);
+        });
+    })();
     </script>
 </body>
 

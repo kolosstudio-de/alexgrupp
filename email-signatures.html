@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Signaturen — Oleksandr Halushka</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8fafc;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      color: #0f172a;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #1e293b;
+      margin: 0 0 8px 0;
+    }
+    .header p {
+      font-size: 15px;
+      color: #64748b;
+      margin: 0;
+    }
+    .signature-section {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
+      border: 1px solid #e2e8f0;
+    }
+    .label {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      color: #334155;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 10px;
+    }
+    .preview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 900px) {
+      .preview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .preview-box {
+      border-radius: 8px;
+      padding: 24px;
+      border: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .preview-box.light {
+      background: #ffffff;
+    }
+    .preview-box.dark {
+      background: #151515;
+    }
+    
+    /* ── Precise simulated dark mode style overrides ── */
+    .preview-box.dark td[style*="border-top"] {
+      border-color: #334155 !important;
+    }
+    .preview-box.dark table tr td a[style*="color:#0f172a"] {
+      color: #f1f5f9 !important;
+    }
+    .preview-box.dark table tr td div[style*="color:#0f172a"] {
+      color: #ffffff !important;
+    }
+    .preview-box.dark table tr td span[style*="color:#334155"] {
+      color: #cbd5e1 !important;
+    }
+    .preview-box.dark table tr td span[style*="color:#0f172a"] {
+      color: #f1f5f9 !important;
+    }
+    .preview-box.dark table tr td div[style*="color:#94a3b8"] {
+      color: #64748b !important;
+    }
+    .preview-box.dark table tr td a[style*="color:#64748b"] {
+      color: #94a3b8 !important;
+    }
+    .preview-box.dark table tr td a[style*="color:#94a3b8"] {
+      color: #475569 !important;
+    }
+
+    .preview-title {
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #94a3b8;
+      margin-bottom: 8px;
+    }
+    .copy-btn {
+      background: #3b7dd8;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.1s;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .copy-btn:hover { background: #2b63b0; }
+    .copy-btn:active { transform: scale(0.98); }
+    .copy-btn.bau-btn { background: #d97706; }
+    .copy-btn.bau-btn:hover { background: #b45309; }
+    .copy-btn.univ-btn { background: #475569; }
+    .copy-btn.univ-btn:hover { background: #334155; }
+  </style>
+  <script>
+    function copySignature(tableId) {
+      var table = document.getElementById(tableId);
+      var htmlBlob = new Blob([table.outerHTML], { type: 'text/html' });
+      var textBlob = new Blob([table.innerText], { type: 'text/plain' });
+      navigator.clipboard.write([new ClipboardItem({
+        'text/html': htmlBlob,
+        'text/plain': textBlob
+      })]).then(function() {
+        alert("Подпись скопирована! Вставьте в Gmail (Cmd+V / Ctrl+V).");
+      }).catch(function() {
+        alert("Ошибка копирования. Выделите карточку вручную и скопируйте.");
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Email Signaturen — Oleksandr Halushka</h1>
+    <p>Премиум Компактный формат (Golden Ratio, 440px) — Бесшовный дизайн на прозрачном фоне</p>
+  </div>
+
+  <!-- SIGNATURE 1 — AUTO -->
+  <div class="signature-section">
+    <div class="label">🔵 Signatur 1 — AUTO (Kfz-Kaufberatung)</div>
+    <div class="preview-grid">
+      <div>
+        <div class="preview-title">☀️ Light Mode Preview</div>
+        <div class="preview-box light">
+          <table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;max-width:440px;width:100%;border:0;" id="sig-auto-table">
+  <tr>
+    <td style="padding:10px 0;">
+      <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+        <tr>
+          <td>
+
+            <!-- NAME + LOGO -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+              <tr>
+                <td style="vertical-align:top;">
+                  <div style="font-size:20px;font-weight:800;color:#0f172a;letter-spacing:-0.4px;line-height:1.2;">Oleksandr Halushka</div>
+                  <div style="font-size:10px;color:#3b7dd8;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-top:4px;">Kfz-Kaufberatung · Bayern</div>
+                  <div style="font-size:9px;color:#94a3b8;margin-top:2px;">Einzelunternehmer</div>
+                </td>
+                <td style="vertical-align:top;text-align:right;width:34px;padding-left:10px;">
+                  <img src="https://files.catbox.moe/aln5jw.png" width="34" alt="OH Monogram Logo" style="display:inline-block;border:0;width:34px;height:auto;" />
+                </td>
+              </tr>
+            </table>
+
+            <!-- DIVIDER -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;margin-top:12px;margin-bottom:12px;">
+              <tr>
+                <td style="border-top:1px solid #cbd5e1;height:1px;"></td>
+              </tr>
+            </table>
+
+            <!-- CONTACTS + HANDWRITTEN SIG -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+              <tr>
+                <td style="vertical-align:top;width:290px;">
+                  <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Telefon</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="tel:+4916093409671" style="color:#0f172a;text-decoration:none;font-size:12px;font-weight:500;">+49 160 9340 9671</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">WhatsApp</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="https://wa.me/4916093409671" style="color:#3b7dd8;text-decoration:none;font-size:12px;font-weight:500;">Nachricht senden →</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">E-Mail</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="mailto:info@oleksandrhalushka.de" style="color:#0f172a;text-decoration:none;font-size:12px;font-weight:500;">info@oleksandrhalushka.de</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Adresse</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><span style="color:#334155;font-size:12px;">Industriestraße 22, 93077&nbsp;Bad&nbsp;Abbach</span></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:0;font-size:9px;color:#94a3b8;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Instagram</td>
+    <td style="vertical-align:middle;padding-bottom:0;font-family:Arial,sans-serif;line-height:16px;"><a href="https://www.instagram.com/oleksandrhalushka.auto/" style="color:#3b7dd8;text-decoration:none;font-size:12px;">@oleksandrhalushka.auto</a></td>
+  </tr>
+                  </table>
+                </td>
+                <td style="vertical-align:bottom;text-align:right;padding-left:10px;padding-bottom:2px;width:75px;">
+                  <img src="https://files.catbox.moe/05gl5o.png" height="42" alt="Handwritten Signature" style="display:inline-block;border:0;height:42px;width:auto;" />
+                </td>
+              </tr>
+            </table>
+
+            <!-- DIVIDER -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;margin-top:12px;margin-bottom:8px;">
+              <tr>
+                <td style="border-top:1px solid #cbd5e1;height:1px;"></td>
+              </tr>
+            </table>
+
+            <!-- FOOTER -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+              <tr>
+                <td>
+                  <a href="https://www.oleksandrhalushka.de" style="color:#64748b;text-decoration:none;font-size:11px;">www.oleksandrhalushka.de</a>
+                </td>
+                <td style="text-align:right;">
+                  <a href="https://www.oleksandrhalushka.de/legal/impressum.html" style="color:#94a3b8;text-decoration:none;font-size:11px;">Impressum</a>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+        </div>
+      </div>
+      <div>
+        <div class="preview-title">🌙 Dark Mode Simulation</div>
+        <div class="preview-box dark">
+          <table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;max-width:440px;width:100%;border:0;" id="sig-auto-table">
+  <tr>
+    <td style="padding:10px 0;">
+      <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+        <tr>
+          <td>
+
+            <!-- NAME + LOGO -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+              <tr>
+                <td style="vertical-align:top;">
+                  <div style="font-size:20px;font-weight:800;color:#0f172a;letter-spacing:-0.4px;line-height:1.2;">Oleksandr Halushka</div>
+                  <div style="font-size:10px;color:#3b7dd8;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-top:4px;">Kfz-Kaufberatung · Bayern</div>
+                  <div style="font-size:9px;color:#94a3b8;margin-top:2px;">Einzelunternehmer</div>
+                </td>
+                <td style="vertical-align:top;text-align:right;width:34px;padding-left:10px;">
+                  <img src="https://files.catbox.moe/aln5jw.png" width="34" alt="OH Monogram Logo" style="display:inline-block;border:0;width:34px;height:auto;" />
+                </td>
+              </tr>
+            </table>
+
+            <!-- DIVIDER -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;margin-top:12px;margin-bottom:12px;">
+              <tr>
+                <td style="border-top:1px solid #cbd5e1;height:1px;"></td>
+              </tr>
+            </table>
+
+            <!-- CONTACTS + HANDWRITTEN SIG -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+              <tr>
+                <td style="vertical-align:top;width:290px;">
+                  <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Telefon</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="tel:+4916093409671" style="color:#0f172a;text-decoration:none;font-size:12px;font-weight:500;">+49 160 9340 9671</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">WhatsApp</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="https://wa.me/4916093409671" style="color:#3b7dd8;text-decoration:none;font-size:12px;font-weight:500;">Nachricht senden →</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">E-Mail</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="mailto:info@oleksandrhalushka.de" style="color:#0f172a;text-decoration:none;font-size:12px;font-weight:500;">info@oleksandrhalushka.de</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Adresse</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><span style="color:#334155;font-size:12px;">Industriestraße 22, 93077&nbsp;Bad&nbsp;Abbach</span></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:0;font-size:9px;color:#94a3b8;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Instagram</td>
+    <td style="vertical-align:middle;padding-bottom:0;font-family:Arial,sans-serif;line-height:16px;"><a href="https://www.instagram.com/oleksandrhalushka.auto/" style="color:#3b7dd8;text-decoration:none;font-size:12px;">@oleksandrhalushka.auto</a></td>
+  </tr>
+                  </table>
+                </td>
+                <td style="vertical-align:bottom;text-align:right;padding-left:10px;padding-bottom:2px;width:75px;">
+                  <img src="https://files.catbox.moe/05gl5o.png" height="42" alt="Handwritten Signature" style="display:inline-block;border:0;height:42px;width:auto;" />
+                </td>
+              </tr>
+            </table>
+
+            <!-- DIVIDER -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;margin-top:12px;margin-bottom:8px;">
+              <tr>
+                <td style="border-top:1px solid #cbd5e1;height:1px;"></td>
+              </tr>
+            </table>
+
+            <!-- FOOTER -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+              <tr>
+                <td>
+                  <a href="https://www.oleksandrhalushka.de" style="color:#64748b;text-decoration:none;font-size:11px;">www.oleksandrhalushka.de</a>
+                </td>
+                <td style="text-align:right;">
+                  <a href="https://www.oleksandrhalushka.de/legal/impressum.html" style="color:#94a3b8;text-decoration:none;font-size:11px;">Impressum</a>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+        </div>
+      </div>
+    </div>
+    <button class="copy-btn" onclick="copySignature('sig-auto-table')">
+      <span>📋</span> Скопировать подпись для Gmail
+    </button>
+  </div>
+
+  <!-- SIGNATURE 2 — BAU -->
+  <div class="signature-section">
+    <div class="label">🔶 Signatur 2 — BAU (Innenausbau)</div>
+    <div class="preview-grid">
+      <div>
+        <div class="preview-title">☀️ Light Mode Preview</div>
+        <div class="preview-box light">
+          <table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;max-width:440px;width:100%;border:0;" id="sig-bau-table">
+  <tr>
+    <td style="padding:10px 0;">
+      <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+        <tr>
+          <td>
+
+            <!-- NAME + LOGO -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+              <tr>
+                <td style="vertical-align:top;">
+                  <div style="font-size:20px;font-weight:800;color:#0f172a;letter-spacing:-0.4px;line-height:1.2;">Oleksandr Halushka</div>
+                  <div style="font-size:10px;color:#d97706;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-top:4px;">Innenausbau &amp; Fliesenarbeiten · Bayern</div>
+                  <div style="font-size:9px;color:#94a3b8;margin-top:2px;">Einzelunternehmer</div>
+                </td>
+                <td style="vertical-align:top;text-align:right;width:34px;padding-left:10px;">
+                  <img src="https://files.catbox.moe/x31v8f.png" width="34" alt="OH Monogram Logo" style="display:inline-block;border:0;width:34px;height:auto;" />
+                </td>
+              </tr>
+            </table>
+
+            <!-- DIVIDER -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;margin-top:12px;margin-bottom:12px;">
+              <tr>
+                <td style="border-top:1px solid #cbd5e1;height:1px;"></td>
+              </tr>
+            </table>
+
+            <!-- CONTACTS + HANDWRITTEN SIG -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+              <tr>
+                <td style="vertical-align:top;width:290px;">
+                  <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Telefon</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="tel:+4916093409671" style="color:#0f172a;text-decoration:none;font-size:12px;font-weight:500;">+49 160 9340 9671</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">WhatsApp</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="https://wa.me/4916093409671" style="color:#d97706;text-decoration:none;font-size:12px;font-weight:500;">Nachricht senden →</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">E-Mail</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="mailto:info@oleksandrhalushka.de" style="color:#0f172a;text-decoration:none;font-size:12px;font-weight:500;">info@oleksandrhalushka.de</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Adresse</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><span style="color:#334155;font-size:12px;">Industriestraße 22, 93077&nbsp;Bad&nbsp;Abbach</span></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:0;font-size:9px;color:#94a3b8;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Instagram</td>
+    <td style="vertical-align:middle;padding-bottom:0;font-family:Arial,sans-serif;line-height:16px;"><a href="https://www.instagram.com/oleksandrhalushka.bau/" style="color:#d97706;text-decoration:none;font-size:12px;">@oleksandrhalushka.bau</a></td>
+  </tr>
+                  </table>
+                </td>
+                <td style="vertical-align:bottom;text-align:right;padding-left:10px;padding-bottom:2px;width:75px;">
+                  <img src="https://files.catbox.moe/05gl5o.png" height="42" alt="Handwritten Signature" style="display:inline-block;border:0;height:42px;width:auto;" />
+                </td>
+              </tr>
+            </table>
+
+            <!-- DIVIDER -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;margin-top:12px;margin-bottom:8px;">
+              <tr>
+                <td style="border-top:1px solid #cbd5e1;height:1px;"></td>
+              </tr>
+            </table>
+
+            <!-- FOOTER -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+              <tr>
+                <td>
+                  <a href="https://www.oleksandrhalushka.de" style="color:#64748b;text-decoration:none;font-size:11px;">www.oleksandrhalushka.de</a>
+                </td>
+                <td style="text-align:right;">
+                  <a href="https://www.oleksandrhalushka.de/legal/impressum.html" style="color:#94a3b8;text-decoration:none;font-size:11px;">Impressum</a>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+        </div>
+      </div>
+      <div>
+        <div class="preview-title">🌙 Dark Mode Simulation</div>
+        <div class="preview-box dark">
+          <table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;max-width:440px;width:100%;border:0;" id="sig-bau-table">
+  <tr>
+    <td style="padding:10px 0;">
+      <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+        <tr>
+          <td>
+
+            <!-- NAME + LOGO -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+              <tr>
+                <td style="vertical-align:top;">
+                  <div style="font-size:20px;font-weight:800;color:#0f172a;letter-spacing:-0.4px;line-height:1.2;">Oleksandr Halushka</div>
+                  <div style="font-size:10px;color:#d97706;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-top:4px;">Innenausbau &amp; Fliesenarbeiten · Bayern</div>
+                  <div style="font-size:9px;color:#94a3b8;margin-top:2px;">Einzelunternehmer</div>
+                </td>
+                <td style="vertical-align:top;text-align:right;width:34px;padding-left:10px;">
+                  <img src="https://files.catbox.moe/x31v8f.png" width="34" alt="OH Monogram Logo" style="display:inline-block;border:0;width:34px;height:auto;" />
+                </td>
+              </tr>
+            </table>
+
+            <!-- DIVIDER -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;margin-top:12px;margin-bottom:12px;">
+              <tr>
+                <td style="border-top:1px solid #cbd5e1;height:1px;"></td>
+              </tr>
+            </table>
+
+            <!-- CONTACTS + HANDWRITTEN SIG -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+              <tr>
+                <td style="vertical-align:top;width:290px;">
+                  <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Telefon</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="tel:+4916093409671" style="color:#0f172a;text-decoration:none;font-size:12px;font-weight:500;">+49 160 9340 9671</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">WhatsApp</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="https://wa.me/4916093409671" style="color:#d97706;text-decoration:none;font-size:12px;font-weight:500;">Nachricht senden →</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">E-Mail</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="mailto:info@oleksandrhalushka.de" style="color:#0f172a;text-decoration:none;font-size:12px;font-weight:500;">info@oleksandrhalushka.de</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Adresse</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><span style="color:#334155;font-size:12px;">Industriestraße 22, 93077&nbsp;Bad&nbsp;Abbach</span></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:0;font-size:9px;color:#94a3b8;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Instagram</td>
+    <td style="vertical-align:middle;padding-bottom:0;font-family:Arial,sans-serif;line-height:16px;"><a href="https://www.instagram.com/oleksandrhalushka.bau/" style="color:#d97706;text-decoration:none;font-size:12px;">@oleksandrhalushka.bau</a></td>
+  </tr>
+                  </table>
+                </td>
+                <td style="vertical-align:bottom;text-align:right;padding-left:10px;padding-bottom:2px;width:75px;">
+                  <img src="https://files.catbox.moe/05gl5o.png" height="42" alt="Handwritten Signature" style="display:inline-block;border:0;height:42px;width:auto;" />
+                </td>
+              </tr>
+            </table>
+
+            <!-- DIVIDER -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;margin-top:12px;margin-bottom:8px;">
+              <tr>
+                <td style="border-top:1px solid #cbd5e1;height:1px;"></td>
+              </tr>
+            </table>
+
+            <!-- FOOTER -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+              <tr>
+                <td>
+                  <a href="https://www.oleksandrhalushka.de" style="color:#64748b;text-decoration:none;font-size:11px;">www.oleksandrhalushka.de</a>
+                </td>
+                <td style="text-align:right;">
+                  <a href="https://www.oleksandrhalushka.de/legal/impressum.html" style="color:#94a3b8;text-decoration:none;font-size:11px;">Impressum</a>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+        </div>
+      </div>
+    </div>
+    <button class="copy-btn bau-btn" onclick="copySignature('sig-bau-table')">
+      <span>🔨</span> Скопировать подпись для Gmail
+    </button>
+  </div>
+
+  <!-- SIGNATURE 3 — UNIVERSAL -->
+  <div class="signature-section">
+    <div class="label">💼 Signatur 3 — UNIVERSAL (Allgemein)</div>
+    <div class="preview-grid">
+      <div>
+        <div class="preview-title">☀️ Light Mode Preview</div>
+        <div class="preview-box light">
+          <table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;max-width:440px;width:100%;border:0;" id="sig-univ-table">
+  <tr>
+    <td style="padding:10px 0;">
+      <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+        <tr>
+          <td>
+
+            <!-- NAME + LOGO -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+              <tr>
+                <td style="vertical-align:top;">
+                  <div style="font-size:20px;font-weight:800;color:#0f172a;letter-spacing:-0.4px;line-height:1.2;">Oleksandr Halushka</div>
+                  <div style="font-size:10px;color:#64748b;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-top:4px;">Fahrzeugberatung &amp; Innenausbau · Bayern</div>
+                  <div style="font-size:9px;color:#94a3b8;margin-top:2px;">Einzelunternehmer</div>
+                </td>
+                <td style="vertical-align:top;text-align:right;width:34px;padding-left:10px;">
+                  <img src="https://files.catbox.moe/5mkatp.png" width="34" alt="OH Monogram Logo" style="display:inline-block;border:0;width:34px;height:auto;" />
+                </td>
+              </tr>
+            </table>
+
+            <!-- DIVIDER -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;margin-top:12px;margin-bottom:12px;">
+              <tr>
+                <td style="border-top:1px solid #cbd5e1;height:1px;"></td>
+              </tr>
+            </table>
+
+            <!-- CONTACTS + HANDWRITTEN SIG -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+              <tr>
+                <td style="vertical-align:top;width:290px;">
+                  <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Telefon</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="tel:+4916093409671" style="color:#0f172a;text-decoration:none;font-size:12px;font-weight:500;">+49 160 9340 9671</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">WhatsApp</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="https://wa.me/4916093409671" style="color:#64748b;text-decoration:none;font-size:12px;font-weight:500;">Nachricht senden →</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">E-Mail</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="mailto:info@oleksandrhalushka.de" style="color:#0f172a;text-decoration:none;font-size:12px;font-weight:500;">info@oleksandrhalushka.de</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Adresse</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><span style="color:#334155;font-size:12px;">Industriestraße 22, 93077&nbsp;Bad&nbsp;Abbach</span></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#94a3b8;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Instagram</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="https://www.instagram.com/oleksandrhalushka.auto/" style="color:#3b7dd8;text-decoration:none;font-size:12px;">@oleksandrhalushka.auto</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:0;font-size:9px;color:#94a3b8;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Instagram</td>
+    <td style="vertical-align:middle;padding-bottom:0;font-family:Arial,sans-serif;line-height:16px;"><a href="https://www.instagram.com/oleksandrhalushka.bau/" style="color:#d97706;text-decoration:none;font-size:12px;">@oleksandrhalushka.bau</a></td>
+  </tr>
+                  </table>
+                </td>
+                <td style="vertical-align:bottom;text-align:right;padding-left:10px;padding-bottom:2px;width:75px;">
+                  <img src="https://files.catbox.moe/05gl5o.png" height="42" alt="Handwritten Signature" style="display:inline-block;border:0;height:42px;width:auto;" />
+                </td>
+              </tr>
+            </table>
+
+            <!-- DIVIDER -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;margin-top:12px;margin-bottom:8px;">
+              <tr>
+                <td style="border-top:1px solid #cbd5e1;height:1px;"></td>
+              </tr>
+            </table>
+
+            <!-- FOOTER -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+              <tr>
+                <td>
+                  <a href="https://www.oleksandrhalushka.de" style="color:#64748b;text-decoration:none;font-size:11px;">www.oleksandrhalushka.de</a>
+                </td>
+                <td style="text-align:right;">
+                  <a href="https://www.oleksandrhalushka.de/legal/impressum.html" style="color:#94a3b8;text-decoration:none;font-size:11px;">Impressum</a>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+        </div>
+      </div>
+      <div>
+        <div class="preview-title">🌙 Dark Mode Simulation</div>
+        <div class="preview-box dark">
+          <table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;max-width:440px;width:100%;border:0;" id="sig-univ-table">
+  <tr>
+    <td style="padding:10px 0;">
+      <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+        <tr>
+          <td>
+
+            <!-- NAME + LOGO -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+              <tr>
+                <td style="vertical-align:top;">
+                  <div style="font-size:20px;font-weight:800;color:#0f172a;letter-spacing:-0.4px;line-height:1.2;">Oleksandr Halushka</div>
+                  <div style="font-size:10px;color:#64748b;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-top:4px;">Fahrzeugberatung &amp; Innenausbau · Bayern</div>
+                  <div style="font-size:9px;color:#94a3b8;margin-top:2px;">Einzelunternehmer</div>
+                </td>
+                <td style="vertical-align:top;text-align:right;width:34px;padding-left:10px;">
+                  <img src="https://files.catbox.moe/5mkatp.png" width="34" alt="OH Monogram Logo" style="display:inline-block;border:0;width:34px;height:auto;" />
+                </td>
+              </tr>
+            </table>
+
+            <!-- DIVIDER -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;margin-top:12px;margin-bottom:12px;">
+              <tr>
+                <td style="border-top:1px solid #cbd5e1;height:1px;"></td>
+              </tr>
+            </table>
+
+            <!-- CONTACTS + HANDWRITTEN SIG -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+              <tr>
+                <td style="vertical-align:top;width:290px;">
+                  <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Telefon</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="tel:+4916093409671" style="color:#0f172a;text-decoration:none;font-size:12px;font-weight:500;">+49 160 9340 9671</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">WhatsApp</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="https://wa.me/4916093409671" style="color:#64748b;text-decoration:none;font-size:12px;font-weight:500;">Nachricht senden →</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">E-Mail</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="mailto:info@oleksandrhalushka.de" style="color:#0f172a;text-decoration:none;font-size:12px;font-weight:500;">info@oleksandrhalushka.de</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#64748b;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Adresse</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><span style="color:#334155;font-size:12px;">Industriestraße 22, 93077&nbsp;Bad&nbsp;Abbach</span></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:6px;font-size:9px;color:#94a3b8;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Instagram</td>
+    <td style="vertical-align:middle;padding-bottom:6px;font-family:Arial,sans-serif;line-height:16px;"><a href="https://www.instagram.com/oleksandrhalushka.auto/" style="color:#3b7dd8;text-decoration:none;font-size:12px;">@oleksandrhalushka.auto</a></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle;width:78px;padding-bottom:0;font-size:9px;color:#94a3b8;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;line-height:16px;">Instagram</td>
+    <td style="vertical-align:middle;padding-bottom:0;font-family:Arial,sans-serif;line-height:16px;"><a href="https://www.instagram.com/oleksandrhalushka.bau/" style="color:#d97706;text-decoration:none;font-size:12px;">@oleksandrhalushka.bau</a></td>
+  </tr>
+                  </table>
+                </td>
+                <td style="vertical-align:bottom;text-align:right;padding-left:10px;padding-bottom:2px;width:75px;">
+                  <img src="https://files.catbox.moe/05gl5o.png" height="42" alt="Handwritten Signature" style="display:inline-block;border:0;height:42px;width:auto;" />
+                </td>
+              </tr>
+            </table>
+
+            <!-- DIVIDER -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;margin-top:12px;margin-bottom:8px;">
+              <tr>
+                <td style="border-top:1px solid #cbd5e1;height:1px;"></td>
+              </tr>
+            </table>
+
+            <!-- FOOTER -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+              <tr>
+                <td>
+                  <a href="https://www.oleksandrhalushka.de" style="color:#64748b;text-decoration:none;font-size:11px;">www.oleksandrhalushka.de</a>
+                </td>
+                <td style="text-align:right;">
+                  <a href="https://www.oleksandrhalushka.de/legal/impressum.html" style="color:#94a3b8;text-decoration:none;font-size:11px;">Impressum</a>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+        </div>
+      </div>
+    </div>
+    <button class="copy-btn univ-btn" onclick="copySignature('sig-univ-table')">
+      <span>💼</span> Скопировать подпись для Gmail
+    </button>
+  </div>
+
+</body>
+</html>

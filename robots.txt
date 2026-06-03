@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /.agents/
+Disallow: /gas_deploy/
+Disallow: /client-review/
+Disallow: /research-gbp-naming/
+Disallow: /docs/
+
+Sitemap: https://oleksandrhalushka.de/sitemap.xml

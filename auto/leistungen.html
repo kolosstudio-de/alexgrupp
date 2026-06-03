@@ -3,11 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
+    <script>
+        (function() {
+            const stored = localStorage.getItem('ag-lang');
+            if (stored) {
+                document.documentElement.setAttribute('lang', stored);
+            }
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beratung beim Autokauf und Autoverkauf | AlexGruppe</title>
+    <title>Beratung beim Autokauf und Autoverkauf | Oleksandr Halushka</title>
     <meta name="description"
-        content="AlexGruppe — kompetente Begleitung beim An- und Verkauf Ihres Fahrzeugs in Bayern: Marktbewertung, Begleitung zur Besichtigung, Verkaufsberatung.">
-
+        content="Oleksandr Halushka — kompetente Begleitung beim An- und Verkauf Ihres Fahrzeugs in Bayern: Marktbewertung, Begleitung zur Besichtigung, Verkaufsberatung.">
+    <meta name="theme-color" content="#0e1117">
+    <link rel="canonical" href="https://oleksandrhalushka.de/auto/leistungen.html">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Leistungen | KFZ-Beratung Oleksandr Halushka">
+    <meta property="og:description" content="Kaufberatung, Ankaufsbegleitung, Wertermittlung und Verkaufsberatung in Bayern.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oleksandrhalushka.de/auto/leistungen.html">
+    <meta property="og:locale" content="de_DE">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -94,7 +109,7 @@
             font-weight: 600;
             letter-spacing: 0.28em;
             text-transform: uppercase;
-            color: #e63946;
+            color: #3b7dd8;
             margin-bottom: 1rem;
             display: block;
         }
@@ -123,11 +138,11 @@
             width: 48px;
             height: 48px;
             border-radius: 10px;
-            background: rgba(230, 57, 70, 0.12);
+            background: rgba(59, 125, 216, 0.12);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #e63946;
+            color: #3b7dd8;
             font-size: 1.25rem;
             flex-shrink: 0;
         }
@@ -156,18 +171,18 @@
         }
 
         .service-item:hover {
-            border-color: rgba(230, 57, 70, 0.3);
+            border-color: rgba(59, 125, 216, 0.3);
         }
 
         .service-item-icon {
             width: 36px;
             height: 36px;
             border-radius: 6px;
-            background: rgba(230, 57, 70, 0.08);
+            background: rgba(59, 125, 216, 0.08);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #e63946;
+            color: #3b7dd8;
             font-size: 0.9rem;
             flex-shrink: 0;
             margin-top: 2px;
@@ -237,8 +252,8 @@
     <!-- Header -->
     <header class="global-header" id="mainHeader">
         <div class="logo">
-            <a href="../index.html"><img src="../assets/Photopea Logo Black.png" alt="AG"
-                    class="logo-icon">ALEX<span>GRUPP</span></a>
+            <a href="../index.html"><img src="../assets/Photopea Logo Black.png" alt="Oleksandr Halushka"
+                    class="logo-icon">OLEKSANDR<span>HALUSHKA</span></a>
         </div>
         <nav class="header-nav">
             <a href="index.html" data-i18n="nav-start">Startseite</a>
@@ -340,10 +355,10 @@
     <!-- Footer -->
     <footer class="site-footer section" style="padding:40px 8%;">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap: wrap; gap: 1.5rem;">
-            <p style="margin:0;">&copy; 2026 AlexGruppe &middot; Alle Rechte vorbehalten</p>
+            <p style="margin:0;">&copy; 2026 Oleksandr Halushka &middot; Alle Rechte vorbehalten</p>
             <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
                 <div class="social-links" style="display:flex; gap: 1rem; align-items: center;">
-                    <a href="https://www.instagram.com/alexgruppee.auto/" target="_blank" rel="noopener"
+                    <a href="https://www.instagram.com/oleksandrhalushka.auto/" target="_blank" rel="noopener"
                         aria-label="Instagram"
                         style="color: rgba(255,255,255,0.4); font-size: 1.3rem; transition: color 0.2s;"
                         onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">
@@ -364,7 +379,25 @@
     <script src="../js/components/smart-header.js"></script>
     <script src="../js/components/modal.js"></script>
     <script>
-        AOS.init({ duration: 650, easing: 'ease-out-cubic', once: true, offset: 80, startEvent: 'DOMContentLoaded' });
+        AOS.init({ duration: 700, easing: 'ease-out-quart', once: true, offset: 60, delay: 0 });
+    </script>
+
+    <script>
+    // Smooth page-exit transition
+    (function() {
+        document.addEventListener('click', function(e) {
+            var a = e.target.closest('a[href]');
+            if (!a) return;
+            var href = a.getAttribute('href');
+            if (!href || href.startsWith('#') || href.startsWith('javascript') ||
+                href.startsWith('http') || href.startsWith('mailto') ||
+                href.startsWith('tel') || a.target === '_blank') return;
+            e.preventDefault();
+            document.body.style.transition = 'opacity 0.12s ease';
+            document.body.style.opacity = '0';
+            setTimeout(function() { location.href = href; }, 120);
+        });
+    })();
     </script>
 </body>
 

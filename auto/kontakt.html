@@ -3,11 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
+    <script>
+        (function() {
+            const stored = localStorage.getItem('ag-lang');
+            if (stored) {
+                document.documentElement.setAttribute('lang', stored);
+            }
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt | AlexGruppe KFZ-Service</title>
+    <title>Kontakt | Oleksandr Halushka · Fahrzeugberatung</title>
     <meta name="description"
-        content="Kontaktieren Sie AlexGruppe — Termin anfragen, Fragen stellen oder direkt anrufen.">
-
+        content="Kontaktieren Sie Oleksandr Halushka — Termin anfragen, Fragen stellen oder direkt anrufen.">
+    <meta name="theme-color" content="#0e1117">
+    <link rel="canonical" href="https://oleksandrhalushka.de/auto/kontakt.html">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kontakt | KFZ-Beratung Oleksandr Halushka">
+    <meta property="og:description" content="Beratung anfragen — Fahrzeugkauf, Verkauf und Wertermittlung in Bayern. Direkt und persönlich.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oleksandrhalushka.de/auto/kontakt.html">
+    <meta property="og:locale" content="de_DE">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -135,7 +150,7 @@
             width: 44px;
             height: 44px;
             border-radius: 10px;
-            background: rgba(230, 57, 70, 0.1);
+            background: rgba(59, 125, 216, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -350,13 +365,13 @@
 
         /* === German Form Validation Styles === */
         .input-invalid {
-            border-color: #e63946 !important;
-            box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.25) !important;
+            border-color: #3b7dd8 !important;
+            box-shadow: 0 0 0 3px rgba(59, 125, 216, 0.25) !important;
         }
 
         .form-error-msg {
             display: block;
-            color: #e63946;
+            color: #3b7dd8;
             font-size: 0.78rem;
             font-weight: 500;
             margin-top: 5px;
@@ -400,8 +415,8 @@
     <!-- Header -->
     <header class="global-header" id="mainHeader">
         <div class="logo">
-            <a href="../index.html"><img src="../assets/Photopea Logo Black.png" alt="AG"
-                    class="logo-icon">ALEX<span>GRUPP</span></a>
+            <a href="../index.html"><img src="../assets/Photopea Logo Black.png" alt="Oleksandr Halushka"
+                    class="logo-icon">OLEKSANDR<span>HALUSHKA</span></a>
         </div>
         <nav class="header-nav">
             <a href="index.html" data-i18n="nav-start">Startseite</a>
@@ -462,7 +477,7 @@
                 <div class="contact-method-icon"><i class="fas fa-envelope"></i></div>
                 <div>
                     <h4 data-i18n="auto-kontakt-email-label">E-Mail</h4>
-                    <a href="mailto:info@alexgruppee.de">info@alexgruppee.de</a>
+                    <a href="mailto:info@oleksandrhalushka.de">info@oleksandrhalushka.de</a>
                 </div>
             </div>
             <div class="contact-method">
@@ -479,7 +494,7 @@
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2638.4!2d12.0432!3d48.9338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f9c4b7e83a34b%3A0x0!2sIndustriestr.%2022%2C%2093077%20Bad%20Abbach!5e0!3m2!1sde!2sde!4v1234567890"
                     width="100%" height="220" style="border:0; display:block;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade" title="AlexGruppe KFZ — Industriestr. 22, Bad Abbach">
+                    referrerpolicy="no-referrer-when-downgrade" title="Oleksandr Halushka — Industriestr. 22, Bad Abbach">
                 </iframe>
             </div>
         </div>
@@ -566,26 +581,19 @@
                             placeholder="Bitte beschreiben Sie kurz Ihr Anliegen oder geben Sie Modell/Baujahr an..."></textarea>
                     </div>
 
-                    <div class="form-group"
-                        style="flex-direction: row; gap: 12px; align-items: flex-start; margin-top: 1rem;">
-                        <input type="checkbox" id="gdpr" name="gdpr" required
-                            style="width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px;">
-                        <label for="gdpr"
-                            style="text-transform: none; letter-spacing: normal; font-weight: 400; line-height: 1.5; cursor: pointer;">
+                    <div class="checkbox-row">
+                        <input type="checkbox" id="gdpr" name="gdpr" required>
+                        <label for="gdpr">
                             Ich stimme zu, dass meine Daten gemäß der <a href="../legal/datenschutz.html"
                                 style="color:var(--color-auto-primary); text-decoration:underline;">Datenschutzerklärung</a>
                             verarbeitet werden, um meine Anfrage zu beantworten. *
                         </label>
                     </div>
 
-                    <div class="form-group"
-                        style="flex-direction: row; gap: 12px; align-items: flex-start; margin-top: 0.5rem; margin-bottom: 2rem;">
-                        <input type="checkbox" id="newsletter" name="newsletter"
-                            style="width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px;">
-                        <label for="newsletter"
-                            style="text-transform: none; letter-spacing: normal; font-weight: 400; line-height: 1.5; cursor: pointer;">
-                            Ja, ich möchte mich für den Newsletter anmelden und <strong>10% Rabatt</strong> auf
-                            meine nächste kostenpflichtige Beratung erhalten (optional).
+                    <div class="checkbox-row" style="margin-top:0.5rem; margin-bottom:2rem;">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">
+                            Ja, ich möchte über neue Tipps, Marktinfos und Angebote informiert werden — <strong>Newsletter erscheint bald</strong> (optional).
                         </label>
                     </div>
 
@@ -645,26 +653,14 @@
     <!-- Footer -->
     <footer class="site-footer section" style="padding:40px 8%;">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap: wrap; gap: 1.5rem;">
-            <p style="margin:0;">&copy; 2026 AlexGruppe &middot; Alle Rechte vorbehalten</p>
+            <p style="margin:0;">&copy; 2026 Oleksandr Halushka &middot; Alle Rechte vorbehalten</p>
             <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
                 <div class="social-links" style="display:flex; gap: 1rem; align-items: center;">
-                    <a href="https://www.instagram.com/alexgruppee.auto/" target="_blank" rel="noopener"
+                    <a href="https://www.instagram.com/oleksandrhalushka.auto/" target="_blank" rel="noopener"
                         aria-label="Instagram"
                         style="color: rgba(255,255,255,0.4); font-size: 1.3rem; transition: color 0.2s;"
                         onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">
                         <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"
-                        title="Facebook"
-                        style="color: rgba(255,255,255,0.5); font-size: 1.3rem; transition: color 0.2s;"
-                        onmouseover="this.style.color='#1877F2'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"
-                        title="LinkedIn"
-                        style="color: rgba(255,255,255,0.5); font-size: 1.3rem; transition: color 0.2s;"
-                        onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
-                        <i class="fab fa-linkedin"></i>
                     </a>
                 </div>
                 <div class="footer-links">
@@ -682,7 +678,25 @@
     <script src="../js/booking-system.js"></script>
     <script src="../js/components/form-validate.js"></script>
     <script>
-        AOS.init({ duration: 650, easing: 'ease-out-cubic', once: true, offset: 80, startEvent: 'DOMContentLoaded' });
+        AOS.init({ duration: 700, easing: 'ease-out-quart', once: true, offset: 60, delay: 0 });
+    </script>
+
+    <script>
+    // Smooth page-exit transition
+    (function() {
+        document.addEventListener('click', function(e) {
+            var a = e.target.closest('a[href]');
+            if (!a) return;
+            var href = a.getAttribute('href');
+            if (!href || href.startsWith('#') || href.startsWith('javascript') ||
+                href.startsWith('http') || href.startsWith('mailto') ||
+                href.startsWith('tel') || a.target === '_blank') return;
+            e.preventDefault();
+            document.body.style.transition = 'opacity 0.12s ease';
+            document.body.style.opacity = '0';
+            setTimeout(function() { location.href = href; }, 120);
+        });
+    })();
     </script>
 </body>
 

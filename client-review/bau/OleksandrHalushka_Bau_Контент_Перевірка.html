@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Oleksandr Halushkae Bau – Перевірка контенту</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f4f6f9;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 5%;
+        }
+
+        .section {
+            background: #fff;
+            border-radius: 16px;
+            padding: 36px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+            border-left: 5px solid #f59e0b;
+        }
+
+        .section h2 {
+            font-size: 1.4rem;
+            color: #0f172a;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h2 .num {
+            background: #f59e0b;
+            color: #fff;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .screenshot {
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            margin: 16px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-block {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .de {
+            color: #d97706;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .ua {
+            color: #166534;
+        }
+
+        .question {
+            background: #fffbeb;
+            border: 1px solid #fcd34d;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 12px 0;
+        }
+
+        .question strong {
+            color: #92400e;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .question .answer {
+            background: #fff;
+            border: 1px dashed #d97706;
+            border-radius: 6px;
+            min-height: 56px;
+            padding: 10px;
+            color: #78350f;
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background: #1e3a5f;
+            color: #fff;
+            padding: 10px 14px;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+
+        .note {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin: 12px 0;
+            font-size: 0.9rem;
+            color: #1e40af;
+        }
+
+        .footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 32px;
+            font-size: 0.9rem;
+        }
+
+        .tag-de {
+            display: inline-block;
+            background: #fef3c7;
+            color: #d97706;
+            border-radius: 4px;
+            padding: 1px 7px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-right: 6px;
+        }
+
+        .tag-ua {
+            display: inline-block;
+            background: #dcfce7;
+            color: #166534;
+            border-radius: 4px;
+            padding: 1px 7px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-right: 6px;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                background: #ffffff !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                margin: 0;
+                padding: 15mm;
+                font-size: 11pt;
+            }
+
+            .container {
+                max-width: 100% !important;
+                width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .section {
+                box-shadow: none !important;
+                border: 1px solid #e2e8f0 !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                margin-bottom: 25px !important;
+                padding: 25px !important;
+                border-radius: 12px !important;
+                display: block !important;
+            }
+
+            .section h2 {
+                display: block !important;
+            }
+
+            .section h2 .num {
+                display: inline-block !important;
+                margin-right: 10px !important;
+                background-color: #f59e0b !important;
+                color: #ffffff !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .screenshot {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+                max-height: 17cm;
+                object-fit: contain;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                display: block;
+                margin: 15px 0 !important;
+            }
+
+            .text-block {
+                background-color: #f8fafc !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                border: 1px solid #e2e8f0;
+            }
+
+            .question {
+                background-color: #fffbeb !important;
+                border: 1px solid #fcd34d !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .question .answer {
+                min-height: 70px !important;
+                background-color: #ffffff !important;
+                border: 1px dashed #d97706 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            table {
+                page-break-inside: auto;
+                font-size: 10pt !important;
+            }
+
+            tr {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            th {
+                background: #1e3a5f !important;
+                color: #fff !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .footer {
+                border-top: 1px solid #e2e8f0;
+                padding-top: 10px !important;
+                background: none !important;
+                color: #64748b !important;
+            }
+
+            script,
+            noscript {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="section">
+            <h2><span class="num">1</span>Стартова сторінка Bau — Головний блок (Hero)</h2>
+            <img src="screenshots/01_hero.png" class="screenshot" alt="Hero блок">
+            <div class="text-block">
+                <div class="de"><span class="tag-de">DE</span>Innenausbau</div>
+                <div class="ua"><span class="tag-ua">UA</span>Внутрішнє оздоблення</div>
+                <div class="de" style="margin-top:10px"><span class="tag-de">DE</span>Erstklassige Fliesenarbeiten,
+                    Renovierung und professionelle Umzugsbegleitung.</div>
+                <div class="ua"><span class="tag-ua">UA</span>Першокласні плиткові роботи, ремонт та професійний
+                    супровід переїздів.</div>
+                <div class="de" style="margin-top:10px"><span class="tag-de">DE</span>ZU DEN LEISTUNGEN → <span
+                        class="tag-ua">UA</span>ДО ПОСЛУГ</div>
+            </div>
+            <div class="question"><strong>❓ Питання 1: Чи підходить заголовок "Innenausbau" та підзаголовок?</strong>
+                <div class="answer">Відповідь: ___</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="num">2</span>Лічильники та Послуги на головній</h2>
+            <img src="screenshots/02_services.png" class="screenshot" alt="Лічильники та послуги">
+            <div class="note">⚠️ Вкажіть реальні цифри вашої компанії нижче в таблиці.</div>
+            <table>
+                <tr>
+                    <th>🇩🇪 Назва</th>
+                    <th>🇺🇦 Переклад</th>
+                    <th>Поточна цифра</th>
+                    <th>Ваша цифра</th>
+                </tr>
+                <tr>
+                    <td>Jahre Erfahrung</td>
+                    <td>Років досвіду</td>
+                    <td>10+</td>
+                    <td>___</td>
+                </tr>
+                <tr>
+                    <td>Erfolgreiche Projekte</td>
+                    <td>Успішних проєктів</td>
+                    <td>500+</td>
+                    <td>___</td>
+                </tr>
+                <tr>
+                    <td>Zufriedene Kunden</td>
+                    <td>Задоволених клієнтів</td>
+                    <td>100%</td>
+                    <td>___</td>
+                </tr>
+                <tr>
+                    <td>Termintreue</td>
+                    <td>Дотримання строків</td>
+                    <td>100%</td>
+                    <td>___</td>
+                </tr>
+            </table>
+            <div class="note">⚠️ Нижче — 4 основні послуги на головній сторінці.</div>
+            <table>
+                <tr>
+                    <th>🇩🇪 Послуга</th>
+                    <th>🇺🇦 Переклад</th>
+                    <th>Опис (UA)</th>
+                </tr>
+                <tr>
+                    <td>Fliesenarbeiten</td>
+                    <td>Плиткові роботи</td>
+                    <td>Точне укладання для ванних кімнат, кухонь та житлових приміщень.</td>
+                </tr>
+                <tr>
+                    <td>Renovierung</td>
+                    <td>Ремонт</td>
+                    <td>Комплексний ремонт внутрішніх приміщень.</td>
+                </tr>
+                <tr>
+                    <td>Innenausbau</td>
+                    <td>Внутрішнє оздоблення</td>
+                    <td>Індивідуальні рішення для вашого дому.</td>
+                </tr>
+                <tr>
+                    <td>Umzugsservice</td>
+                    <td>Послуги переїзду</td>
+                    <td>Професійний транспорт та монтаж меблів.</td>
+                </tr>
+            </table>
+            <div class="question"><strong>❓ Питання 2: Цифри правильні? Вкажіть свої у стовпці "Ваша цифра".</strong>
+                <div class="answer">Відповідь: ___</div>
+            </div>
+            <div class="question"><strong>❓ Питання 3: Ці 4 послуги підходять для головної? Що змінити?</strong>
+                <div class="answer">Відповідь: ___</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="num">3</span>Блок "Чому ми?" (Warum Oleksandr Halushkae?)</h2>
+            <img src="screenshots/03_why_us.png" class="screenshot" alt="Чому ми">
+            <table>
+                <tr>
+                    <th>🇩🇪 Назва</th>
+                    <th>🇺🇦 Переклад</th>
+                    <th>Опис (UA)</th>
+                </tr>
+                <tr>
+                    <td>Präzision &amp; Qualität</td>
+                    <td>Точність та Якість</td>
+                    <td>Кожен шов і кут ідеальні. Ми працюємо з найвищою точністю.</td>
+                </tr>
+                <tr>
+                    <td>Termingerechte Arbeit</td>
+                    <td>Робота в строк</td>
+                    <td>Ми дотримуємося графіка. Ваш проєкт буде готовий вчасно.</td>
+                </tr>
+                <tr>
+                    <td>Transparente Kosten</td>
+                    <td>Прозорі витрати</td>
+                    <td>Чесні ціни без прихованих платежів.</td>
+                </tr>
+                <tr>
+                    <td>Alles aus einer Hand</td>
+                    <td>Все з одних рук</td>
+                    <td>Від планування до фінального прибирання.</td>
+                </tr>
+            </table>
+            <div class="question"><strong>❓ Питання 4: Ці 4 переваги підходять? Що додати чи змінити?</strong>
+                <div class="answer">Відповідь: ___</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="num">4</span>Відгуки клієнтів (Was unsere Kunden sagen)</h2>
+            <img src="screenshots/04_testimonials.png" class="screenshot" alt="Відгуки">
+            <div class="note">На головній сторінці — слайдер з відгуками щодо ремонту. Потрібні реальні відгуки від
+                ваших клієнтів.</div>
+            <div class="question"><strong>❓ Питання 5: Надайте реальні відгуки (або дозвольте залишити демо):</strong>
+                <div class="answer">Відгук 1 — Ім'я: ___ / Місто: ___ / Текст: ___<br><br>Відгук 2 — Ім'я: ___ / Місто:
+                    ___ / Текст: ___<br><br>Відгук 3 — Ім'я: ___ / Місто: ___ / Текст: ___</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="num">5</span>Сторінка Послуг — Плиткові роботи (Fliesenarbeiten)</h2>
+            <img src="screenshots/05_fliesen.png" class="screenshot" alt="Плиткові роботи">
+            <table>
+                <tr>
+                    <th>🇩🇪 Послуга / Деталь</th>
+                    <th>🇺🇦 Переклад</th>
+                    <th>Опис (UA)</th>
+                </tr>
+                <tr>
+                    <td>Bad Komplettsanierung</td>
+                    <td>Повний ремонт ванної</td>
+                    <td>Від зносу старого до нової плитки.</td>
+                </tr>
+                <tr>
+                    <td>Großformatfliesen</td>
+                    <td>Плитка великого формату</td>
+                    <td>Сучасний вигляд з мінімальною кількістю швів.</td>
+                </tr>
+                <tr>
+                    <td>Mosaikverlegung</td>
+                    <td>Укладання мозаїки</td>
+                    <td>Детальні акценти для душових кабін та кухонь.</td>
+                </tr>
+                <tr>
+                    <td>Naturstein &amp; Terrassen</td>
+                    <td>Природний камінь та тераси</td>
+                    <td>Міцні рішення для інтер'єру та екстер'єру.</td>
+                </tr>
+            </table>
+            <div class="question"><strong>❓ Питання 6: Ви робите всі ці роботи? Що прибрати або додати (наприклад,
+                    фартух для кухні, сходи)?</strong>
+                <div class="answer">Відповідь: ___</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="num">6</span>Сторінка Послуг — Ремонт та Оздоблення</h2>
+            <img src="screenshots/06_renovierung.png" class="screenshot" alt="Ремонт та Оздоблення">
+            <table>
+                <tr>
+                    <th>🇩🇪 Послуга / Деталь</th>
+                    <th>🇺🇦 Переклад</th>
+                    <th>Опис (UA)</th>
+                </tr>
+                <tr>
+                    <td>Trockenbau</td>
+                    <td>Гіпсокартонні роботи</td>
+                    <td>Стінові перегородки, підвісні стелі.</td>
+                </tr>
+                <tr>
+                    <td>Bodenverlegung</td>
+                    <td>Укладання підлоги</td>
+                    <td>Ламінат, паркет, вініл професійно укладені.</td>
+                </tr>
+                <tr>
+                    <td>Maler- &amp; Spachtelarbeiten</td>
+                    <td>Малярні роботи та шпаклівка</td>
+                    <td>Гладкі стіни та ідеальні кольори.</td>
+                </tr>
+                <tr>
+                    <td>Türen &amp; Fenster</td>
+                    <td>Двері та вікна</td>
+                    <td>Монтаж міжкімнатних дверей та віконних рам.</td>
+                </tr>
+            </table>
+            <div class="question"><strong>❓ Питання 7: Перелік правильний? Чи виконуєте ви сантехнічні або
+                    електромонтажні роботи (або співпрацюєте з партнерами)?</strong>
+                <div class="answer">Відповідь: ___</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="num">7</span>Сторінка Послуг — Переїзд та Монтаж (Umzug)</h2>
+            <img src="screenshots/07_umzug.png" class="screenshot" alt="Переїзд та Монтаж">
+            <table>
+                <tr>
+                    <th>🇩🇪 Послуга / Деталь</th>
+                    <th>🇺🇦 Переклад</th>
+                    <th>Опис (UA)</th>
+                </tr>
+                <tr>
+                    <td>Privat- &amp; Firmenumzüge</td>
+                    <td>Приватні та корпоративні переїзди</td>
+                    <td>Безпечний транспорт ваших речей.</td>
+                </tr>
+                <tr>
+                    <td>Möbelmontage</td>
+                    <td>Монтаж меблів</td>
+                    <td>Професійне розбирання та збирання (напр. кухні).</td>
+                </tr>
+                <tr>
+                    <td>Verpackungsservice</td>
+                    <td>Послуги пакування</td>
+                    <td>Надійне пакування крихких предметів.</td>
+                </tr>
+                <tr>
+                    <td>Entrümpelung</td>
+                    <td>Розчищення / Звільнення</td>
+                    <td>Утилізація старих меблів та звільнення приміщень.</td>
+                </tr>
+            </table>
+            <div class="question"><strong>❓ Питання 8: Чи всі послуги з переїзду актуальні? Ви займаєтесь вивезенням
+                    сміття/старих меблів (Entrümpelung)?</strong>
+                <div class="answer">Відповідь: ___</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="num">8</span>"Про нас" — Філософія та Наші Цінності</h2>
+            <img src="screenshots/08_philosophy.png" class="screenshot" alt="Філософія">
+            <img src="screenshots/09_values.png" class="screenshot" alt="Цінності">
+            <div class="text-block">
+                <div class="de"><span class="tag-de">DE</span>Handwerk mit Herz und Präzision</div>
+                <div class="ua"><span class="tag-ua">UA</span>Ремесло з серцем та точністю</div>
+                <div class="de" style="margin-top:10px"><span class="tag-de">DE</span>Jedes Bauprojekt ist einzigartig.
+                    Wir von Oleksandr Halushkae Bau legen größten Wert auf Details... Was mit kleinen handwerklichen Aufträgen
+                    begann, ist heute ein verlässlicher Partner für komplexe Renovierungen...</div>
+                <div class="ua"><span class="tag-ua">UA</span>Кожен будівельний проєкт унікальний. Ми приділяємо
+                    найбільшу увагу деталям... Те, що починалося з невеликих замовлень, сьогодні є надійним партнером
+                    для складних ремонтів...</div>
+            </div>
+            <div class="question"><strong>❓ Питання 9: Чи підходить цей опис вашого будівельного підрозділу? Що
+                    змінити?</strong>
+                <div class="answer">Відповідь: ___</div>
+            </div>
+            <div class="question"><strong>❓ Питання 10: Цінності (Якість, Надійність, Чистота, Різнобічність)
+                    підходять?</strong>
+                <div class="answer">Відповідь: ___</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="num">9</span>"Про нас" — Ключові етапи розвитку</h2>
+            <img src="screenshots/10_milestones1.png" class="screenshot" alt="Мілстоуни 1">
+            <img src="screenshots/11_milestones2.png" class="screenshot" alt="Мілстоуни 2">
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>🇩🇪 Назва</th>
+                    <th>🇺🇦</th>
+                    <th>Опис (UA)</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Die ersten Fliesen</td>
+                    <td>Перша плитка</td>
+                    <td>Перші проєкти по укладанню плитки як основа майстерності.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Erweiterung: Renovierung</td>
+                    <td>Розширення: Ремонт</td>
+                    <td>Додані послуги маляра, гіпсокартону та укладання підлог.</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Kompletter Innenausbau</td>
+                    <td>Комплексне оздоблення</td>
+                    <td>Реалізація великих проєктів «під ключ».</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Heute: Vertrauenspartner</td>
+                    <td>Сьогодні: Надійний партнер</td>
+                    <td>Десятки закінчених об'єктів та задоволених сімей.</td>
+                </tr>
+            </table>
+            <div class="question"><strong>❓ Питання 11: Хронологія розвитку будівельного напрямку правдива? Що
+                    уточнити?</strong>
+                <div class="answer">Відповідь: ___</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="num">10</span>Контакти — Форма та FAQ</h2>
+            <img src="screenshots/12_kontakt_hero.png" class="screenshot" alt="Контакти Hero">
+            <img src="screenshots/13_kontakt_form.png" class="screenshot" alt="Контактна форма">
+            <img src="screenshots/14_faq.png" class="screenshot" alt="FAQ">
+            <div class="question"><strong>❓ Питання 12: Чи відрізняються контактні дані від Автосервісу? Якщо так,
+                    вкажіть тут:</strong>
+                <div class="answer">Телефон BAU: ___<br>E-mail BAU: ___<br>Адреса: ___</div>
+            </div>
+            <table>
+                <tr>
+                    <th colspan="3" style="background:#1e3a5f">Часті питання (FAQ)</th>
+                </tr>
+                <tr>
+                    <td>Kommen Sie zur Besichtigung?</td>
+                    <td>Чи приїжджаєте ви на огляд?</td>
+                    <td>Так, ми пропонуємо безкоштовний огляд об'єкта для точного кошторису.</td>
+                </tr>
+                <tr>
+                    <td>Arbeiten Sie mit Festpreisen?</td>
+                    <td>Ви працюєте з фіксованими цінами?</td>
+                    <td>Зазвичай ми складаємо детальний кошторис після огляду.</td>
+                </tr>
+                <tr>
+                    <td>Besorgen Sie das Material?</td>
+                    <td>Ви закуповуєте матеріали?</td>
+                    <td>За вашим бажанням ми можемо закупити чорнові та чистові матеріали.</td>
+                </tr>
+            </table>
+            <div class="question"><strong>❓ Питання 13: Відповіді правильні? Чи завжди виїзд на огляд
+                    безкоштовний?</strong>
+                <div class="answer">Відповідь: ___</div>
+            </div>
+        </div>
+
+        <div class="section" style="border-left-color:#10b981; background:#f0fdf4;">
+            <h2 style="color:#166534"><span class="num" style="background:#10b981">✓</span>Підсумок</h2>
+            <p style="margin-bottom:14px">Дякуємо! Після отримання відповідей ми оновимо всі тексти на сайті для
+                напрямку BAU.</p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Oleksandr Halushkae © 2026 &nbsp;|&nbsp; Документ підготовлено для перевірки контенту &nbsp;|&nbsp; Розділ: BAU
+        (Innenausbau)
+    </div>
+
+</body>
+
+</html>
