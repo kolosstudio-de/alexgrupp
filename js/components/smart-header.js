@@ -71,11 +71,10 @@ class SmartHeader {
                 } else if (currentY > this.prevScrollY) {
                     // Scrolling DOWN — hide immediately
                     this.hide();
-                } else if (currentY < this.prevScrollY && this.mouseNearTop) {
-                    // Scrolling UP and mouse is near top — show
+                } else if (currentY < this.prevScrollY) {
+                    // Scrolling UP — show
                     this.show();
                 }
-                // Scrolling UP without mouse near top — stay hidden
 
                 this.prevScrollY = currentY;
                 this.ticking = false;
