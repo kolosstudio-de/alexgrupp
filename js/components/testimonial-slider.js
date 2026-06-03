@@ -145,7 +145,19 @@ class TestimonialSlider {
                 .ts-dot { width: 8px; height: 8px; border-radius: 50%; background: #ccc; cursor: pointer; transition: 0.3s; }
                 .ts-dot.active { transform: scale(1.5); }
                 .ts-dot.active.auto { background: var(--color-auto-primary); }
+                
+                .ts-dots { display: flex; justify-content: center; gap: 8px; margin-top: 2rem; }
+                .ts-dot { width: 8px; height: 8px; border-radius: 50%; background: #ccc; cursor: pointer; transition: 0.3s; }
+                .ts-dot.active { transform: scale(1.5); }
+                .ts-dot.active.auto { background: var(--color-auto-primary); }
                 .ts-dot.active.bau { background: var(--color-bau-primary); }
+                
+                @media (max-width: 600px) {
+                    .ts-wrapper { padding: 0; }
+                    .ts-nav { display: none; }
+                    .ts-card { padding: 2rem 1.5rem; border-radius: 12px; }
+                }
+
             `;
             document.head.appendChild(style);
         }
