@@ -180,18 +180,18 @@ img {
 
 /* Burger Menu Toggle */
 .burger-menu {
-  display: none;
-  /* Desktop hidden */
+  display: flex; /* visible by default — hidden on desktop via min-width query below */
   flex-direction: column;
   justify-content: space-around;
-  width: 24px;
-  height: 18px;
+  width: 28px;
+  height: 20px;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: 4px;
   z-index: 1001;
-  margin-left: 10px;
+  margin-left: 8px;
+  flex-shrink: 0;
 }
 
 .burger-menu span {
@@ -249,6 +249,14 @@ img {
 .burger-menu.active span:nth-child(3) {
   transform: translateY(-6.5px) rotate(-45deg);
 }
+
+/* ── Desktop: hide burger, show nav links ──────────────── */
+@media (min-width: 769px) {
+  .burger-menu {
+    display: none !important;
+  }
+}
+
 
 /* Logo icon (AG monogram) beside wordmark */
 .logo-icon {
