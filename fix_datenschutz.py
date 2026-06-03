@@ -1,109 +1,10 @@
-<!DOCTYPE html>
-<html lang="de">
+import os
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datenschutzerklärung | Oleksandr Halushka</title>
-    <link rel="stylesheet" href="../styles/global.css">
-    <style>
-        body {
-            background: #fafafa;
-            color: #0f172a;
-            font-family: 'Inter', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+filepath = "/Volumes/Extreme SSD/ AI Prrojects /alexgruppweb-бекап-2026-05-04-перед-аудит-фіксами/legal/datenschutz.html"
+with open(filepath, "r", encoding="utf-8") as f:
+    content = f.read()
 
-        .header-simple {
-            padding: 24px 8%;
-            background: #fff;
-            border-bottom: 1px solid #e2e8f0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo a {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: #0f172a;
-            letter-spacing: -0.02em;
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: #94a3b8;
-            font-weight: 400;
-        }
-
-        .back-link {
-            font-size: 0.9rem;
-            color: #64748b;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .back-link:hover {
-            color: #0f172a;
-        }
-
-        .legal-content {
-            flex: 1;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 80px 24px;
-            width: 100%;
-        }
-
-        .legal-content h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            margin-bottom: 3rem;
-            color: #0f172a;
-        }
-
-        .legal-content h2 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            color: #0f172a;
-        }
-
-        .legal-content p {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #475569;
-            margin-bottom: 1.5rem;
-        }
-
-        .legal-content a {
-            color: #1e40af;
-            text-decoration: underline;
-        }
-
-        .site-footer {
-            background: #f1f5f9;
-            border-top: 1px solid #e2e8f0;
-            color: #94a3b8;
-            padding: 40px 8%;
-            text-align: center;
-            font-size: 0.85rem;
-        }
-    </style>
-</head>
-
-<body>
-    <header class="header-simple">
-        <div class="logo"><a href="../index.html">OLEKSANDR<span>HALUSHKA</span></a></div>
-        <a href="../index.html" class="back-link">← Zurück zur Startseite</a>
-    </header>
-
-    <main class="legal-content">
+new_main = """<main class="legal-content">
         <h1>Datenschutzerklärung</h1>
         <p><strong>Stand: Juni 2026</strong></p>
 
@@ -149,11 +50,12 @@
 
         <h3>Google Maps (Zwei-Klick-Lösung)</h3>
         <p>Auf meiner Kontaktseite ist Google Maps integriert, jedoch durch eine datenschutzfreundliche <strong>Zwei-Klick-Lösung</strong> geschützt. Die Karte ist standardmäßig deaktiviert. Es wird erst eine Verbindung zu den Servern von Google (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland) hergestellt, wenn Sie aktiv auf den Platzhalter klicken und die Karte laden. Mit dem Klick willigen Sie gem. Art. 6 Abs. 1 lit. a DSGVO in die Datenübertragung an Google ein. Ihre Einwilligung können Sie für die Zukunft widerrufen, indem Sie die Seite neu laden.</p>
-    </main>
+    </main>"""
 
-    <footer class="site-footer">
-        <p>&copy; 2026 Oleksandr Halushka · Alle Rechte vorbehalten</p>
-    </footer>
-</body>
+import re
+content = re.sub(r'<main class="legal-content">.*?</main>', new_main, content, flags=re.DOTALL)
 
-</html>
+with open(filepath, "w", encoding="utf-8") as f:
+    f.write(content)
+
+print("Updated datenschutz.html")

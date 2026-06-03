@@ -135,3 +135,20 @@ document.addEventListener('DOMContentLoaded', async function () {
     updateSwitcherUI(lang);
     console.log('[i18n] Page loaded with lang:', lang, '| BASE_PATH:', BASE_PATH);
 });
+
+
+// Prefetch all languages in the background for instant switching
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        LANGS.forEach(({ code }) => {
+            if (code !== getLang() && !_cache[code]) {
+                fetch(BASE_PATH + code + '.json')
+                    .then(r => r.json())
+                    .then(data => {
+                        _cache[code] = data;
+                        localStorage.setItem('ag-i18n-' + code, JSON.stringify(data));
+                    }).catch(() => {});
+            }
+        });
+    }, 1000); // 1 second after load
+});
