@@ -10,13 +10,11 @@ const LANGS = [
     { code: 'ru', label: 'RU' },
 ];
 
-// Resolve path to /locales/ regardless of page depth
+// Resolve path to /locales/ robustly regardless of page depth and hosting protocol (file:// or http://)
 const BASE_PATH = (function () {
-    const parts = window.location.pathname.split('/').filter(Boolean);
-    // Remove the filename (last part)
-    const dirParts = parts.slice(0, -1);
-    const depth = dirParts.length;
-    return depth > 0 ? '../'.repeat(depth) + 'locales/' : 'locales/';
+    const path = window.location.pathname;
+    const isSubdir = /\/(auto|bau|legal)(\/|$)/.test(path);
+    return isSubdir ? '../locales/' : 'locales/';
 })();
 
 // In-memory cache — load each file only once per page visit
